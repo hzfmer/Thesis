@@ -1,0 +1,17 @@
+[1] Config.pm:311> INFO - This is Biber 2.16
+[1] Config.pm:314> INFO - Logfile is 'thesis.blg'
+[265] biber-darwin:340> INFO - === Tue Jun 22, 2021, 22:46:52
+[323] Biber.pm:415> INFO - Reading 'thesis.bcf'
+[744] Biber.pm:952> INFO - Found 157 citekeys in bib section 0
+[795] Biber.pm:4340> INFO - Processing section 0
+[830] Biber.pm:4531> INFO - Looking for bibtex format file 'references.bib' for section 0
+[970] bibtex.pm:1689> INFO - LaTeX decoding ...
+[4713] bibtex.pm:1494> INFO - Found BibTeX data source 'references.bib'
+[7558] Utils.pm:395> WARN - ISBN '978-3-540-89622-7 978-3-540-89623-4' in entry 'satoSeismicWavePropagation2009' is invalid - run biber with '--validate_datamodel' for details.
+[11136] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[11137] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[11137] Biber.pm:4168> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
+[11138] Biber.pm:4174> INFO - No sort tailoring available for locale 'en-US'
+[12142] bbl.pm:654> INFO - Writing 'thesis.bbl' with encoding 'UTF-8'
+[12483] bbl.pm:757> INFO - Output to thesis.bbl
+[12483] Biber.pm:128> INFO - WARNINGS: 1
