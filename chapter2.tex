@@ -1,35 +1,83 @@
 % !TEX encoding = UTF-8 Unicode
 
 \linespread{1.7}
-\chapter{Calibration of the Near-surface Seismic Structure in the SCEC Community Velocity Model Version 4}
+\chapter{Kinematic Source Models for Earthquake Simulations with Fault-zone Plasticity}
 \linespread{2.0}
 %\newrefsection
 \label{chap:eks}
 
 \graphicspath{{/Users/zhh076/work/PhD_way/eks/}}
 
-The near-surface seismic structure (to a depth of about 1000 m), particularly the shear-wave velocity (Vs), can strongly affect the propagation of seismic waves, and therefore must be accurately calibrated for ground motion simulations and seismic hazard assessment. The Vs of the top ~30 m of the crust (Vs30) is often well-characterized from borehole studies, geotechnical measurements, and water wells, while the velocities of the material deeper than about 1000 m are typically determined by tomography studies. However, the material parameters between these two regions are typically poorly constrained due to lack of data constraints. A widely-used method for incorporating the near-surface earth structure is incorporated in the Southern California Earthquake Center (SCEC) Community Velocity Models (CVMs) by interpolating Vs from Vs30 measurements to the S-wave velocity at 350 m \citep{elyVs30derivedNearsurfaceSeismic2010}. However, our 3D simulations of the 2014 M5.1 La Habra earthquake in the Los Angeles area using the SCEC CVM-S4.26.M01 model significantly underpredict low-frequency (< 1 Hz) ground motions at rock sites for the \citet{elyVs30derivedNearsurfaceSeismic2010} method. On the other hand, extending the Vs30-based refinement of the shallow velocities down to a depth of about 1000 meters improves the fit between our synthetics and seismic data at rock sites considerably, without compromising the fit at soil sites. We recommend that our proposed near-surface velocity refinement at rock sites down to about 1000 meters be incorporated in CVM-S4.26M01, as well as considered for other CVMs.
+Fault slip and surface deformation patterns are essential factors in seismic hazard assessment. However, slip inversions reveal a widely observed shallow slip deficit (SSD) which has not yet been clearly explained. One possible cause of the SSD is distributed plastic deformation in the fault damage zone near the surface. \citet{rotenOfffaultDeformationsShallow2017} performed 3D dynamic rupture simulations of the 1992 $M_w$ 7.3 Landers earthquake in a medium governed by Drucker-Prager plasticity. The study showed that while linear simulations tend to underpredict SSD and off-fault deformation (OFD), nonlinear simulations with moderately fractured rock mass can properly reproduce results that are consistent with the 30-60\% SSD and around 46\% OFD reported in geodetic observations. Analysis of the \citet{rotenOfffaultDeformationsShallow2017} results shows that discrepancies between linear and nonlinear simulations are only significant in the top hundreds of meters of the surface-rupturing fault. Although inelastic responses in the fault damage zone provide more realistic representations of earthquake physics, it can be computationally expensive or numerically unfeasible (e.g., in adjoint methods) to include nonlinear effects in ground motion simulations. One solution proposed here is to use an equivalent kinematic source (EKS) model that mimics the fault-zone plastic effects. This method generates source-time-functions by modifying the slip rate time histories based on comparisons of linear and non-linear dynamic rupture models, which are then used as input to kinematic simulations. The EKS model is able to reproduce the reduction of ground motions observed in dynamic simulations with fault-zone plasticity compared against linear simulations. In spite of its simple formula, the EKS model is robust in the presence different stress drop, rock strength and rupture directions for a $M_w$ 7.8 earthquake scenario on the San Andreas Fault. Further verification of the method and comparison with the output from kinematic rupture generators are needed before the anticipated use in practical applications such as the SCEC CyberShake and Broadband platforms.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction} \label{eks:intro}
+Dynamic and kinematic earthquake simulations of fault rupture processes and wave propagation have been widely used as a complimentary approach to predict ground motions, especially for near-source regions where observed data is sparse. Numerical models are also used to establish physical limits to ground motions caused by plastic yielding in crustal rocks \citeg{andrewsPhysicalLimitsGround2007,duanSensitivityStudyPhysical2010}. \citet{rotenExpectedSeismicShaking2014} simulated the $M$ 7.8 ShakeOut earthquake scenario and found that plastic yielding in the fault zone can reduce peak ground velocities (PGVs) at periods longer than 1 s, which somewhat contradicts the typical assumption that non-linear effects are only relevant at higher frequencies. A successive study \citep{rotenOfffaultDeformationsShallow2017} on the 1992 Landers Earthquake further shows that simulations with fault-zone plasticity can reproduce off-fault deformations and shallow slip deficit that are consistent with previous studies and observations; however linear simulations fail to capture such phenomenon.
+
+Although many recent studies on rupture dynamics have focused on the absorption of rupture energy by inelastic response of near-fault materials and pointed out its necessity in numerical simulations \citeg{andrewsRuptureDynamicsEnergy2005,ma2008physical,dunhamEarthquakeRupturesStrongly2011,dunhamEarthquakeRupturesStrongly2011a,gabrielSourcePropertiesDynamic2013}, linear simulations with viscoelastic models are still widely adopted for seismic hazard analysis considering their efficiency. This work aims to further explore fault-zone non-linearity due to plastic yielding and develop a kinematic source model to emulate plasticity in linear simulations.
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Numerical Approach}\label{eks:approach}
+\section{Method}\label{eks:method}
+We set up a number of dynamic simulations using the AWP-ODC 3D finite-difference code \citep{olsenThreeDimensionalSimulationMagnitude1995,dayMemoryEfficientSimulationAnelastic2001,cuiScalableEarthquakeSimulation2010}, which simulates spontaneous rupture with the staggered-grid split-node formulation \citep{dalguer2007staggered} and includes Drucker-Prager plasticity following the return-map algorithm \citep{rotenOfffaultDeformationsShallow2017}. The code has been verified against several finite-difference and finite-element methods for both visco-elastic and visco-plastic material properties within the Southern California Earthquake Center (SCEC) dynamic rupture code verification project \citep{harris2009scec,harris2011verifying}.
 
+\subsection{Simulations of Dynamic Rupture}
+We performed dynamic simulations of an $M_w$ 7.8 earthquake scenario rupturing the southern San Andreas Fault, based on the model used in \citet{rotenOfffaultDeformationsShallow2017}. The planar fault was embedded in a 3-D heterogeneous velocity mesh \citep[SCEC CVM4;][]{magistraleSCECSouthernCalifornia2000} with a 450-m wide low-velocity zone, where the peak amplitudes of the shear wave are reduced by 30\%.
+
+The Drucker-Prager plasticity was implemented in terms of cohesion $c$ and friction angle $\varphi$:
+\begin{equation}\label{eq:eks-1}
+    Y(\tau)=\max \left(0, c \cos \varphi-\left(\tau_{m}+P_{f}\right) \sin \varphi\right),
+\end{equation}
+where $Y(\tau)$ is the yield stress, $\tau_{m}$ the mean stress (negative in compression) and $P_f$ the fluid pressure. Although cohesions and friction angles can be measured from small samples in the laboratory, rock strength tends to decrease with sample size, as smaller samples are less likely to include pre-existing fractures on which failure may occur \citep{wyllie2017rock}. This issue is addressed by the generalized Hoek-Brown failure criterion, which describes the strength of intact rock with the unconfined compressive strength and the material constant $m_i$, which is provided in tables for various rock types. The reduced value mb is evaluated from the material constant $m_i$ using the Geological Strength Index (GSI) of the rock\citep{hoek1980empirical,hoek1997practical}. The value of the GSI ranges from 0 to 100 and is used reflect different geologic conditions, related to the degree of fracturing and weathering. For example, a GSI above about 80 indicates intact, undisturbed rock; a GSI of 50 describes a blocky/disturbed rock, while a GSI value of 30 characterizes a mostly disintegrated, heavily broken/tectonically deformed rock mass. The Hoek-Brown model \citep{evert2002hoek} is used to approximate the Hoek-Brown failure criterion and derive the equivalent cohesions and friction angles for two different rock models, sandstone and shale, with GSI values of 50 and 30 respectively.
+
+
+We performed dynamic rupture simulations for several different realizations of the random stress field and selected a representative case for different media (Figure 1). Linear and non-linear models show similar peak slip rate (PSR) distributions, while the amplitudes can be much various, especially near the surface. In the linear case, surface PSRs are about 7 m/s for most parts of the fault and reach peak values (> 14 m/s) in the right portion of the fault. These surface PSR values are reduced to less than 4 m/s in the non-linear simulation for the sandstone model, and even less for the shale model. Actually, the rupture above the nucleation starting location in non-linear cases may fail to reach the surface. Overall reduction in PSRs is produced by non-linear effects, and it is most pronounced in the shallow zone, which is consistent with \citet{rotenExpectedSeismicShaking2014}.
+
+\subsection{Peak Slip Rate–Depth Profile}
+Since permanent deformations concentrate near the fault, plastic yielding of crustal rock in fault zone is assumed to produce the majority of the difference in ground motions. Considering the fact that the layered model is a typically reasonable approximation of real structure, we compared the slip rates along depth between linear and non-linear simulations, even though our velocity mesh is three-dimensional heterogeneous. The linear models excite high PSRs near the surface (above 3 km), which can be as large as two times of the PSRs for sandstone models on the surface; while both models generate almost identical PSRs in the deeper part of the fault. These are also shown through the ratio of PSRs between non-linear and linear models, which gradually increases from about 0.4-0.5 on the surface to close to 1 near the bottom of the fault (Figure 2).
+
+Including non-linearity caused by fault-zone plasticity can greatly increase the computational cost in dynamic simulations, while kinematic simulations using linear models are much more efficient. The similar pattern of PSR ratio profiles motivates us to design a depth-dependent fitting function, which can be applied upon the linear PSR profile to imitate the non-linear PSR profile, and therefore produce similar resulting ground motions. We adopted the fitting function in the form of $r_{fit}=A+B * \exp \left(f(depth)\right)$, and regression of a large ensemble of realizations gives a best-fit function (see red dashed curves in \cref{fig:eks-2}):
+
+\begin{equation}\label{eq:eks-2}
+    r_{f i t}=0.97+\left(0.97-\frac{G S I}{100}\right) * \exp \left(\frac{d}{d_{\text {norm }}}\right),
+\end{equation}
+where $d$ is the depth and $d_{norm}$ is a normalization depth, above which the reduction of PSRs in non-linear cases becomes pronounced. We approximated $d_{norm}$ with the depth where PSR profile for the linear model first turns flat. Note that this depth is closely related to the fault zone rock stengths, as further discussed in \cref{eks:conclusions}). The fitting function above is therefore only a function of depth and rock strength (represented by GSI values).
+
+\subsection{Kinematic Source Model}
+As stated in \cref{eks:intro}, fault-zone plasticity reduces slip rates on the fault, which is likely more realistic than linear models. Given any source time function (STF) for a linear model, its corresponding non-linear PSR-depth profile can be retrieved by multiplying the fitting curve with the linear PSR profile. The profile describes the slip rate distribution averaged along fault strike without incorporating detailed STF on each subfault, which means much detailed information is lost during this simple multiplication. Moreover, the plastic yielding mainly occur then strain is large, so the difference in STF between non-linear and linear models only exists for a small portion around the failure time. We multiply the STF on each subfault with a conversion function, whose peak time is identical with that of the STF for the linear model and minimum value is the fitting curve value at the depth of the subfault.
+
+The process to modify a STF to obtain the converted STF is shown in Figure 3. The modification is applied to all subfaults and generates an equivalent kinematic source (EKS) model. Since the converted STF is very close to that for the non-linear model, it is reasonable to expect that the EKS model is able to reproduce similar ground motions with the non-linear model.
+
+\section{Ground Motion Simulations using Linear, Non-linear and EKS models}
+
+\subsection{Comparison of Ground Motions}
+Figure 4 shows peak ground velocities for a representative realization with three different models. In the linear case, strong shaking (PGV > 3 m/s) occurs near the fault, especially at Palm Springs, the intersection of the fault and the San Bernardino Basin and near Lake Hughes; some small patches of strong ground motions (PGVs larger than 1.5 m/s) also appear in the Los Angeles (LA) Basin and Oxnard Plain. These patterns have been reported in previous simulations \citep{olsen2009shakeout} and confirmed by ambient noise measurements20, which can be attributed to wave guide effects. The non-linear model predicts significant smaller PGVs near the fault, where PGVs are reduced to about 2 m/s and 1 m/s or even smaller. The reduction is relatively less pronounced in the areas near Palm Springs. Compared with the linear model, EKS produces weaker shaking in a similar pattern with the non-linear model, though the reduction level is smaller.
+
+\subsection{Reduction of Ground Motion Extremes}
+The non-linearity also affects ground motion extremes, for which we computed the cumulative distribution of PGVs (Figure 5). Plastic effects reduce the amplitude and occurrence of strong ground motions, e.g. at an occurrence frequency of 10$^{-4}$ PGVs decrease from 4.5 m/s in the linear simulation to 3.5 m/s in the non-linear simulations, which is well reproduced in the EKS model. The results sustain for different rocks including sandstone and shale, and shale rock model yields slightly more reduction than sandstone due to its weaker strength.
+
+We also computed the same distribution of spectral acceleration at 3 s (3s-SA, Figure 6) to analyze the effects of plasticity and effectiveness of EKS model at different frequencies. The distribution pattern of 3s-SA is similar with that of PGV, except that non-linearity reduces infrequent 3s-SAs up to 40-50\%, larger than reductions for PGVs.
+
+\subsection{Rupture Direction}
+The rupture direction sometimes makes an important role in determining ground shaking, especially when combining with waveguide channels. We tested the robustness of the EKS model against different rupture directions by reversing the fault rupture direction. The distribution of PGVs in the lower stress drop case is similar with the model with original rupture direction; while one non-linear case (Figure 7b) shows large difference that non-linearity has almost no effects on PGVS.  This may be aleatory, and more simulations with different stress drops are needed.
+
+\subsection{Off-Fault Regions}
+
+Even though the EKS model can reproduce similar overall ground motion reduction features with non-linear models, the reduction in regions away from the fault remains a challenge. As shown in Figure 4, some strong motion patches exist in the EKS model. We zoomed in the LA basin and plotted histograms of the PGVs for three models. For the shale media, the EKS models work quite well to produce the PGV distribution patterns that are consistent with non-linear models; whereas the EKS models overpredict the PGVs for the sandstone model. This may be explained by the fact that the sandstone models generate PGVs in the LA basin comparable with the shale model, instead of stronger shaking due to greater rock strength and less inelastic absorption of seismic energy.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\section{Discussion and Conclusions}\label{eks:conclusions}
+Our simulations of an M7.8 strike slip scenario show that slip rates and the resulting ground motions are reduced with the presence of plastic yielding in fault-zone crustal rocks. Such plastic effects are emulated in kinematic source models by modifying the STF in linear models. The EKS model is able to reproduce the reduction of occurrence and amplitudes of strong ground motions. Velocity strengthening friction in the upper fault may reduce fault slip and slip rates in a similar way and mimic non-linear effects. Yet the EKS model is also suitable to be applied in kinematic rupture generators, considering its advantage of the robustness against different rock strengths and rupture directions along with its simple formula.
+The EKS models proposed here only depend on rock strength and depth. It is likely that more advanced formulation, e.g. involving lateral dependency and magnitude-dependency, will produce more accurate ground motion features. Moreover, the plastic effects still need more assessment about its dependency on factors including initial stress, stress drop, earthquake magnitude and so on. More simulations with different realizations of these parameters will have to be carried out; future simulations should also include non-surface-rupturing scenarios, though EKS models are developed for large earthquakes considering its aim to save computational cost. Deeper understanding of non-linearity caused by plastic yielding will help to construct more realistic EKS models.
 
 \section*{Data and Resources}
 
 
 \section*{Acknowledgements}
 \addcontentsline{toc}{section}{\protect\numberline{}Acknowledgements}
-
-This research was supported through the U.S. Geological Survey External Program (award \url{\#G19AS00021}), as well as the Southern California Earthquake Center (SCEC; Contribution Number xx). SCEC is funded by the National Science Foundation (NSF) Cooperative Agreement EAR-1600087 and the U.S. Geological Survey Cooperative Agreement \url{G17AC00047}. We thank Robert W. Graves for providing the source models and Fabio Silva for providing the station records of the 2014 La Habra earthquake.
 
 \Cref{chap:eks}, in full, is a reformatted version of a paper currently being prepared: Hu, Z., Roten, D., Olsen, K.B., and Day, S.M. (2021). Kinematic Source Models for Earthquake Simulations with Fault-zone Plasticity. The dissertation author was the primary investigator and author of this paper.
 
@@ -45,7 +93,7 @@ This research was supported through the U.S. Geological Survey External Program 
 % \begin{adjustbox}{width=\textwidth,center}
 % \begin{tabular}{|c|cccccccccccccccccccccccccccccccc|c|}
 % \end{tabular}
-% \label{tb:5-S3}
+% \label{tab:5-S3}
 % \end{adjustbox}
 % \end{sidewaystable}
 
@@ -53,38 +101,123 @@ This research was supported through the U.S. Geological Survey External Program 
 
 % %%%%%%%%%%%%% figures 
 
+%\clearpage
+\floatsetup[figure]{style=plain,subcapbesideposition=top,font=Large,footfont=Large}
+\begin{figure}[!ht]
+    \sidesubfloat[]{\includegraphics[width=0.9\textwidth]{figures/figure_eks_1a.png}\label{fig:eks-1a}} \\[\baselineskip]%
+    \sidesubfloat[]{\includegraphics[width=0.9\textwidth]{figures/figure_eks_1b.png}\label{fig:eks-1b}} \\[\baselineskip]%
+    \sidesubfloat[]{\includegraphics[width=0.9\textwidth]{figures/figure_eks_1c.png}\label{fig:eks-1c}} \\[\baselineskip]%
+    \vspace{-3mm}
+    \centering
+    \includegraphics[width=0.3\textwidth]{figures/figure_eks_1d.png}\label{fig:eks-1d}
+    \caption{Peak slip rate (PSR) obtained on the fault from a representative rupture case, with the surface PSR (in m/s) shown in the panel above each subplot. From top to bottom shows three models: (a) linear; (b) sandstone (nonlinear); (c) shale (nonlinear). Black contours indicate rupture time in 1 s intervals.}
+    \label{fig:eks-1}
+\end{figure}
+\clearpage
+
 \clearpage
 \begin{figure}[!ht]
-    \centering
-    \includegraphics[width=0.9\textwidth]{figures/figure_vs30_1.png}
-    \caption{Simulation region for the La Habra event (rectangle) and locations of 259 strong ground motion stations (circles represent soil sites with surface $V_S$ < 1000 m/s and red triangles represent rock sites with surface $V_S$ >= 1000 m/s). The named sites (triangles with black edge) are selected for further comparisons in Figure 12. The star depicts the epicenter of the La Habra earthquake.
-    }
-    \label{fig:eks-1}
+    \includegraphics[width=0.28\textwidth]{figures/figure_eks_2a.pdf}\label{fig:eks-2a} \hspace{0.02\textwidth}%
+    \includegraphics[width=0.28\textwidth]{figures/figure_eks_2b.pdf}\label{fig:eks-2b} \hspace{0.02\textwidth}%\hfil
+    \includegraphics[width=0.28\textwidth]{figures/figure_eks_2c.pdf}\label{fig:eks-2c} % \\[\baselineskip]%
+    \caption{Peak slip rate (PSR) averaged over along strike against depth(left panel of each subplot) for sandstone (nonlinear) and linear models and their ratio (right panel of each subplot). (a)-(c) depit three realizations for the sandstone models with stress drop of 7, 8, 10 $MPa$, respectively. Dashed red lines indicates the curves fitting the nonlinear to linear PSR ratio using \cref{eq:eks-2}.}
+    \label{fig:eks-2}
+\end{figure}
+\clearpage
+
+
+\clearpage
+\begin{figure}[!ht]
+    \sidesubfloat[]{\includegraphics[width=0.26\textwidth]{figures/figure_eks_3a.pdf}\label{fig:eks-3a}} \hfil
+    \sidesubfloat[]{\includegraphics[width=0.26\textwidth]{figures/figure_eks_3b.pdf}\label{fig:eks-3b}} \hfil
+    \sidesubfloat[]{\includegraphics[width=0.26\textwidth]{figures/figure_eks_3c.pdf}\label{fig:eks-3c}}
+    \caption{(a) The STF on a representative subfault (depth=0) for the linear model. (b) The time-domain scaling factors from the scaling function computed with \cref{eq:eks-2}. For the non-linear model and scaled STF (right). The middle figure shows the conversion function with a minimum value of 0.38, which is exactly the value of the fitting curve on the surface. The black dashed lines in the left and middle figure indicate peak time of the STF and conversion function.}
+    \label{fig:eks-3}
+\end{figure}
+\clearpage
+
+\clearpage
+\begin{figure}[!ht]
+    \includegraphics[width=0.9\textwidth]{figures/figure_eks_4.png}
+    \caption{PGV distribution for the southern San Andreas Fault region, obtained for (a) linear, (b) sandstone and (c) EKS model. Contour lines are just for better visibility. The red dotted rectangle denotes LA basin region for further ground motion comparisons in \Cref{fig:eks-10}.}
+    \label{fig:eks-4}
 \end{figure}
 
 
 \clearpage
 \floatsetup[figure]{style=plain,subcapbesideposition=top,font=Large,footfont=Large}
 \begin{figure}[!ht]
-    \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_vs30_14a.png}\label{fig:eks-14a}} \hfil
-    \sidesubfloat[]{\includegraphics[width=0.45\textwidth]{figures/figure_vs30_14b.pdf}\label{fig:eks-14b}} % \\[\baselineskip]%
-    \caption{ (a) $V_S$ profile sample locations in California. Triangles denote rock sites and circles denote soil sites, and (b) extracted $V_S$ profiles. The top panel zooms into the top 500 m. }
-    \label{fig:eks-14}
+    \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_eks_5a.png}\label{fig:eks-5a}} \hfil%\\[\baselineskip]%
+    \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_eks_5b.png}\label{fig:eks-5b}} \\[\baselineskip]%
+    \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_eks_5c.png}\label{fig:eks-5c}} \hfil%\\[\baselineskip]%
+    \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_eks_5d.png}\label{fig:eks-5d}} \\[\baselineskip]
+
+    \caption{Cumulative distribution of PGVs for linear models with stress drop of 7 (a and c) and 10 (b and d) $Mpa$, as well as nonlinear models and the corresponding EKS models. The top row (a and b) depicts nonlinear model with sandstone media and the bottom (c and d) with shale.}
+    \label{fig:eks-5}
 \end{figure}
+
+\clearpage
+\floatsetup[figure]{style=plain,subcapbesideposition=top,font=Large,footfont=Large}
+\begin{figure}[!ht]
+    \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_eks_6a.pdf}\label{fig:eks-6a}} \hfil%\\[\baselineskip]%
+    \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_eks_6b.pdf}\label{fig:eks-6b}} \\[\baselineskip]%
+    \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_eks_6c.pdf}\label{fig:eks-6c}} \hfil%\\[\baselineskip]%
+    \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_eks_6d.pdf}\label{fig:eks-6d}}
+
+    \caption{Same as \Cref{fig:eks-5}, but for SA-5s comparisons.}
+    \label{fig:eks-6}
+\end{figure}
+
+\clearpage
+\floatsetup[figure]{style=plain,subcapbesideposition=top,font=Large,footfont=Large}
+\begin{figure}[!ht]
+    \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_eks_7a.pdf}\label{fig:eks-7a}} \hfil%\\[\baselineskip]%
+    \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_eks_7b.pdf}\label{fig:eks-7b}} \\[\baselineskip]%
+    \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_eks_7c.pdf}\label{fig:eks-7c}} \hfil%\\[\baselineskip]%
+    \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_eks_7d.pdf}\label{fig:eks-7d}}
+
+    \caption{Same as \Cref{fig:eks-5}, but for SA-3s comparisons.}
+    \label{fig:eks-7}
+\end{figure}
+
+\clearpage
+\floatsetup[figure]{style=plain,subcapbesideposition=top,font=Large,footfont=Large}
+\begin{figure}[!ht]
+    \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_eks_8a.pdf}\label{fig:eks-8a}} \hfil%\\[\baselineskip]%
+    \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_eks_8b.pdf}\label{fig:eks-8b}} \\[\baselineskip]%
+    \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_eks_8c.pdf}\label{fig:eks-8c}} \hfil%\\[\baselineskip]%
+    \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_eks_8d.pdf}\label{fig:eks-8d}}
+
+    \caption{Same as \Cref{fig:eks-5}, but for SA-2s comparisons.}
+    \label{fig:eks-8}
+\end{figure}
+
+\clearpage
+\floatsetup[figure]{style=plain,subcapbesideposition=top,font=Large,footfont=Large}
+\begin{figure}[!ht]
+    \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_eks_10a.png}\label{fig:eks-10a}} \hfil%\\[\baselineskip]%
+    \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_eks_10b.png}\label{fig:eks-10b}} \\[\baselineskip]%
+    \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_eks_10c.png}\label{fig:eks-10c}} \hfil%\\[\baselineskip]%
+    \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_eks_10d.png}\label{fig:eks-10d}}
+
+    \caption{Probability densite (P.D) histograms of PGVs in the Los Angeles Basin area. Tho models shown are the same as in \Cref{fig:eks-5}}
+    \label{fig:eks-10}
+\end{figure}
+
 \clearpage
 
 %% supplement
-\setcounter{table}{0}
-\setcounter{figure}{0}
-\numberwithin{figure}{chapter}
-\numberwithin{table}{chapter}
-\renewcommand{\thetable}{S\arabic{chapter}.\arabic{table}}
-\renewcommand{\thefigure}{S\arabic{chapter}.\arabic{figure}}
-\newpage
-\section*{Supplementary Materials}
-\addcontentsline{toc}{section}{\protect\numberline{}Supplementary Materials}
+% \setcounter{table}{0}
+% \setcounter{figure}{0}
+% \numberwithin{figure}{chapter}
+% \numberwithin{table}{chapter}
+% \renewcommand{\thetable}{S\arabic{chapter}.\arabic{table}}
+% \renewcommand{\thefigure}{S\arabic{chapter}.\arabic{figure}}
+% \newpage
+% \section*{Supplementary Materials}
+% \addcontentsline{toc}{section}{\protect\numberline{}Supplementary Materials}
 
-This supplement includes.
+% This supplement includes.
 
 
 

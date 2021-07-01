@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.5.26)  27 JUN 2021 20:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.5.26)  1 JUL 2021 13:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -793,6 +793,7 @@ File: puenc.def 2021-02-27 v7.00k Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
+Package hyperref Info: Option `draft' set `true' on input line 4073.
 Package hyperref Info: Option `breaklinks' set `true' on input line 4073.
 Package hyperref Info: Hyper figures OFF on input line 4192.
 Package hyperref Info: Link nesting OFF on input line 4197.
@@ -871,7 +872,7 @@ Package cleveref Info: always capitalise cross-reference names on input line 785
 File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count440
 \l__pdf_internal_box=\box65
-) (./thesis.aux (./thesis_frontmatter.aux) (./appendices.aux))
+) (./thesis.aux (./chapter4.aux))
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 273.
@@ -1001,21 +1002,17 @@ Package biblatex Info: ... file 'thesis.bbl' found.
 Package biblatex Info: Reference section=0 on input line 273.
 Package biblatex Info: Reference segment=0 on input line 273.
 LaTeX Info: Redefining \microtypecontext on input line 273.
-Package microtype Info: Generating PDF output.
-Package microtype Info: Character protrusion enabled (level 2).
-Package microtype Info: Using default protrusion set `alltext'.
-Package microtype Info: Automatic font expansion enabled (level 2),
-(microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
-Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 273.
-Package microtype Info: No adjustment of tracking.
-Package microtype Info: No adjustment of interword spacing.
-Package microtype Info: No adjustment of character kerning.
- (/usr/local/texlive/2021/texmf-dist/tex/latex/microtype/mt-ptm.cfg
-File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
-)
+
+
+Package microtype Warning: `draft' option active.
+(microtype)                Disabling all micro-typographic extensions.
+(microtype)                This might lead to different line and page breaks.
+
+
+Package hyperref Warning: Draft mode on.
+
 Package hyperref Info: Link coloring ON on input line 273.
- (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (/usr/local/texlive/2021/texmf-dist/tex/latex/refcount/refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
@@ -1027,150 +1024,84 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 273.
 LaTeX Info: Redefining \pageref on input line 273.
 LaTeX Info: Redefining \nameref on input line 273.
- (./thesis.out) (./thesis.out)
-\@outlinefile=\write5
-\openout5 = `thesis.out'.
+\openout2 = `chapter4.aux'.
 
-\openout2 = `thesis_frontmatter.aux'.
-
- (./thesis_frontmatter.tex
-Underfull \hbox (badness 10000) in paragraph at lines 55--55
-
- []
-
-[1
-
-
-{/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
-
-Package hyperref Warning: bookmark level for unknown frontmatter defaults to 0.
-
-LaTeX Font Info:    Trying to load font information for OT1+ptmcm on input line 55.
+ (./chapter4.tex
+Chapter 1.
+Package biblatex Info: Reference segment=1 on input line 4.
+Package biblatex Info: Setting label 'refsegment:01' on input line 4.
+LaTeX Font Info:    Trying to load font information for OT1+ptmcm on input line 4.
 (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/ot1ptmcm.fd
 File: ot1ptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ptmcm.
 )
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `ptmcm' (encoding: OT1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-LaTeX Font Info:    Trying to load font information for OML+ptmcm on input line 55.
+LaTeX Font Info:    Trying to load font information for OML+ptmcm on input line 4.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/omlptmcm.fd
 File: omlptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ptmcm.
 )
-LaTeX Font Info:    Trying to load font information for OMX+psycm on input line 55.
+LaTeX Font Info:    Trying to load font information for OMX+psycm on input line 4.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/omxpsycm.fd
 File: omxpsycm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/psycm.
-) (/usr/local/texlive/2021/texmf-dist/tex/latex/microtype/mt-cmr.cfg
-File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
 )
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 55.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 55.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 55.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 55.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 4.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 4.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 4.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-) (/usr/local/texlive/2021/texmf-dist/tex/latex/microtype/mt-msa.cfg
-File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 55.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (/usr/local/texlive/2021/texmf-dist/tex/latex/microtype/mt-msb.cfg
-File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-) [3] [4] [5] (./thesis.toc)
-\tf@toc=\write6
-\openout6 = `thesis.toc'.
-
- [6] (./thesis.lof)
-\tf@lof=\write7
-\openout7 = `thesis.lof'.
-
- [7] (./thesis.lot)
-\tf@lot=\write8
-\openout8 = `thesis.lot'.
-
- [8] [9]
-
-LaTeX Warning: Reference `chap:eks' on page i undefined on input line 166.
-
-
-LaTeX Warning: Reference `chap:vs30' on page i undefined on input line 168.
-
-[10]
-
-LaTeX Warning: Reference `chap:highf' on page i undefined on input line 170.
-
-
-LaTeX Warning: Reference `chap:etf' on page i undefined on input line 172.
-
-[11] [12]
-
-LaTeX Warning: Hyper reference `chap:intro' on page xiii undefined on input line 207.
-
-
-LaTeX Warning: Hyper reference `chap:eks' on page xiii undefined on input line 207.
-
-
-LaTeX Warning: Hyper reference `chap:vs30' on page xiii undefined on input line 207.
-
-
-LaTeX Warning: Hyper reference `chap:highf' on page xiii undefined on input line 207.
-
-
-LaTeX Warning: Hyper reference `chap:vs30' on page xiii undefined on input line 207.
-
-
-LaTeX Warning: Hyper reference `chap:highf' on page xiii undefined on input line 207.
-
-
-LaTeX Warning: Hyper reference `chap:etf' on page xiii undefined on input line 207.
-
-[13] [14])
-\openout2 = `appendices.aux'.
-
- (./appendices.tex
-Package biblatex Info: Reference segment=1 on input line 5.
-Package biblatex Info: Setting label 'refsegment:01' on input line 5.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 11.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 11.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 11.
  [1
 
 
 
-
-]
-LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 10.79993pt on input line 41.
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `phv' (encoding: T1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-<figures/figure_vs30_14a.png, id=146, 384.83775pt x 362.43405pt>
-File: figures/figure_vs30_14a.png Graphic file (type png)
-<use figures/figure_vs30_14a.png>
-Package pdftex.def Info: figures/figure_vs30_14a.png  used on input line 42.
-(pdftex.def)             Requested size: 183.56317pt x 172.87689pt.
-LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 8.99994pt on input line 42.
-<figures/figure_vs30_14b.pdf, id=147, 402.70764pt x 340.85818pt>
-File: figures/figure_vs30_14b.pdf Graphic file (type pdf)
-<use figures/figure_vs30_14b.pdf>
-Package pdftex.def Info: figures/figure_vs30_14b.pdf  used on input line 43.
-(pdftex.def)             Requested size: 206.51031pt x 174.79236pt.
+{/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4] [5] [6] [7] [8]
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 72.
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+) [9] [10] [11]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 44.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 88.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 44.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 88.
+ [12] [13] [14] [15] [16] [17] [18] [19] [20]
+Overfull \hbox (4.09299pt too wide) in paragraph at lines 141--142
+[]\T1/ptm/m/n/12 This re-search was sup-ported through the U.S. Ge-o-log-i-cal Sur-vey Ex-ter-nal Pro-gram (award|
+ []
+
+
+Overfull \hbox (17.50568pt too wide) in paragraph at lines 141--142
+\T1/ptm/m/n/12 ment EAR-1600087 and the U.S. Ge-o-log-i-cal Sur-vey (USGS) Co-op-er-a-tive Agree-ment G17AC00047.|
+ []
+
+[21] [22] [23]
+</Users/zhh076/work/PhD_way/high_f//topo_q100f06_ely1000_hist.pdf, id=85, 366.65106pt x 245.11826pt>
+</Users/zhh076/work/PhD_way/high_f//topo_q100f06_hist.pdf, id=86, 366.65106pt x 245.11826pt>
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 44.
-) [2
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 172.
+) [24
 
- <./figures/figure_vs30_14a.png (PNG copy)> <./figures/figure_vs30_14b.pdf>] [3
+] [25] [26
 
 
 
-] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16]
+] [27] [28]
+Underfull \hbox (badness 1009) in paragraph at lines 307--307
+[][]\T1/ptm/m/n/12 Nie, S., Wang, Y., Olsen, K. B., and Day, S. M. (2017). ``Fourth-order Staggered-grid
+ []
+
+[29] [30] [31]
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the thesis.maf file.
@@ -1197,17 +1128,7 @@ Package minitoc(hints) Warning: W0024
 (minitoc(hints))                Some hints have been written 
 (minitoc(hints))                in the thesis.log file.
 
-[17] (./thesis.aux (./thesis_frontmatter.aux) (./appendices.aux))
-
-LaTeX Warning: There were undefined references.
-
-Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: FDE3AB5DC5F88682F2980E57174C32B9;1559.
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                thesis
-(biblatex)                and rerun LaTeX afterwards.
-
+[32] (./thesis.aux (./chapter4.aux))
 Package logreq Info: Writing requests to 'thesis.run.xml'.
 \openout1 = `thesis.run.xml'.
 
@@ -1217,18 +1138,18 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 ### semi simple group (level 1) entered at line 140 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 27766 strings out of 478994
- 488573 string characters out of 5858184
- 1439850 words of memory out of 5000000
- 43982 multiletter control sequences out of 15000+600000
- 497671 words of font info for 409 fonts, out of 8000000 for 9000
+ 26775 strings out of 478994
+ 461390 string characters out of 5858184
+ 1261304 words of memory out of 5000000
+ 43647 multiletter control sequences out of 15000+600000
+ 499190 words of font info for 192 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 111i,8n,116p,2800b,18441s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (31 pages, 1426593 bytes).
+ 111i,8n,116p,2848b,18526s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on thesis.pdf (32 pages, 171822 bytes).
 PDF statistics:
- 485 PDF objects out of 1000 (max. 8388607)
- 413 compressed objects within 5 object streams
- 206 named destinations out of 1000 (max. 500000)
- 82027 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 151 PDF objects out of 1000 (max. 8388607)
+ 103 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
