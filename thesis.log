@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.5.26)  22 JUN 2021 22:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.5.26)  2 JUL 2021 01:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -793,7 +793,6 @@ File: puenc.def 2021-02-27 v7.00k Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
-Package hyperref Info: Option `draft' set `true' on input line 4073.
 Package hyperref Info: Option `breaklinks' set `true' on input line 4073.
 Package hyperref Info: Hyper figures OFF on input line 4192.
 Package hyperref Info: Link nesting OFF on input line 4197.
@@ -872,7 +871,7 @@ Package cleveref Info: always capitalise cross-reference names on input line 785
 File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count440
 \l__pdf_internal_box=\box65
-) (./thesis.aux (./thesis_frontmatter.aux) (./chapter1.aux) (./chapter2.aux) (./chapter3.aux) (./chapter4.aux) (./chapter5.aux) (./appendices.aux))
+) (./thesis.aux (./chapter4.aux))
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 273.
@@ -1002,17 +1001,21 @@ Package biblatex Info: ... file 'thesis.bbl' found.
 Package biblatex Info: Reference section=0 on input line 273.
 Package biblatex Info: Reference segment=0 on input line 273.
 LaTeX Info: Redefining \microtypecontext on input line 273.
-
-
-Package microtype Warning: `draft' option active.
-(microtype)                Disabling all micro-typographic extensions.
-(microtype)                This might lead to different line and page breaks.
-
-
-Package hyperref Warning: Draft mode on.
-
+Package microtype Info: Generating PDF output.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using default protrusion set `alltext'.
+Package microtype Info: Automatic font expansion enabled (level 2),
+(microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
+Package microtype Info: Using default expansion set `alltext-nott'.
+LaTeX Info: Redefining \showhyphens on input line 273.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of interword spacing.
+Package microtype Info: No adjustment of character kerning.
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/microtype/mt-ptm.cfg
+File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
+)
 Package hyperref Info: Link coloring ON on input line 273.
-(/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/nameref.sty
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (/usr/local/texlive/2021/texmf-dist/tex/latex/refcount/refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
@@ -1024,390 +1027,234 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 273.
 LaTeX Info: Redefining \pageref on input line 273.
 LaTeX Info: Redefining \nameref on input line 273.
-\openout2 = `thesis_frontmatter.aux'.
+ (./thesis.out) (./thesis.out)
+\@outlinefile=\write5
+\openout5 = `thesis.out'.
 
- (./thesis_frontmatter.tex
-Underfull \hbox (badness 10000) in paragraph at lines 55--55
-
- []
-
-[1
-
-
-{/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
-
-Package hyperref Warning: bookmark level for unknown frontmatter defaults to 0.
-
-LaTeX Font Info:    Trying to load font information for OT1+ptmcm on input line 55.
-(/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/ot1ptmcm.fd
-File: ot1ptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ptmcm.
-)
-LaTeX Font Info:    Trying to load font information for OML+ptmcm on input line 55.
- (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/omlptmcm.fd
-File: omlptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ptmcm.
-)
-LaTeX Font Info:    Trying to load font information for OMX+psycm on input line 55.
- (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/omxpsycm.fd
-File: omxpsycm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/psycm.
-)
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 55.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 55.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 55.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 55.
- (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 55.
- (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [3] [4] [5] (./thesis.toc [6])
-\tf@toc=\write5
-\openout5 = `thesis.toc'.
-
- [7] (./thesis.lof [8] [9]
-Package biblatex Info: Delimiter 'nameyeardelim' in context '' already defined, overwriting on input line 71.
-
-Overfull \hbox (0.6349pt too wide) in paragraph at lines 75--75
- \T1/ptm/m/n/12 site lo-ca-tion de-noted by the tri-an-gle. (b) West^^Ueast A^^UA' and (d) north^^Usouth |
- []
-
-[10]
-Overfull \hbox (0.93599pt too wide) in paragraph at lines 81--81
- [][] []\T1/ptm/m/n/12 Energy on the (a) hor-i-zon-tal and (b) ver-ti-cal com-po-nents at the site TKCH05. |
- []
-
-
-Overfull \hbox (4.85995pt too wide) in paragraph at lines 85--85
- [][] []\T1/ptm/m/n/12 (a) Map of events (pur-ple tri-an-gles) used for com-put-ing the ETFs at TKCH05. |
- []
-
-)
-\tf@lof=\write6
-\openout6 = `thesis.lof'.
-
- [11] (./thesis.lot)
-\tf@lot=\write7
-\openout7 = `thesis.lot'.
-
- [12] [13] [14] [15] [16] [17] [18])
-\openout2 = `chapter1.aux'.
-
- (./chapter1.tex
-Chapter 1.
-Package biblatex Info: Reference segment=1 on input line 4.
-Package biblatex Info: Setting label 'refsegment:01' on input line 4.
-[1
-
-
-
-
-] [2] [3] [4] [5] [6] [7] [8] [9] [10]) [11]
-\openout2 = `chapter2.aux'.
-
- (./chapter2.tex
-Chapter 2.
-Package biblatex Info: Reference segment=2 on input line 4.
-Package biblatex Info: Setting label 'refsegment:02' on input line 4.
-[12
-
-
-
-
-]
-Overfull \hbox (4.09299pt too wide) in paragraph at lines 32--33
-[]\T1/ptm/m/n/12 This re-search was sup-ported through the U.S. Ge-o-log-i-cal Sur-vey Ex-ter-nal Pro-gram (award|
- []
-
-
-Overfull \hbox (17.50568pt too wide) in paragraph at lines 32--33
-\T1/ptm/m/n/12 ment EAR-1600087 and the U.S. Ge-o-log-i-cal Sur-vey (USGS) Co-op-er-a-tive Agree-ment $G17AC00047$.|
- []
-
-[13] [14]
-<figures/figure_vs30_1.png, id=112, 555.7563pt x 451.4466pt>
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 61.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 61.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 61.
- [15
-
-]
-<figures/figure_vs30_14a.png, id=117, 384.83775pt x 362.43405pt>
-<figures/figure_vs30_14b.pdf, id=118, 398.8181pt x 336.84319pt>
- [16
-
-]) [17
-
-]
-\openout2 = `chapter3.aux'.
-
- (./chapter3.tex
-Chapter 3.
-Package biblatex Info: Reference segment=3 on input line 4.
-Package biblatex Info: Setting label 'refsegment:03' on input line 4.
-[18
-
-
-
-
-] [19] [20]
-Overfull \hbox (4.09299pt too wide) in paragraph at lines 40--41
-[]\T1/ptm/m/n/12 This re-search was sup-ported through the U.S. Ge-o-log-i-cal Sur-vey Ex-ter-nal Pro-gram (award|
- []
-
-
-Overfull \hbox (17.50568pt too wide) in paragraph at lines 40--41
-\T1/ptm/m/n/12 ment EAR-1600087 and the U.S. Ge-o-log-i-cal Sur-vey (USGS) Co-op-er-a-tive Agree-ment $G17AC00047$.|
- []
-
-[21] [22] [23] [24
-
-]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 138.
- (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [25
-
-]
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 186.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 188.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 188.
-
-Underfull \hbox (badness 10000) in paragraph at lines 188--189
-
- []
-
-
-Overfull \hbox (90.78822pt too wide) in paragraph at lines 145--192
- [] |
- []
-
-[26
-
-] [27
-
-]
-
-pdfTeX warning: pdflatex (file ./figures/figure_vs30_2.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/figure_vs30_2.pdf, id=157, 253.97084pt x 499.35056pt>
-[28]
-<figures/figure_vs30_3.pdf, id=161, 402.3311pt x 342.96632pt>
- [29
-
-
-]
-<figures/figure_vs30_4.pdf, id=165, 647.47694pt x 549.45375pt>
- [30
-
-]
-<figures/figure_vs30_5.png, id=169, 284.62335pt x 341.5962pt>
- [31
-
-]
-<figures/figure_vs30_6.pdf, id=174, 662.25114pt x 288.79895pt>
- [32
-
-]
-<figures/figure_vs30_7.pdf, id=178, 662.25114pt x 289.40121pt>
- [33
-
-]
-<figures/figure_vs30_8.pdf, id=183, 817.78123pt x 282.27255pt>
- [34
-
-]
-<figures/figure_vs30_9.pdf, id=187, 658.51318pt x 553.28809pt>
- [35
-
-]
-<figures/figure_vs30_10.png, id=191, 455.301pt x 294.25935pt>
- [36
-
-]
-<figures/figure_vs30_11.png, id=195, 455.301pt x 144.2991pt>
- [37
-
-]
-<figures/figure_vs30_12.pdf, id=200, 963.6pt x 542.025pt>
- [38
-
-]
-<figures/figure_vs30_13.pdf, id=204, 262.97623pt x 154.8142pt>
- [39
-
-] [40
-
-]
-<figures/figure_vs30_S1.pdf, id=211, 658.51318pt x 553.28809pt>
- [41
-
-]
-<figures/figure_vs30_S2.pdf, id=215, 885.28545pt x 722.15996pt>
- [42
-
-]) [43]
 \openout2 = `chapter4.aux'.
 
  (./chapter4.tex
-Chapter 4.
-Package biblatex Info: Reference segment=4 on input line 4.
-Package biblatex Info: Setting label 'refsegment:04' on input line 4.
-[44
+Chapter 1.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 4.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4.
+
+Package biblatex Info: Reference segment=1 on input line 4.
+Package biblatex Info: Setting label 'refsegment:01' on input line 4.
+LaTeX Font Info:    Trying to load font information for OT1+ptmcm on input line 4.
+(/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/ot1ptmcm.fd
+File: ot1ptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ptmcm.
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `ptmcm' (encoding: OT1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+LaTeX Font Info:    Trying to load font information for OML+ptmcm on input line 4.
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/omlptmcm.fd
+File: omlptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ptmcm.
+)
+LaTeX Font Info:    Trying to load font information for OMX+psycm on input line 4.
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/omxpsycm.fd
+File: omxpsycm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/psycm.
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/microtype/mt-cmr.cfg
+File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 4.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 4.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 4.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/microtype/mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/microtype/mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 11.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 11.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 11.
+ [1
 
 
 
+{/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4] [5] [6] [7] [8]
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 73.
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+) [9] [10] [11]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 89.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 89.
 
-]
-Overfull \hbox (4.09299pt too wide) in paragraph at lines 33--34
-[]\T1/ptm/m/n/12 This re-search was sup-ported through the U.S. Ge-o-log-i-cal Sur-vey Ex-ter-nal Pro-gram (award|
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 89.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 89.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 89.
+
+[12] [13] [14]
+
+LaTeX Warning: Reference `fig:highf-10' on page 1 undefined on input line 111.
+
+[15] [16]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 123.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\kappa' on input line 123.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 123.
+
+[17] [18] [19] [20]
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `pcr' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+ [21] [22] [23]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 231.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 233.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 233.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 233.
+
+Underfull \hbox (badness 10000) in paragraph at lines 233--234
+
  []
 
 
-Overfull \hbox (17.50568pt too wide) in paragraph at lines 33--34
-\T1/ptm/m/n/12 ment EAR-1600087 and the U.S. Ge-o-log-i-cal Sur-vey (USGS) Co-op-er-a-tive Agree-ment G17AC00047.|
+Overfull \hbox (106.19011pt too wide) in paragraph at lines 209--237
+ [] 
  []
 
-[45] [46] [47]
-</Users/zhh076/work/PhD_way/high_f//topo_q100f06_ely1000_hist.pdf, id=235, 370.47784pt x 245.11826pt>
-</Users/zhh076/work/PhD_way/high_f//topo_q100f06_hist.pdf, id=236, 366.65106pt x 245.11826pt>
-) [48
-
-] [49]
-\openout2 = `chapter5.aux'.
-
- (./chapter5.tex
-Chapter 5.
-Package biblatex Info: Reference segment=5 on input line 4.
-Package biblatex Info: Setting label 'refsegment:05' on input line 4.
-[50
-
-
-
-
-] [51] [52] [53] [54] [55] [56]
-Overfull \hbox (2.10767pt too wide) in paragraph at lines 69--70
-\T1/ptm/m/n/12 ing 3D mod-el-ing, is com-pu-ta-tion-ally chal-leng-ing. We use the par-al-lel and scal-able discontinuous-|
- []
-
-[57] [58] [59] [60] [61] [62] [63] [64] [65] [66] [67]
-Package biblatex Info: Delimiter 'nameyeardelim' in context '' already defined, overwriting on input line 140.
- [68] [69] [70] [71
-
-] [72
-
+[24
 
 ]
-<figures/figure_etf_1.pdf, id=317, 409.80302pt x 349.32506pt>
- [73
+<figures/figure_highf_1.png, id=426, 555.7563pt x 434.3427pt>
+File: figures/figure_highf_1.png Graphic file (type png)
+<use figures/figure_highf_1.png>
+Package pdftex.def Info: figures/figure_highf_1.png  used on input line 244.
+(pdftex.def)             Requested size: 413.02063pt x 322.7871pt.
+ [25
 
-]
-<figures/figure_etf_2.pdf, id=322, 847.53136pt x 531.89818pt>
- [74
+ <./figures/figure_highf_1.png (PNG copy)>]
+<figures/figure_highf_2.png, id=433, 284.62335pt x 462.528pt>
+File: figures/figure_highf_2.png Graphic file (type png)
+<use figures/figure_highf_2.png>
+Package pdftex.def Info: figures/figure_highf_2.png  used on input line 252.
+(pdftex.def)             Requested size: 326.52388pt x 530.61858pt.
+ [26
 
-]
-<figures/figure_etf_3.pdf, id=326, 912.7982pt x 518.19298pt>
- [75
+ <./figures/figure_highf_2.png (PNG copy)>]
+<figures/figure_highf_3.pdf, id=438, 579.36403pt x 333.30127pt>
+File: figures/figure_highf_3.pdf Graphic file (type pdf)
+<use figures/figure_highf_3.pdf>
+Package pdftex.def Info: figures/figure_highf_3.pdf  used on input line 259.
+(pdftex.def)             Requested size: 413.031pt x 237.61185pt.
+ [27
 
-]
-<figures/figure_etf_4.pdf, id=330, 666.49pt x 409.53pt>
- [76
+ <./figures/figure_highf_3.pdf>]
+<figures/figure_highf_4.png, id=507, 455.301pt x 199.10385pt>
+File: figures/figure_highf_4.png Graphic file (type png)
+<use figures/figure_highf_4.png>
+Package pdftex.def Info: figures/figure_highf_4.png  used on input line 266.
+(pdftex.def)             Requested size: 413.03235pt x 180.61969pt.
+ [28
 
-]
-<figures/figure_etf_5.pdf, id=334, 409.80302pt x 349.32506pt>
- [77
+ <./figures/figure_highf_4.png (PNG copy)>]
+<figures/figure_highf_5.png, id=513, 455.301pt x 308.95425pt>
+File: figures/figure_highf_5.png Graphic file (type png)
+<use figures/figure_highf_5.png>
+Package pdftex.def Info: figures/figure_highf_5.png  used on input line 274.
+(pdftex.def)             Requested size: 413.03235pt x 280.27194pt.
+ [29
 
-]
-<figures/figure_etf_6.pdf, id=338, 763.96317pt x 537.60345pt>
-Package biblatex Info: Delimiter 'nameyeardelim' in context '' already defined, overwriting on input line 315.
- [78
+ <./figures/figure_highf_5.png (PNG copy)>]
+<figures/figure_highf_6.pdf, id=518, 363.84056pt x 351.43546pt>
+File: figures/figure_highf_6.pdf Graphic file (type pdf)
+<use figures/figure_highf_6.pdf>
+Package pdftex.def Info: figures/figure_highf_6.pdf  used on input line 282.
+(pdftex.def)             Requested size: 413.0504pt x 398.96748pt.
+ [30
 
-]
-<figures/figure_etf_7.pdf, id=342, 937.97626pt x 334.65929pt>
- [79
+ <./figures/figure_highf_6.pdf>]
+<figures/figure_highf_7.png, id=570, 455.301pt x 425.1885pt>
+File: figures/figure_highf_7.png Graphic file (type png)
+<use figures/figure_highf_7.png>
+Package pdftex.def Info: figures/figure_highf_7.png  used on input line 291.
+(pdftex.def)             Requested size: 413.03235pt x 385.7154pt.
+ [31
 
-]
-<figures/figure_etf_8.pdf, id=347, 568.1135pt x 532.27856pt>
- [80
+ <./figures/figure_highf_7.png (PNG copy)>]
+<figures/figure_highf_8.png, id=576, 455.301pt x 302.20905pt>
+File: figures/figure_highf_8.png Graphic file (type png)
+<use figures/figure_highf_8.png>
+Package pdftex.def Info: figures/figure_highf_8.png  used on input line 300.
+(pdftex.def)             Requested size: 413.03235pt x 274.15294pt.
+ [32
 
-]
-<figures/figure_etf_9.pdf, id=351, 935.64656pt x 351.74211pt>
- [81
+ <./figures/figure_highf_8.png (PNG copy)>]
+<figures/figure_highf_9.pdf, id=581, 666.97398pt x 362.98106pt>
+File: figures/figure_highf_9.pdf Graphic file (type pdf)
+<use figures/figure_highf_9.pdf>
+Package pdftex.def Info: figures/figure_highf_9.pdf  used on input line 309.
+(pdftex.def)             Requested size: 413.0209pt x 224.77452pt.
+ [33
 
-]
-<figures/figure_etf_10.pdf, id=355, 666.49pt x 409.53pt>
- [82
+ <./figures/figure_highf_9.pdf>]
+<figures/figure_highf_10.png, id=645, 455.301pt x 489.62926pt>
+File: figures/figure_highf_10.png Graphic file (type png)
+<use figures/figure_highf_10.png>
+Package pdftex.def Info: figures/figure_highf_10.png  used on input line 318.
+(pdftex.def)             Requested size: 413.03235pt x 444.17368pt.
+ [34
 
-]
-<figures/figure_etf_11.pdf, id=359, 961.36565pt x 506.27544pt>
- [83
+ <./figures/figure_highf_10.png (PNG copy)>]
+<figures/figure_highf_11.png, id=651, 455.301pt x 302.20905pt>
+File: figures/figure_highf_11.png Graphic file (type png)
+<use figures/figure_highf_11.png>
+Package pdftex.def Info: figures/figure_highf_11.png  used on input line 328.
+(pdftex.def)             Requested size: 413.03235pt x 274.15294pt.
+ [35
 
-] [84]
+ <./figures/figure_highf_11.png (PNG copy)>]) [36
 
-pdfTeX warning: pdflatex (file ./figures/figure_etf_S1a.pdf): PDF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
-<figures/figure_etf_S1a.pdf, id=367, 401.28821pt x 344.63956pt>
-<figures/figure_etf_S1b.pdf, id=368, 397.03706pt x 233.55898pt>
-[85
-
-]
-
-pdfTeX warning: pdflatex (file ./figures/figure_etf_S2a.pdf): PDF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
-<figures/figure_etf_S2a.pdf, id=373, 397.484pt x 298.3396pt>
-<figures/figure_etf_S2b.pdf, id=374, 395.411pt x 233.55898pt>
-[86
-
-]
-
-pdfTeX warning: pdflatex (file ./figures/figure_etf_S3a.pdf): PDF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
-<figures/figure_etf_S3a.pdf, id=378, 307.18463pt x 196.51016pt>
-
-
-pdfTeX warning: pdflatex (file ./figures/figure_etf_S3b.pdf): PDF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
-<figures/figure_etf_S3b.pdf, id=379, 307.18463pt x 196.51016pt>
-[87
-
-]
-
-pdfTeX warning: pdflatex (file ./figures/figure_etf_S4a.pdf): PDF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
-<figures/figure_etf_S4a.pdf, id=383, 307.18463pt x 196.51016pt>
-
-
-pdfTeX warning: pdflatex (file ./figures/figure_etf_S4b.pdf): PDF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
-<figures/figure_etf_S4b.pdf, id=384, 307.18463pt x 196.51016pt>
-) [88
-
-]
-\openout2 = `appendices.aux'.
-
- (./appendices.tex
-Package biblatex Info: Reference segment=6 on input line 5.
-Package biblatex Info: Setting label 'refsegment:06' on input line 5.
-) [89
-
-
-
-
-] [90
+] [37
 
 
 
-] [91] [92] [93] [94] [95] [96] [97] [98]
-Underfull \hbox (badness 1009) in paragraph at lines 307--307
-[][]\T1/ptm/m/n/12 Nie, S., Wang, Y., Olsen, K. B., and Day, S. M. (2017). ``Fourth-order Staggered-grid
- []
-
-[99] [100] [101] [102] [103]
-
-Package caption Warning: Unused \captionsetup[floatfoot] on input line 68.
-See the caption package documentation for explanation.
-
+] [38] [39] [40] [41] [42]
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the thesis.maf file.
@@ -1429,34 +1276,55 @@ Package minitoc(hints) Info: I0053
 (minitoc(hints))             facilities can not be used for new types 
 (minitoc(hints))             of floats defined by the rotfloat package.
 
+
 Package minitoc(hints) Warning: W0024
 (minitoc(hints))                Some hints have been written 
 (minitoc(hints))                in the thesis.log file.
 
-[104] (./thesis.aux (./thesis_frontmatter.aux) (./chapter1.aux) (./chapter2.aux) (./chapter3.aux) (./chapter4.aux) (./chapter5.aux) (./appendices.aux))
+[43] (./thesis.aux (./chapter4.aux))
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `thesis.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `thesis.out':
+(rerunfilecheck)             Before: 1F2BED78360BA841CACCE7EC211D56E0;4585
+(rerunfilecheck)             After:  582EA6ACE256ABBDDA337E2332F61A5C;4585.
+
+Package biblatex Warning: Please rerun LaTeX.
+(biblatex)                Page breaks have changed.
+
 Package logreq Info: Writing requests to 'thesis.run.xml'.
 \openout1 = `thesis.run.xml'.
 
  )
-(\end occurred inside a group at level 3)
+(\end occurred inside a group at level 1)
 
-### simple group (level 3) entered at line 32 ({)
-### simple group (level 2) entered at line 70 ({)
 ### semi simple group (level 1) entered at line 140 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 27734 strings out of 478994
- 487547 string characters out of 5858184
- 1504509 words of memory out of 5000000
- 44496 multiletter control sequences out of 15000+600000
- 508245 words of font info for 198 fonts, out of 8000000 for 9000
+ 27906 strings out of 478994
+ 478860 string characters out of 5858184
+ 1266668 words of memory out of 5000000
+ 44023 multiletter control sequences out of 15000+600000
+ 543415 words of font info for 563 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 111i,23n,116p,2800b,18678s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (122 pages, 289016 bytes).
+ 111i,20n,116p,2848b,18552s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{chapter*.18} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.17} has been referenced but does not exist, replaced by a fixed one
+
+{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on thesis.pdf (43 pages, 92196012 bytes).
 PDF statistics:
- 478 PDF objects out of 1000 (max. 8388607)
- 302 compressed objects within 4 object streams
- 0 named destinations out of 1000 (max. 500000)
- 191 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 769 PDF objects out of 1000 (max. 8388607)
+ 558 compressed objects within 6 object streams
+ 162 named destinations out of 1000 (max. 500000)
+ 131336 words of extra memory for PDF output out of 154059 (max. 10000000)
 
