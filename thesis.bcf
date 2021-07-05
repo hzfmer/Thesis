@@ -2448,10 +2448,14 @@
     <bcf:citekey order="72">savranGroundMotionSimulation2019</bcf:citekey>
     <bcf:citekey order="73">przybillaEstimationCrustalScattering2009</bcf:citekey>
     <bcf:citekey order="74">huCalibrationNearsurfaceSeismic2021</bcf:citekey>
-    <bcf:citekey order="75">anderson1984model</bcf:citekey>
-    <bcf:citekey order="76">hanksFmax1982</bcf:citekey>
-    <bcf:citekey order="77">anderson1984model</bcf:citekey>
-    <bcf:citekey order="78">andersonQuantitativeMeasureGoodnessOfFit2004</bcf:citekey>
+    <bcf:citekey order="75">huCalibrationNearsurfaceSeismic2021</bcf:citekey>
+    <bcf:citekey order="76">huCalibrationNearsurfaceSeismic2021</bcf:citekey>
+    <bcf:citekey order="77">massaOverviewTopographicEffects2014</bcf:citekey>
+    <bcf:citekey order="78">anderson1984model</bcf:citekey>
+    <bcf:citekey order="79">hanksFmax1982</bcf:citekey>
+    <bcf:citekey order="80">anderson1984model</bcf:citekey>
+    <bcf:citekey order="81">anderson1984model</bcf:citekey>
+    <bcf:citekey order="82">anderson1984model</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">

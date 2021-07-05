@@ -94,6 +94,9 @@
       \field{dateera}{ce}
       \field{pages}{1969\bibrangedash 1993}
       \range{pages}{25}
+      \verb{file}
+      \verb /Users/zhh076/work/Papers_zotero/Bulletin of the Seismological Society of America/1984/Anderson and Hough_1984_A model for the shape of the Fourier amplitude spe.pdf
+      \endverb
       \keyw{⛔ No DOI found}
     \endentry
     \entry{arias1970measure}{report}{}
@@ -2378,6 +2381,68 @@
       \verb /Users/zhh076/work/Papers_zotero/Bulletin of the Seismological Society of America/1996/Magistrale et al._1996_A geology-based 3D velocity model of the Los Angel.pdf
       \endverb
       \keyw{⛔ No DOI found}
+    \endentry
+    \entry{massaOverviewTopographicEffects2014}{article}{}
+      \name{author}{3}{}{%
+        {{hash=23cc18f863974403190bb1d84e221bf4}{%
+           family={Massa},
+           familyi={M\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=edd6f2f3804b8482d2ccaf51f8ae082f}{%
+           family={Barani},
+           familyi={B\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=4f76e5262ba1d438c9af44b26b46e77a}{%
+           family={Lovati},
+           familyi={L\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{c89a27168430e775f9b2f5e9534bfca4}
+      \strng{fullhash}{dd3914cd98eb3993483c7379c2e79f52}
+      \strng{bibnamehash}{dd3914cd98eb3993483c7379c2e79f52}
+      \strng{authorbibnamehash}{dd3914cd98eb3993483c7379c2e79f52}
+      \strng{authornamehash}{c89a27168430e775f9b2f5e9534bfca4}
+      \strng{authorfullhash}{dd3914cd98eb3993483c7379c2e79f52}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{The paper presents an extensive review of topographic effects in seismology taking into account the knowledge of 40 yr of scientific literature. An overview of topographic effects based on experimental observations and numerical modelling is presented with the aim of highlighting meaning and causes of these phenomena as well as possible correlations between site response (fundamental frequency, amplification level) and geometrical (width and shape ratio of a relief) parameters. After a thorough summary of topographic effects, the paper focuses on five Italian sites whose seismic response is potentially affected by local morphology, as already evidenced by previous studies. In this study, seismic data recorded at these sites are analysed computing directional spectral ratios both in terms of horizontal to vertical spectral ratios (HVSRs) and, wherever possible, in terms of standard spectral ratios (SSRs). The analysis lead to the conclusion that wavefield tends to be polarized along a direction perpendicular to the main axis of a topographic irregularity, direction along which ground motion amplification is maximum. The final section of the article compares and contrasts different spectral ratio techniques in order to examine their effectiveness and reliability in detecting topographic effects. The examples discussed in the paper show that site responses based on HVSRs rather than SSR measurements could lead to misinterpretation of ground response results, both as concerns the definition of the site fundamental frequency and amplification level.}
+      \field{day}{1}
+      \field{issn}{0956-540X, 1365-246X}
+      \field{journaltitle}{Geophysical Journal International}
+      \field{langid}{english}
+      \field{month}{6}
+      \field{number}{3}
+      \field{shortjournal}{Geophysical Journal International}
+      \field{shorttitle}{Overview of Topographic Effects Based on Experimental Observations}
+      \field{title}{Overview of Topographic Effects Based on Experimental Observations: Meaning, Causes and Possible Interpretations}
+      \field{urlday}{9}
+      \field{urlmonth}{6}
+      \field{urlyear}{2021}
+      \field{volume}{197}
+      \field{year}{2014}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1537\bibrangedash 1550}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1093/gji/ggt341
+      \endverb
+      \verb{file}
+      \verb /Users/zhh076/work/Papers_zotero/Geophysical Journal International/2014/Massa et al._2014_Overview of topographic effects based on experimen.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://academic.oup.com/gji/article-lookup/doi/10.1093/gji/ggt341
+      \endverb
+      \verb{url}
+      \verb https://academic.oup.com/gji/article-lookup/doi/10.1093/gji/ggt341
+      \endverb
     \endentry
     \entry{maufroyFrequencyScaledCurvature2015}{article}{}
       \name{author}{4}{}{%
