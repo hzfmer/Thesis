@@ -94,6 +94,9 @@
       \field{dateera}{ce}
       \field{pages}{1969\bibrangedash 1993}
       \range{pages}{25}
+      \verb{file}
+      \verb /Users/zhh076/work/Papers_zotero/Bulletin of the Seismological Society of America/1984/Anderson and Hough_1984_A model for the shape of the Fourier amplitude spe.pdf
+      \endverb
       \keyw{⛔ No DOI found}
     \endentry
     \entry{arias1970measure}{report}{}
@@ -964,6 +967,56 @@
       \range{pages}{1}
       \verb{file}
       \verb /Users/zhh076/work/Papers_zotero/undefined/undefined/Ely et al._A VS30-derived Near-surface Seismic Velocity Model.pdf
+      \endverb
+    \endentry
+    \entry{fehler1992separation}{article}{}
+      \name{author}{4}{}{%
+        {{hash=4000822521a2ee9f03d59a51bec3c69a}{%
+           family={Fehler},
+           familyi={F\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=0bf5eaa00ecb341d663cecdf79a2e209}{%
+           family={Hoshiba},
+           familyi={H\bibinitperiod},
+           given={Mitsuyuki},
+           giveni={M\bibinitperiod}}}%
+        {{hash=e97377c5c88863e09062e508c4eb3189}{%
+           family={Sato},
+           familyi={S\bibinitperiod},
+           given={Haruo},
+           giveni={H\bibinitperiod}}}%
+        {{hash=052f218bbba9adbdc1dafc49c7b7d03f}{%
+           family={Obara},
+           familyi={O\bibinitperiod},
+           given={Kazushige},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Blackwell Publishing Ltd Oxford, UK}%
+      }
+      \strng{namehash}{c89379ac9a786a4e38664973ab5d96f3}
+      \strng{fullhash}{2a7d3d003c888991051c831f19fea88c}
+      \strng{bibnamehash}{2a7d3d003c888991051c831f19fea88c}
+      \strng{authorbibnamehash}{2a7d3d003c888991051c831f19fea88c}
+      \strng{authornamehash}{c89379ac9a786a4e38664973ab5d96f3}
+      \strng{authorfullhash}{2a7d3d003c888991051c831f19fea88c}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Geophysical Journal International}
+      \field{number}{3}
+      \field{title}{Separation of Scattering and Intrinsic Attenuation for the {{Kanto}}-{{Tokai}} Region, {{Japan}}, Using Measurements of {{S}}-Wave Energy versus Hypocentral Distance}
+      \field{volume}{108}
+      \field{year}{1992}
+      \field{dateera}{ce}
+      \field{pages}{787\bibrangedash 800}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1111/j.1365-246X.1992.tb03470.x
       \endverb
     \endentry
     \entry{frankelFiniteDifferenceSimulations1986}{article}{}
@@ -1982,6 +2035,107 @@
       \verb http://journals.sagepub.com/doi/10.1193/010617EQS005M
       \endverb
     \endentry
+    \entry{linFrequencyDependentAttenuationWaves2018}{article}{}
+      \name{author}{2}{}{%
+        {{hash=62befa0ef074a3083f31670bbc4dcc65}{%
+           family={Lin},
+           familyi={L\bibinitperiod},
+           given={Yu-Pin},
+           giveni={Y\bibinithyphendelim P\bibinitperiod}}}%
+        {{hash=fdf09bb4df5edecc7beb9620cc75af49}{%
+           family={Jordan},
+           familyi={J\bibinitperiod},
+           given={Thomas\bibnamedelima H.},
+           giveni={T\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \strng{namehash}{d4dc4fc704d39846435b32a5251bb6a0}
+      \strng{fullhash}{d4dc4fc704d39846435b32a5251bb6a0}
+      \strng{bibnamehash}{d4dc4fc704d39846435b32a5251bb6a0}
+      \strng{authorbibnamehash}{d4dc4fc704d39846435b32a5251bb6a0}
+      \strng{authornamehash}{d4dc4fc704d39846435b32a5251bb6a0}
+      \strng{authorfullhash}{d4dc4fc704d39846435b32a5251bb6a0}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Accurate models of crustal attenuation structure are important for simulating seismic wavefields at high frequencies (f {$>$} 1 Hz). In this study, we collected P and S waveforms from 160 regional earthquakes (3.3 ≤ M ≤ 5.7) recorded at 218 broadband stations of Southern California Seismic Network and measured spectral amplitudes of P and S waves in the 1- to 10-Hz band using integrals over wavelet transforms. We accounted for source structure and geometrical spreading by referencing the spectral amplitudes to values computed from 1-D synthetic seismograms. We inverted the spectral amplitude ratios for a 1-D, frequency-dependent crustal attenuation model. When plotted against wavenumber, the depth averages of both QP and QS are described by the same function, Q(k) = (240 ± 20) k0.40 ± 0.05 (1 km−1 ≤ k ≤ 17 km−1). Our results are consistent with attenuation dominated by first-order Born scattering from an isotropic, self-affine distribution of elastic heterogeneities with an outer scale of 10 km, a root-mean-square relative amplitude of 8\% and a fractal dimension of 3.8. The inversions accounted for frequency-dependent variations in the source spectra and site response. The source spectra roll off at an average rate of about 2 for both wave types. The station residuals, which reflect unresolved lateral structure, show stronger attenuation in the Los Angeles region and weaker attenuation in the batholithic terrains to the north and south, as well as in the Proterozoic terrains on the eastern side of the study region.}
+      \field{annotation}{\_eprint: https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/2018JB015448}
+      \field{issn}{2169-9356}
+      \field{journaltitle}{Journal of Geophysical Research: Solid Earth}
+      \field{langid}{english}
+      \field{number}{7}
+      \field{title}{Frequency-{{Dependent Attenuation}} of {{P}} and {{S Waves}} in {{Southern California}}}
+      \field{urlday}{9}
+      \field{urlmonth}{6}
+      \field{urlyear}{2021}
+      \field{volume}{123}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{5814\bibrangedash 5830}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1029/2018JB015448
+      \endverb
+      \verb{file}
+      \verb /Users/zhh076/work/Papers_zotero/Journal of Geophysical Research Solid Earth/2018/Lin and Jordan_2018_Frequency-Dependent Attenuation of P and S Waves i.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2018JB015448
+      \endverb
+      \verb{url}
+      \verb https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2018JB015448
+      \endverb
+      \keyw{frequency-dependent Q,scattering,seismic attenuation,Southern California}
+    \endentry
+    \entry{liu1976velocity}{article}{}
+      \name{author}{3}{}{%
+        {{hash=9e2023577ac8f3dc4e27ea9c33d7b516}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Hsi-Ping},
+           giveni={H\bibinithyphendelim P\bibinitperiod}}}%
+        {{hash=86388f2c9ffea8b1c8f6359d21545ad9}{%
+           family={Anderson},
+           familyi={A\bibinitperiod},
+           given={Don\bibnamedelima L},
+           giveni={D\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=fce24e66f39d82ad730be62de3d12ecb}{%
+           family={Kanamori},
+           familyi={K\bibinitperiod},
+           given={Hiroo},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Blackwell Publishing Ltd Oxford, UK}%
+      }
+      \strng{namehash}{7fd08dbae93da83bcb6a5f84bda09d7d}
+      \strng{fullhash}{73be424c4a10485aa6f50cf59558bbc5}
+      \strng{bibnamehash}{73be424c4a10485aa6f50cf59558bbc5}
+      \strng{authorbibnamehash}{73be424c4a10485aa6f50cf59558bbc5}
+      \strng{authornamehash}{7fd08dbae93da83bcb6a5f84bda09d7d}
+      \strng{authorfullhash}{73be424c4a10485aa6f50cf59558bbc5}
+      \field{extraname}{1}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Geophysical Journal International}
+      \field{number}{1}
+      \field{title}{Velocity Dispersion Due to Anelasticity; Implications for Seismology and Mantle Composition}
+      \field{volume}{47}
+      \field{year}{1976}
+      \field{dateera}{ce}
+      \field{pages}{41\bibrangedash 58}
+      \range{pages}{18}
+      \verb{doi}
+      \verb 10.1111/j.1365-246X.1976.tb01261.x
+      \endverb
+    \endentry
     \entry{liuScatteringSeismicWaves2020}{article}{}
       \name{author}{5}{}{%
         {{hash=6e2a401bb35241dc87662f24d20050d9}{%
@@ -2016,6 +2170,7 @@
       \strng{authorbibnamehash}{7c2079e37c676af8825a252547d7124e}
       \strng{authornamehash}{aa39a74bf80de6e0da076b407986fb73}
       \strng{authorfullhash}{7c2079e37c676af8825a252547d7124e}
+      \field{extraname}{2}
       \field{sortinit}{L}
       \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
       \field{extradatescope}{labelyear}
@@ -2050,6 +2205,66 @@
       \endverb
       \verb{url}
       \verb http://link.springer.com/10.1007/s11803-020-0600-z
+      \endverb
+    \endentry
+    \entry{maEffectsLargeScaleSurface2007}{article}{}
+      \name{author}{3}{}{%
+        {{hash=09d5aaacdfbbc789c9d61fce1728387a}{%
+           family={Ma},
+           familyi={M\bibinitperiod},
+           given={Shuo},
+           giveni={S\bibinitperiod}}}%
+        {{hash=e12d6ae8f372c45914aa9ecaf641a93c}{%
+           family={Archuleta},
+           familyi={A\bibinitperiod},
+           given={Ralph\bibnamedelima J.},
+           giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=42f65660121b30b326f63145fe19d1b5}{%
+           family={Page},
+           familyi={P\bibinitperiod},
+           given={Morgan\bibnamedelima T.},
+           giveni={M\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+      }
+      \strng{namehash}{16d8a10bc9fa6913586dcbf8b4d004e1}
+      \strng{fullhash}{5d328eea841f9fa43a1332629cd9c3c0}
+      \strng{bibnamehash}{5d328eea841f9fa43a1332629cd9c3c0}
+      \strng{authorbibnamehash}{5d328eea841f9fa43a1332629cd9c3c0}
+      \strng{authornamehash}{16d8a10bc9fa6913586dcbf8b4d004e1}
+      \strng{authorfullhash}{5d328eea841f9fa43a1332629cd9c3c0}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We investigate the effects of large-scale surface topography on ground motions generated by nearby faulting. We show a specific example studying the effect of the San Gabriel Mountains, which are bounded by the Mojave segment of the San Andreas fault on the north and by the Los Angeles Basin on the south. By simulating a Mw~7.5 earthquake on the Mojave segment of the San Andreas fault, we show that the San Gabriel Mountains act as a natural seismic insulator for metropolitan Los Angeles. The topography of the mountains scatters the surface waves generated by the rupture on the San Andreas fault, leading to less-efficient excitation of basin-edge generated waves and natural resonances within the Los Angeles Basin. The effect of the mountains reduces the peak amplitude of ground velocity for some regions in the basin by as much as 50\% in the frequency band up to 0.5~Hz. These results suggest that, depending on the relative location of faulting and the nearby large-scale topography, the topography can shield some areas from ground shaking.}
+      \field{day}{1}
+      \field{issn}{0037-1106}
+      \field{journaltitle}{Bulletin of the Seismological Society of America}
+      \field{month}{12}
+      \field{number}{6}
+      \field{shortjournal}{Bulletin of the Seismological Society of America}
+      \field{title}{Effects of {{Large}}-{{Scale Surface Topography}} on {{Ground Motions}}, as {{Demonstrated}} by a {{Study}} of the {{San Gabriel Mountains}}, {{Los Angeles}}, {{California}}}
+      \field{urlday}{9}
+      \field{urlmonth}{6}
+      \field{urlyear}{2021}
+      \field{volume}{97}
+      \field{year}{2007}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{2066\bibrangedash 2079}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1785/0120070040
+      \endverb
+      \verb{file}
+      \verb /Users/zhh076/work/Papers_zotero/Bulletin of the Seismological Society of America/2007/Ma et al._2007_Effects of Large-Scale Surface Topography on Groun.pdf;/Users/zhh076/work/Papers_zotero/Bulletin of the Seismological Society of America/2007/Ma et al._2007_Effects of Large-Scale Surface Topography on Groun2.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1785/0120070040
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1785/0120070040
       \endverb
     \endentry
     \entry{magistraleSCECSouthernCalifornia2000}{article}{}
@@ -2166,6 +2381,68 @@
       \verb /Users/zhh076/work/Papers_zotero/Bulletin of the Seismological Society of America/1996/Magistrale et al._1996_A geology-based 3D velocity model of the Los Angel.pdf
       \endverb
       \keyw{⛔ No DOI found}
+    \endentry
+    \entry{massaOverviewTopographicEffects2014}{article}{}
+      \name{author}{3}{}{%
+        {{hash=23cc18f863974403190bb1d84e221bf4}{%
+           family={Massa},
+           familyi={M\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=edd6f2f3804b8482d2ccaf51f8ae082f}{%
+           family={Barani},
+           familyi={B\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=4f76e5262ba1d438c9af44b26b46e77a}{%
+           family={Lovati},
+           familyi={L\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{c89a27168430e775f9b2f5e9534bfca4}
+      \strng{fullhash}{dd3914cd98eb3993483c7379c2e79f52}
+      \strng{bibnamehash}{dd3914cd98eb3993483c7379c2e79f52}
+      \strng{authorbibnamehash}{dd3914cd98eb3993483c7379c2e79f52}
+      \strng{authornamehash}{c89a27168430e775f9b2f5e9534bfca4}
+      \strng{authorfullhash}{dd3914cd98eb3993483c7379c2e79f52}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{The paper presents an extensive review of topographic effects in seismology taking into account the knowledge of 40 yr of scientific literature. An overview of topographic effects based on experimental observations and numerical modelling is presented with the aim of highlighting meaning and causes of these phenomena as well as possible correlations between site response (fundamental frequency, amplification level) and geometrical (width and shape ratio of a relief) parameters. After a thorough summary of topographic effects, the paper focuses on five Italian sites whose seismic response is potentially affected by local morphology, as already evidenced by previous studies. In this study, seismic data recorded at these sites are analysed computing directional spectral ratios both in terms of horizontal to vertical spectral ratios (HVSRs) and, wherever possible, in terms of standard spectral ratios (SSRs). The analysis lead to the conclusion that wavefield tends to be polarized along a direction perpendicular to the main axis of a topographic irregularity, direction along which ground motion amplification is maximum. The final section of the article compares and contrasts different spectral ratio techniques in order to examine their effectiveness and reliability in detecting topographic effects. The examples discussed in the paper show that site responses based on HVSRs rather than SSR measurements could lead to misinterpretation of ground response results, both as concerns the definition of the site fundamental frequency and amplification level.}
+      \field{day}{1}
+      \field{issn}{0956-540X, 1365-246X}
+      \field{journaltitle}{Geophysical Journal International}
+      \field{langid}{english}
+      \field{month}{6}
+      \field{number}{3}
+      \field{shortjournal}{Geophysical Journal International}
+      \field{shorttitle}{Overview of Topographic Effects Based on Experimental Observations}
+      \field{title}{Overview of Topographic Effects Based on Experimental Observations: Meaning, Causes and Possible Interpretations}
+      \field{urlday}{9}
+      \field{urlmonth}{6}
+      \field{urlyear}{2021}
+      \field{volume}{197}
+      \field{year}{2014}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1537\bibrangedash 1550}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1093/gji/ggt341
+      \endverb
+      \verb{file}
+      \verb /Users/zhh076/work/Papers_zotero/Geophysical Journal International/2014/Massa et al._2014_Overview of topographic effects based on experimen.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://academic.oup.com/gji/article-lookup/doi/10.1093/gji/ggt341
+      \endverb
+      \verb{url}
+      \verb https://academic.oup.com/gji/article-lookup/doi/10.1093/gji/ggt341
+      \endverb
     \endentry
     \entry{maufroyFrequencyScaledCurvature2015}{article}{}
       \name{author}{4}{}{%
@@ -2730,63 +3007,6 @@
       \range{pages}{8}
       \verb{doi}
       \verb 10.1785/0220140102
-      \endverb
-    \endentry
-    \entry{panzeraEvidenceTopographicEffects2011}{article}{}
-      \name{author}{3}{}{%
-        {{hash=96a7cee3464780279b2204208eedeb9d}{%
-           family={Panzera},
-           familyi={P\bibinitperiod},
-           given={F.},
-           giveni={F\bibinitperiod}}}%
-        {{hash=da337417579c7992a8f8c06e6127ba9f}{%
-           family={Lombardo},
-           familyi={L\bibinitperiod},
-           given={G.},
-           giveni={G\bibinitperiod}}}%
-        {{hash=9d1580176b05576ced2d3b3744e4a4ad}{%
-           family={Rigano},
-           familyi={R\bibinitperiod},
-           given={R.},
-           giveni={R\bibinitperiod}}}%
-      }
-      \strng{namehash}{974e6fe2edd8cb602b2a53043172d5f5}
-      \strng{fullhash}{f4d16f81b9148f8edd4c42601f83ad1f}
-      \strng{bibnamehash}{f4d16f81b9148f8edd4c42601f83ad1f}
-      \strng{authorbibnamehash}{f4d16f81b9148f8edd4c42601f83ad1f}
-      \strng{authornamehash}{974e6fe2edd8cb602b2a53043172d5f5}
-      \strng{authorfullhash}{f4d16f81b9148f8edd4c42601f83ad1f}
-      \field{sortinit}{P}
-      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{day}{1}
-      \field{issn}{0895-0695}
-      \field{journaltitle}{Seismological Research Letters}
-      \field{langid}{english}
-      \field{month}{5}
-      \field{number}{3}
-      \field{shortjournal}{Seismological Research Letters}
-      \field{title}{Evidence of {{Topographic Effects}} through the {{Analysis}} of {{Ambient Noise Measurements}}}
-      \field{urlday}{16}
-      \field{urlmonth}{2}
-      \field{urlyear}{2021}
-      \field{volume}{82}
-      \field{year}{2011}
-      \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \field{pages}{413\bibrangedash 419}
-      \range{pages}{7}
-      \verb{doi}
-      \verb 10.1785/gssrl.82.3.413
-      \endverb
-      \verb{urlraw}
-      \verb https://pubs.geoscienceworld.org/srl/article/82/3/413-419/143822
-      \endverb
-      \verb{url}
-      \verb https://pubs.geoscienceworld.org/srl/article/82/3/413-419/143822
       \endverb
     \endentry
     \entry{pitarka2009simulating}{article}{}
