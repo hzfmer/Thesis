@@ -1,0 +1,173 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\contentsline {frontmatter}{\numberline {}Dissertation Approval Page}{iii}{section*.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {frontmatter}{\numberline {}Dedication}{iv}{section*.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {frontmatter}{\numberline {}Epigraph}{v}{section*.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {frontmatter}{\numberline {}Table of Contents}{vi}{section*.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {frontmatter}{\numberline {}List of Figures}{ix}{section*.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {frontmatter}{\numberline {}List of Tables}{xvi}{section*.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {frontmatter}{\numberline {}Acknowledgements}{xvii}{section*.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {frontmatter}{\numberline {}Vita}{xx}{section*.8}%
+\defcounter {refsection}{0}\relax 
+\contentsline {frontmatter}{\numberline {}Abstract of the Dissertation}{xxi}{section*.9}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {Chapter\nobreakspace {}1}Introduction}{1}{chapter.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.1}Motivation}{1}{section.1.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.2}Near-source Plasticity}{3}{section.1.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.3}Model Characteristics in High-Frequency Simulations}{4}{section.1.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.3.1}Near Surface Low Velocity}{5}{subsection.1.3.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.3.2}Topography}{6}{subsection.1.3.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.3.3}Anelastic attenuation}{7}{subsection.1.3.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.3.4}Small-scale Heterogeneities}{8}{subsection.1.3.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.4}Site Amplification}{10}{section.1.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {Chapter\nobreakspace {}2}Kinematic Source Models for Earthquake Simulations with Fault-zone Plasticity}{13}{chapter.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.1}Introduction}{14}{section.2.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.2}Method}{15}{section.2.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.1}Simulations of Dynamic Rupture}{15}{subsection.2.2.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.2}Peak Slip Rate–Depth Profile}{17}{subsection.2.2.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.3}Kinematic Source Model}{18}{subsection.2.2.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.3}Ground Motion Simulations using Linear, Non-linear and EKS models}{18}{section.2.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3.1}Comparison of Ground Motions}{18}{subsection.2.3.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3.2}Reduction of Ground Motion Extremes}{19}{subsection.2.3.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3.3}Rupture Direction}{19}{subsection.2.3.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3.4}Off-Fault Regions}{20}{subsection.2.3.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.4}Discussion and Conclusions}{20}{section.2.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {}Acknowledgements}{21}{section*.11}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {}Tables and Figures}{22}{section*.12}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {Chapter\nobreakspace {}3}Calibration of the Near-surface Seismic Structure in the SCEC Community Velocity Model Version 4}{31}{chapter.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.1}Introduction}{32}{section.3.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.2}Numerical Approach}{36}{section.3.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.3}Simulation Results}{39}{section.3.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.4}Velocity Taper Method}{40}{section.3.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.5}SH1D Theoretical Analysis}{43}{section.3.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.6}3D Numerical Simulations}{45}{section.3.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.7}Discussion and Conclusions}{46}{section.3.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {}Acknowledgements}{50}{section*.23}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {}Tables and Figures}{51}{section*.24}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {}Supplementary Materials}{68}{section*.43}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {Chapter\nobreakspace {}4}0-5 Hz Deterministic 3D Ground Motion Simulations for the 2014 La Habra, California, Earthquake}{71}{chapter.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.1}Introduction}{72}{section.4.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.2}Computational Aspect}{75}{section.4.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2.1}Numerical method for simulating ground motions}{75}{subsection.4.2.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2.2}Computational Domain}{76}{subsection.4.2.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2.3}Small-scale Heterogeneities}{77}{subsection.4.2.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2.4}Topography}{78}{subsection.4.2.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2.5}Frequency-Dependent Attenuation}{78}{subsection.4.2.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2.6}Near-surface Geotechnical Layer}{79}{subsection.4.2.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2.7}Ground Motion Simulations}{80}{subsection.4.2.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2.8}Data Processing}{80}{subsection.4.2.8}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2.9}Goodness of fit criteria}{81}{subsection.4.2.9}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.3}Results}{82}{section.4.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.3.1}Source Models}{82}{subsection.4.3.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.3.2}Minimum \textbf {$V_S$}}{82}{subsection.4.3.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.3.3}Reference Model Response}{83}{subsection.4.3.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.3.4}Topography}{84}{subsection.4.3.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.3.5}Frequency-Dependent Attenuation}{85}{subsection.4.3.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.3.6}Small-scale heterogeneities}{86}{subsection.4.3.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.4}Discussions}{87}{section.4.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.4.1}Topography and Shallow Velocity Taper}{88}{subsection.4.4.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.4.2}Anelastic Attenuation and $\kappa $}{90}{subsection.4.4.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.4.3}Goodness of Fit}{91}{subsection.4.4.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.5}Conclusions}{92}{section.4.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {}Acknowledgements}{92}{section*.48}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {}Tables and Figures}{94}{section*.49}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {}Supplementary Materials}{111}{section*.68}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {Chapter\nobreakspace {}5}Modeling of Empirical Transfer Functions with 3D Velocity Structure}{112}{chapter.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.1}Introduction}{113}{section.5.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.2}Data}{116}{section.5.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.3}TFs}{116}{section.5.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.4}Model Construction}{118}{section.5.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.4.1}Numerical simulations}{119}{subsection.5.4.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.5}GVDA}{121}{section.5.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.6}TKCH05}{123}{section.5.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.7}Discussion}{125}{section.5.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.8}Summary and Conclusions}{129}{section.5.8}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {}Acknowledgements}{131}{section*.70}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {}Tables and Figures}{132}{section*.71}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {}Supplementary Materials}{145}{section*.85}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Appendix}{150}{appendix*.90}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A}Von Karmen Autocorrelation Function}{150}{section.Alph0.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliography}{151}{appendix*.91}%
