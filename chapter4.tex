@@ -97,7 +97,7 @@ Southern California features several low-velocity basins where the minimum (surf
 
 At each site, we calculated two SH1D responses, one using the velocity profile from our models, and the other using the same profile yet with minimum $V_S$ clamped at 500 m/s, the ratio of which thus characterizes the minimum $V_S$ effects. Then our 3D simulated synthetics are convolved with this SH1D response ratio in the frequency domain to incorporate the effects of using realistic low velocities. Because the SH1D method considers SH waves only, we will only apply this synthetic calibration on horizontal components only, which is supported by a lower-frequency (2 Hz) simulation using the same domain, that reducing the minimum $V_S$ amplifies the ground motions for horizontal components while yielding negligible difference in the vertical component. (\cref{fig:highf-S1}).
 
-\Cref{fig:highf-5} shows the procedure and results of applying the Sh1D method onto an example site. The two profiles have similar SH1D responses below about 0.3 Hz, then the SH1D response ratio increases with frequency with considerable fluctuation, which means lower velocities in the unclamped profile tends to amplify the ground motions. As expected, we see in \Cref{fig:highf-5}c that the PGV is increased by 32\% when no $V_S$ clamping is conducted. The shape of the waveform remains almost unchanged, except more high-frequency wiggles are present, which is better visible in comparing their Fourier spectra (smoothed) in \Cref{fig:highf-5}d. Such effects are observed 
+\Cref{fig:highf-5} shows the procedure and results of applying the Sh1D method onto an example site. The two profiles have similar SH1D responses below about 0.3 Hz, then the SH1D response ratio increases with frequency with considerable fluctuation, which means lower velocities in the unclamped profile tends to amplify the ground motions. As expected, we see in \Cref{fig:highf-5}c that the PGV is increased by 32\% when no $V_S$ clamping is conducted. The shape of the waveform remains almost unchanged, except more high-frequency wiggles are present, which is better visible in comparing their Fourier spectra (smoothed) in \Cref{fig:highf-5}d. Similar effects are observed for all profiles with near-surface velocity lower than 500 m/s, and we therefore apply this technique to all our 3D simulations with the minimum $V_S$ clamped at 500 m/s. 
 %we compared the response of Model 2 (minimum $V_S$ of 200 m/s) to a variation of Model 2 with minimum $V_S$ of 500 m/s (\cref{fig:highf-5}). As expected, the largest effects are observed above the basin areas with the lowest near-surface velocities. At frequencies below 1 Hz, the PGV amplification is generally concentrated in basins with low near-surface $V_S$. However, as frequency increases, the amplification in PGV extends to the surrounding low-altitude areas, including mountain valleys. For 2.5-5 Hz seismic waves, deamplification starts to show up in the mountain regions, likely due to entrapment and attenuation of seismic energy in the basin areas. DUR is relatively less affected by reducing the minimum $V_S$, compared to PGV and AI. As the effects of the near-surface velocities are somewhat similar for PGV and AI in pattern and amplitude. %Considering the similar patterns for the ground motions calculated for 0.15-1 Hz and 0.15-2.5 Hz, we will not show 0.15-2.5 Hz and AI in the subsequent plots of ground motion metrics.
 
 %\Cref{fig:highf-6} shows the effects of the near-surface low $V_S$ quantitatively. While the low velocities can cause up to 50\% or higher local amplification in PGV (concentrated in the central basins where the lowest velocities reside), the average effect is less than 10\%. Both the mean and standard deviation of the difference between the two models increase with frequency, but remain at a relatively low level up to 5 Hz. Thus, our results suggest that despite locally large effects in particular for the higher frequencies, omitting the effects of material with $V_S < 500$ m/s does not change the overall ground motions significantly. Based on this result, we adopt a minimum $V_S$ of 500 m/s in the remaining analysis to alleviate computational cost.
@@ -308,14 +308,14 @@ This research was supported through the U.S. Geological Survey External Program 
 \end{figure}
 \clearpage
 
-\begin{figure}[!ht]
-  \centering
-  \includegraphics[width=0.9\textwidth,height=0.9\textheight,keepaspectratio]{figures/figure_highf_6.pdf}
-  \caption{Histogram of the difference between the model with minimum $V_S$ of 200 m/s and the model with minimum $V_S$ of 500 m/s. The definition of percent difference is the same as in \cref{fig:highf-5}.
-  }
-  \label{fig:highf-6}
-\end{figure}
-\clearpage
+% \begin{figure}[!ht]
+%   \centering
+%   \includegraphics[width=0.9\textwidth,height=0.9\textheight,keepaspectratio]{figures/figure_highf_6.pdf}
+%   \caption{Histogram of the difference between the model with minimum $V_S$ of 200 m/s and the model with minimum $V_S$ of 500 m/s. The definition of percent difference is the same as in \cref{fig:highf-5}.
+%   }
+%   \label{fig:highf-6}
+% \end{figure}
+% \clearpage
 
 \begin{figure}[!ht]
   \centering
