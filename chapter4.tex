@@ -80,7 +80,7 @@ Table 1.1 lists the parameters used in our simulations. All simulations have the
 259 strong-motion seismic stations were used to validate the simulations. The strong motion recordings (velocity time series) are obtained from SCEC (F. Silva, Personal Communication, 07/2020), with hypocentral distance up to 90 km and signal-to-noise ratio above 3 dB. The processing procedure included the following steps: (1) low-pass filtering of the time series below 10 Hz using a zero-phase filter; (2) interpolating the time series linearly to a uniform time step; (3) tapering of at the last 2 seconds using the positive half of a Hanning window; (4) zero padding the last 5 seconds; (5) filtering the seismograms to the desired frequency, and (6) converting velocities to accelerations by a time derivative. Except for the initial 10 Hz low-pass filter, all filters used a low-cut frequency of 0.15 Hz to avoid noise interference. $4^{\text{th}}$-order Butterworth filters were used in all cases. Finally, our horizontal synthetic seismograms were rotated 39.9$^\circ$ clockwise to minimize the computational requirements needed to include all seismic stations.
 
 \subsection{Goodness of fit criteria}
-We used a modified subset of the goodness-of-fit (GOF) metrics proposed by the methods of \citet{andersonQuantitativeMeasureGoodnessOfFit2004} and \citet{olsenGoodnessoffitCriteriaBroadband2010} developed for the comparison of broadband seismic traces (0 to 10+ Hz). The method includes 10 different metrics, from which we selected 7, namely peak ground velocity (PGV), peak ground acceleration (PGA), energy duration (DUR), cumulative energy (ENER), response spectral acceleration averaged between 0.1 and 10 s (RS), and smoothed Fourier amplitude spectrum (FAS), as well as one additional metric, Arias intensity (AI), to compute our GOF scores. We computed the SA at frequencies linearly spaced from 0.2 to 5 Hz. Cumulative energy is calculated as $E N E R=\int v(t)^{2} d t$. Both ENER and DUR are defined on the interval between the arrival of 5 and 95 percent of the total energy. Arias intensity describes the cumulative energy per unit mass \citep{arias1970measure}, and is defined as $AI=\dfrac{\pi}{2 g} \int a(t)^{2} d t$, where $a(t)$ is the acceleration time series, and $g$ is the gravitational acceleration.
+We used a modified subset of the goodness-of-fit (GOF) metrics proposed by the methods of \citet{andersonQuantitativeMeasureGoodnessOfFit2004} and \citet{olsenGoodnessoffitCriteriaBroadband2010} developed for the comparison of broadband seismic traces (0 to 10+ Hz). The method includes 10 different metrics, from which we selected 7, namely peak ground velocity (PGV), peak ground acceleration (PGA), energy duration (DUR), cumulative energy (ENER), response spectral acceleration averaged between 0.1 and 10 s (RS), and smoothed Fourier amplitude spectrum (FAS), as well as one additional metric, Arias intensity (AI), to compute our GOF scores. We computed the SA at frequencies linearly spaced from 0.2 to 5 Hz. Cumulative energy is calculated as $E N E R=\int v(t)^{2} d t$. Both ENER and DUR are defined on the interval between the arrival of 5 and 95 percent of the total energy. Arias intensity describes the cumulative energy per unit mass \citep{arias1970measure}, and is defined as $AI=\dfrac{\pi}{2 g} \int a(t)^{2} d t$, where $a(t)$ is the acceleration time series, and $g$ is the gravitational acceleration. 
 
 The GOF score for each metric is defined as
 \begin{equation}\label{qe:highf-4}
@@ -93,11 +93,11 @@ The GOF score for each metric is defined as
 Due to the stochastic characteristics of the kinematic source generator by \citet{gravesKinematicGroundMotion2016}, a series of 40 source realizations with different random seeds are evaluated based on comparisons between spectral accelerations with records at stations with epicentral distance of 31 km or less (R. Graves, Personal Communication, 03/04/2020). The 40 source models were rated based on the average absolute bias between synthetics and data up to 5 Hz for the median pseudo-spectral acceleration rotated over all azimuths (rotD50), from which we selected the three best performing source descriptions with hypocentral depths at 5, 5.5 and 6 km (see \cref{fig:highf-3}). The rupture duration of the source descriptions is less than 2 s and sampled at an interval of 0.001 s, identical to the time step used in our simulations. The three sources tend to generate overall similar patterns of PGV within the same bandwidth of low (< 2.5 Hz) or high (> 2.5 Hz) frequencies (\cref{fig:highf-4}). Based on this result, we carry out our analysis with Source 1 only in order to limit the computational requirements.
 
 \subsection{Minimum \textbf{$V_S$}}
-Southern California features several low-velocity basins where the minimum (surface) $V_S$ in CVM-S can be much lower than the minimum value of 500 m/s that we imposed in our models (see \cref{tab:highf-1}). As previous studies have pointed out that soft soils, characterized by lower $V_S$, have been found to generate significant amplification of the ground motions \citeg{anderson1984model}. However, in order to maintain the capacity to resolve seismic waves up to the same frequency, reducing the minimum $V_S$ will increase the computational cost exponentially in the finite-difference method. For example, clamping the minimum $V_S$ at 200 m/s instead of 500 m/s requires about 40 times more node hours for a single simulation. Considering the prohibitive expense to use a lower minimum velocity, we decided to use an SH1D method, which models vertically-incident SH waves in a horizontally-layered halfspace \citeg{dayRMSResponseOnedimensional1996,thompsonTaxonomySiteResponse2012}, to account for effects of reducing the minimum $V_S$.
+Southern California features several low-velocity basins where the minimum (surface) $V_S$ in CVM-S can be much lower than the minimum value of 500 m/s that we imposed in our models (see \cref{tab:highf-1}). As previous studies have pointed out that soft soils, characterized by lower $V_S$, have been found to generate significant amplification of the ground motions \citeg{anderson1984model}. However, in order to maintain the capacity to resolve seismic waves up to the same frequency, reducing the minimum $V_S$ will increase the computational cost exponentially in the finite-difference method. For example, clamping the minimum $V_S$ at 200 m/s instead of 500 m/s requires about 40 times more node hours for a single simulation. Considering the prohibitive expense to use a lower minimum velocity, we decided to use an SH1D method, which models vertically-incident SH waves in a horizontally-layered halfspace \citeg{dayRMSResponseOnedimensional1996,thompsonTaxonomySiteResponse2012}, to account for effects of reducing the minimum $V_S$. 
 
 At each site, we calculated two SH1D responses, one using the velocity profile from our models, and the other using the same profile yet with minimum $V_S$ clamped at 500 m/s, the ratio of which thus characterizes the minimum $V_S$ effects. Then our 3D simulated synthetics are convolved with this SH1D response ratio in the frequency domain to incorporate the effects of using realistic low velocities. Because the SH1D method considers SH waves only, we will only apply this synthetic calibration on horizontal components only, which is supported by a lower-frequency (2 Hz) simulation using the same domain, that reducing the minimum $V_S$ amplifies the ground motions for horizontal components while yielding negligible difference in the vertical component. (\cref{fig:highf-S1}).
 
-\Cref{fig:highf-5} shows the procedure and results of applying the Sh1D method onto an example site. The two profiles have similar SH1D responses below about 0.3 Hz, then the SH1D response ratio increases with frequency with considerable fluctuation, which means lower velocities in the unclamped profile tends to amplify the ground motions. As expected, we see in \Cref{fig:highf-5}c that the PGV is increased by 32\% when no $V_S$ clamping is conducted. The shape of the waveform remains almost unchanged, except more high-frequency wiggles are present, which is better visible in comparing their Fourier spectra (smoothed) in \Cref{fig:highf-5}d. Such effects are observed
+\Cref{fig:highf-5} shows the procedure and results of applying the Sh1D method onto an example site. The two profiles have similar SH1D responses below about 0.3 Hz, then the SH1D response ratio increases with frequency with considerable fluctuation, which means lower velocities in the unclamped profile tends to amplify the ground motions. As expected, we see in \Cref{fig:highf-5}c that the PGV is increased by 32\% when no $V_S$ clamping is conducted. The shape of the waveform remains almost unchanged, except more high-frequency wiggles are present, which is better visible in comparing their Fourier spectra (smoothed) in \Cref{fig:highf-5}d. Similar effects are observed for all profiles with near-surface velocity lower than 500 m/s, and we therefore apply this technique to all our 3D simulations with the minimum $V_S$ clamped at 500 m/s. 
 %we compared the response of Model 2 (minimum $V_S$ of 200 m/s) to a variation of Model 2 with minimum $V_S$ of 500 m/s (\cref{fig:highf-5}). As expected, the largest effects are observed above the basin areas with the lowest near-surface velocities. At frequencies below 1 Hz, the PGV amplification is generally concentrated in basins with low near-surface $V_S$. However, as frequency increases, the amplification in PGV extends to the surrounding low-altitude areas, including mountain valleys. For 2.5-5 Hz seismic waves, deamplification starts to show up in the mountain regions, likely due to entrapment and attenuation of seismic energy in the basin areas. DUR is relatively less affected by reducing the minimum $V_S$, compared to PGV and AI. As the effects of the near-surface velocities are somewhat similar for PGV and AI in pattern and amplitude. %Considering the similar patterns for the ground motions calculated for 0.15-1 Hz and 0.15-2.5 Hz, we will not show 0.15-2.5 Hz and AI in the subsequent plots of ground motion metrics.
 
 %\Cref{fig:highf-6} shows the effects of the near-surface low $V_S$ quantitatively. While the low velocities can cause up to 50\% or higher local amplification in PGV (concentrated in the central basins where the lowest velocities reside), the average effect is less than 10\%. Both the mean and standard deviation of the difference between the two models increase with frequency, but remain at a relatively low level up to 5 Hz. Thus, our results suggest that despite locally large effects in particular for the higher frequencies, omitting the effects of material with $V_S < 500$ m/s does not change the overall ground motions significantly. Based on this result, we adopt a minimum $V_S$ of 500 m/s in the remaining analysis to alleviate computational cost.
@@ -136,7 +136,7 @@ Their validation process is, however, restricted to frequency below 1 Hz with fl
 
 We followed \citet{huCalibrationNearsurfaceSeismic2021} and divided the 259 stations into two groups: type A representing sites with good geological constraints and type B representing sites with poor geological constraints. Type B is characterized by unrealistically large surface $V_S$ and lack of change with depth in the top 500-1000 m in CVMs. \Cref{fig:highf-13} shows the median FAS over both types of sites from various models (see \cref{tab:highf-2} for model features). Similar with \citet{huCalibrationNearsurfaceSeismic2021}, type A sites are insensitive to the shallow velocity tapering, while the model with shallow velocities from the original, untapered CVM-S (Model 8) is found to significantly underpredict the FAS at type B sites in the full bands. The underprediction becomes smaller as frequency increases, suggesting that even higher-frequency response is not captured by either the CVM-S or the tapered shallow velocity structure. Topography appears to yield only small effects in terms of FAS (Model 1 versus Model 10) by reducing the FAS in vertical component between 1-3 Hz for both types of sites and horizontal components between 0.4-1.1 Hz for type B site. It is interesting that we observed equally strong effects in vertical components compared to horizontal components, which is somewhat different from previous experiments \citep[][and the references therein]{massaOverviewTopographicEffects2014}. Moreover, the models with $\gamma=0.6$ (Model 1, 8, 10) show a trend of growing overprediction above 2-3 Hz, which can be improved by reducing $\gamma$ to 0.3 (Model 2).
 
-Topographic effects are further complicated by the presence of shallow low velocities, i.e. reflection and trapping of seismic energies due to irregular geometry and scattering due to low velocities. Therefore, direct comparison between a model with topography against a flat model may be inaccurate, especially at high frequencies where both these effects are more prominent. Following \citet{maufroyFrequencyScaledCurvature2015} and \citet{raiEmpiricalTerrainBasedTopographic2017}, who conducted numerical experiments and both found topographic curvature a good proxy characterizing irregular surface in evaluating topographic effects, we calculated the smoothed curvature of topography with a smoothing window of 640 m (a much shorter smoothing window of 120 m is also tested considering our high frequency bound, as shown in \Cref{fig:highf-S1}, which yields similar results). Steeper protruding areas are characterized by larger curvature values and flat regions are of curvatures close to zero. \Cref{fig:highf-14} shows the percent difference in PGV caused by including topography, over various curvatures in the simulated region. Two sets of models are shown, one with 1000 m $V_S$ taper and the other without. Similar PGV difference is obtained from models with and without shallow (1000 m) $V_S$ taper below 2.5 Hz, while significant different trends appear at frequencies above 2.5 Hz as curvature increases. Without the near-surface low velocities introduced by the $V_S$ taper method, topography tends to reduce the PGVs by about 10-40\% over almost the full range of curvatures, though showing a small trend toward less reduction when the curvature is greater than 1. This trend, however, becomes much more notable when the shallow low velocities are present, and topography will increase PGVs at most curved areas, e.g., mountain summits and local steep hills. This result may in part explain the reason that previous simulations underestimate topographic amplification at mountain tops compared to observations \citeg{pischiuttaTopographicEffectsHill2010,lovati2011estimation} as their velocity models lack near-surface low velocities, which we found will enhance topographic amplification in such specific areas. It should be noted that because the greater Los Angeles region is dominated by relatively flat basins, topography tends to reduce PGVs on average in our model.
+Topographic effects are further complicated by the presence of shallow low velocities, i.e. reflection and trapping of seismic energies due to irregular geometry and scattering due to low velocities. Therefore, direct comparison between a model with topography against a flat model may be inaccurate, especially at high frequencies where both these effects are more prominent. Following \citet{maufroyFrequencyScaledCurvature2015} and \citet{raiEmpiricalTerrainBasedTopographic2017}, who conducted numerical experiments and both found topographic curvature a good proxy characterizing irregular surface in evaluating topographic effects, we calculated the smoothed curvature of topography with a smoothing window of 640 m (a much shorter smoothing window of 120 m is also tested considering our high frequency bound, as shown in \Cref{fig:highf-S1}, which yields similar results). Steeper protruding areas are characterized by larger curvature values and flat regions are of curvatures close to zero. \Cref{fig:highf-14} shows the percent difference in PGV caused by including topography, over various curvatures in the simulated region. Two sets of models are shown, one with 1000 m $V_S$ taper and the other without. Similar PGV difference is obtained from models with and without shallow (1000 m) $V_S$ taper below 2.5 Hz, while significant different trends appear at frequencies above 2.5 Hz as curvature increases. Without the near-surface low velocities introduced by the $V_S$ taper method, topography tends to reduce the PGVs by about 10-40\% over almost the full range of curvatures, though showing a small trend toward less reduction when the curvature is greater than 1. This trend, however, becomes much more notable when the shallow low velocities are present, and topography will increase PGVs at most curved areas, e.g., mountain summits and local steep hills. This result may in part explain the reason that previous simulations underestimate topographic amplification at mountain tops compared to observations \citeg{pischiuttaTopographicEffectsHill2010,lovati2011estimation} as their velocity models lack near-surface low velocities, which we found will enhance topographic amplification in such specific areas. It should be noted that because the greater Los Angeles region is dominated by relatively flat basins, topography tends to reduce PGVs on average in our model. 
 
 
 \subsection{Anelastic Attenuation and $\kappa$}
@@ -180,7 +180,7 @@ The UCVM program used to extract velocity meshes can be obtained from SCEC on \u
 
 This research was supported through the U.S. Geological Survey External Program (award \#G19AS00021), as well as the Southern California Earthquake Center (SCEC; Contribution Number xx). SCEC is funded by the National Science Foundation (NSF) Cooperative Agreement EAR-1600087 and the U.S. Geological Survey (USGS) Cooperative Agreement G17AC00047. We thank Robert W. Graves for providing the source models and Fabio Silva for providing the station records of the 2014 La Habra earthquake.
 
-\Cref{chap:highf}, in full, is a reformatted version of a paper currently being prepared: Hu, Z., Olsen, K.B. and Day, S.M. (2021). 0-5 Hz Deterministic 3D Ground Motion Simulations for the 2014 La Habra, California, Earthquake. The dissertation author was the primary investigator and author of this paper.
+\Cref{chap:highf}, in full, is a reformatted version of a paper currently being prepared: Hu, Z., Olsen, K.B. and Day, S.M. (2021), 0-5 Hz Deterministic 3D Ground Motion Simulations for the 2014 $M_w$ 5.1 LaHabra Earthquake. The dissertation author was the primary investigator and author of this paper.
 
 \newpage
 \section*{Tables and Figures}
@@ -205,27 +205,27 @@ This research was supported through the U.S. Geological Survey External Program 
     \renewcommand{\arraystretch}{1.2}%
     \begin{tabular}{@{}lc@{}}
       \toprule
-      \textbf{Model}                &                                              \\ \midrule
-      Topography                    & Yes                                          \\
-      Length                        & 147.840 km                                   \\
-      Width                         & 140.400 km                                   \\
-      Depth                         & 58.000 km                                    \\
-      Northwest corner              & \multicolumn{1}{l}{-118.0154409, 34.8921683} \\
-      Southwest corner              & \multicolumn{1}{l}{-118.9774168, 33.9093124} \\
-      Southeast corner              & \multicolumn{1}{l}{-117.7401908, 33.0695780} \\
-      Northeast corner              & \multicolumn{1}{l}{-116.7729754, 34.0429241} \\[1.5mm]%  \midrule
-      \textbf{Spatial resolution}   & \multicolumn{1}{l}{}                         \\[1mm]%  \midrule
-      Maximum frequency             & 5 Hz                                         \\
-      Minimum $V_S$                 & 500 m/s                                      \\
-      Points per minimum wavelength & 5                                            \\
-      Grid discretization           & 20 m                                         \\
-      Number of cells               & 150,486,336,000                              \\
-      Number of GPU processors      & 1,512                                        \\
-      Wall-clock time               & 5 hr                                         \\[1.5mm]% \midrule
-      \textbf{Temporal resolution}  & \multicolumn{1}{l}{}                         \\[1mm]% \midrule
-      Time discretization           & 0.0006 s                                     \\
-      Simulation time               & 120 s                                        \\
-      Number of timesteps           & 200,000                                      \\ \bottomrule
+      \textbf{Model}               &  \\ \midrule
+      Topography                    & Yes\\
+      Length                        & 147.840 km\\
+      Width                         & 140.400 km\\
+      Depth                         & 58.000 km\\
+      Northwest corner              & \multicolumn{1}{l}{-118.0154409, 34.8921683}\\
+      Southwest corner              & \multicolumn{1}{l}{-118.9774168, 33.9093124}\\
+      Southeast corner              & \multicolumn{1}{l}{-117.7401908, 33.0695780}\\
+      Northeast corner              & \multicolumn{1}{l}{-116.7729754, 34.0429241}\\[1.5mm]%  \midrule
+      \textbf{Spatial resolution}   & \multicolumn{1}{l}{}\\[1mm]%  \midrule
+      Maximum frequency             & 5 Hz\\
+      Minimum $V_S$                 & 500 m/s\\
+      Points per minimum wavelength & 5\\
+      Grid discretization           & 20 m\\
+      Number of cells               & 150,486,336,000\\
+      Number of GPU processors      & 1,512\\
+      Wall-clock time               & 5 hr\\[1.5mm]% \midrule
+      \textbf{Temporal resolution}  & \multicolumn{1}{l}{}\\[1mm]% \midrule
+      Time discretization           & 0.0006 s\\
+      Simulation time               & 120 s\\
+      Number of timesteps           & 200,000\\ \bottomrule
     \end{tabular}%
   }
 \end{table}
@@ -308,14 +308,14 @@ This research was supported through the U.S. Geological Survey External Program 
 \end{figure}
 \clearpage
 
-\begin{figure}[!ht]
-  \centering
-  \includegraphics[width=0.9\textwidth,height=0.9\textheight,keepaspectratio]{figures/figure_highf_6.pdf}
-  \caption{Histogram of the difference between the model with minimum $V_S$ of 200 m/s and the model with minimum $V_S$ of 500 m/s. The definition of percent difference is the same as in \cref{fig:highf-5}.
-  }
-  \label{fig:highf-6}
-\end{figure}
-\clearpage
+% \begin{figure}[!ht]
+%   \centering
+%   \includegraphics[width=0.9\textwidth,height=0.9\textheight,keepaspectratio]{figures/figure_highf_6.pdf}
+%   \caption{Histogram of the difference between the model with minimum $V_S$ of 200 m/s and the model with minimum $V_S$ of 500 m/s. The definition of percent difference is the same as in \cref{fig:highf-5}.
+%   }
+%   \label{fig:highf-6}
+% \end{figure}
+% \clearpage
 
 \begin{figure}[!ht]
   \centering
@@ -385,7 +385,7 @@ This research was supported through the U.S. Geological Survey External Program 
   \centering
   \includegraphics[width=0.9\textwidth,height=0.9\textheight,keepaspectratio]{figures/figure_highf_14.pdf}
   \caption{
-    Density histogram of percent difference of PGV (same as in \cref{fig:highf-8}) calculated from models with topography compared to models without topography for 0.15-2.5 Hz and 2.5-5 Hz. The y-axis is topographic curvature, using a smoothing window of 640 m. The first row (a and b) shows models with an 1000 m shallow $V_S$ taper and the bottom row (c and d) shows models without velocity taper. The darker color denotes more grid points and the lighter color denotes the opposite. Note that equally dark color does not indicate equal number of grid points in a single plot, i.e. at a certain curvature, the darkest color denotes the percent difference of PGV from the most points among all points with this curvature.
+  Density histogram of percent difference of PGV (same as in \cref{fig:highf-8}) calculated from models with topography compared to models without topography for 0.15-2.5 Hz and 2.5-5 Hz. The y-axis is topographic curvature, using a smoothing window of 640 m. The first row (a and b) shows models with an 1000 m shallow $V_S$ taper and the bottom row (c and d) shows models without velocity taper. The darker color denotes more grid points and the lighter color denotes the opposite. Note that equally dark color does not indicate equal number of grid points in a single plot, i.e. at a certain curvature, the darkest color denotes the percent difference of PGV from the most points among all points with this curvature.
   }
   \label{fig:highf-14}
 \end{figure}
@@ -429,7 +429,7 @@ This research was supported through the U.S. Geological Survey External Program 
   \centering
   \includegraphics[width=0.9\textwidth,height=0.85\textheight,keepaspectratio]{figures/figure_highf_S1.pdf}
   \caption{
-    The FAS bias, calculated as 10-based log ratio, between simulated synthetics with minimum $V_S$ clamped at 200 m/s (blue) or 500 m/s (green) and records. (a) and (b) show two horizontal components and (c) show the vertical component. A positive bias means overpredition and a negative value means the opposite. The solid line is the median FAS bias over all 259 stations; the shade depicts the 95\% confidence interval (CI) and the dashed lines denote one standard deviation centered at the median.
+  The FAS bias, calculated as 10-based log ratio, between simulated synthetics with minimum $V_S$ clamped at 200 m/s (blue) or 500 m/s (green) and records. (a) and (b) show two horizontal components and (c) show the vertical component. A positive bias means overpredition and a negative value means the opposite. The solid line is the median FAS bias over all 259 stations; the shade depicts the 95\% confidence interval (CI) and the dashed lines denote one standard deviation centered at the median.
   }
   \label{fig:highf-S1}
 \end{figure}
@@ -439,7 +439,7 @@ This research was supported through the U.S. Geological Survey External Program 
   \centering
   \includegraphics[width=0.9\textwidth,height=0.9\textheight,keepaspectratio]{figures/figure_highf_S2.pdf}
   \caption{
-    Density histogram of percent difference of PGV (same as in \cref{fig:highf-8}) calculated from models with topography compared to models without topography for 0.15-2.5 Hz and 2.5-5 Hz. The y-axis is topographic curvature, using a smoothing window of 120 m. The first row (a and b) shows models with an 1000 m shallow $V_S$ taper and the bottom row (c and d) shows models without velocity taper. The darker color denotes more grid points and the lighter color denotes the opposite. Note that equally dark color does not indicate equal number of grid points in a single plot, i.e. at a certain curvature, the darkest color denotes the percent difference of PGV from the most points among all points with this curvature.
+  Density histogram of percent difference of PGV (same as in \cref{fig:highf-8}) calculated from models with topography compared to models without topography for 0.15-2.5 Hz and 2.5-5 Hz. The y-axis is topographic curvature, using a smoothing window of 120 m. The first row (a and b) shows models with an 1000 m shallow $V_S$ taper and the bottom row (c and d) shows models without velocity taper. The darker color denotes more grid points and the lighter color denotes the opposite. Note that equally dark color does not indicate equal number of grid points in a single plot, i.e. at a certain curvature, the darkest color denotes the percent difference of PGV from the most points among all points with this curvature.
   }
   \label{fig:highf-S2}
 \end{figure}
