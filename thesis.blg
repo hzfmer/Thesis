@@ -1,20 +1,18 @@
-[0] Config.pm:311> INFO - This is Biber 2.16
+[1] Config.pm:311> INFO - This is Biber 2.16
 [1] Config.pm:314> INFO - Logfile is 'thesis.blg'
-[410] biber-darwin:340> INFO - === Thu Jul  8, 2021, 01:04:10
-[482] Biber.pm:415> INFO - Reading 'thesis.bcf'
-[1452] Biber.pm:952> INFO - Found 259 citekeys in bib section 0
-[1496] Biber.pm:4340> INFO - Processing section 0
-[1529] Biber.pm:4531> INFO - Looking for bibtex format file 'references.bib' for section 0
-[1648] bibtex.pm:1689> INFO - LaTeX decoding ...
-[4644] bibtex.pm:1494> INFO - Found BibTeX data source 'references.bib'
-[6728] Utils.pm:395> WARN - ISBN '978-3-540-89622-7 978-3-540-89623-4' in entry 'satoSeismicWavePropagation2009' is invalid - run biber with '--validate_datamodel' for details.
-[12683] Utils.pm:395> WARN - I didn't find a database entry for 'mamaPhysicalModelWidespread2008duanSensitivityStudyPhysical2010' (section 0)
-[12685] Utils.pm:395> WARN - I didn't find a database entry for 'ely2010' (section 0)
-[12685] Utils.pm:395> WARN - I didn't find a database entry for 'Withers2015' (section 0)
-[14850] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[14850] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[14850] Biber.pm:4168> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
-[14850] Biber.pm:4174> INFO - No sort tailoring available for locale 'en-US'
-[16941] bbl.pm:654> INFO - Writing 'thesis.bbl' with encoding 'UTF-8'
-[17770] bbl.pm:757> INFO - Output to thesis.bbl
-[17770] Biber.pm:128> INFO - WARNINGS: 4
+[261] biber-darwin:340> INFO - === Tue Jul 13, 2021, 01:37:34
+[345] Biber.pm:415> INFO - Reading 'thesis.bcf'
+[1832] Biber.pm:952> INFO - Found 257 citekeys in bib section 0
+[1903] Biber.pm:4340> INFO - Processing section 0
+[1934] Biber.pm:4531> INFO - Looking for bibtex format file 'references.bib' for section 0
+[2074] bibtex.pm:1689> INFO - LaTeX decoding ...
+[7056] bibtex.pm:1494> INFO - Found BibTeX data source 'references.bib'
+[10332] Utils.pm:395> WARN - ISBN '978-3-540-89622-7 978-3-540-89623-4' in entry 'satoSeismicWavePropagation2009' is invalid - run biber with '--validate_datamodel' for details.
+[15752] Utils.pm:395> WARN - I didn't find a database entry for 'ely2010' (section 0)
+[17096] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[17096] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[17097] Biber.pm:4168> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
+[17097] Biber.pm:4174> INFO - No sort tailoring available for locale 'en-US'
+[18749] bbl.pm:654> INFO - Writing 'thesis.bbl' with encoding 'UTF-8'
+[19437] bbl.pm:757> INFO - Output to thesis.bbl
+[19438] Biber.pm:128> INFO - WARNINGS: 2

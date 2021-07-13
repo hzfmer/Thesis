@@ -3631,6 +3631,56 @@
       \verb http://journals.sagepub.com/doi/10.1193/1.2857545
       \endverb
     \endentry
+    \entry{denolle2014strong}{article}{}
+      \name{author}{4}{}{%
+        {{hash=bc97c01f96cb4f5091b97655f72e617d}{%
+           family={Denolle},
+           familyi={D\bibinitperiod},
+           given={MA},
+           giveni={M\bibinitperiod}}}%
+        {{hash=2b9db66111560cb852be1447bbff6d85}{%
+           family={Dunham},
+           familyi={D\bibinitperiod},
+           given={EM},
+           giveni={E\bibinitperiod}}}%
+        {{hash=95a78f315d7882aa7770768de6562730}{%
+           family={Prieto},
+           familyi={P\bibinitperiod},
+           given={GA},
+           giveni={G\bibinitperiod}}}%
+        {{hash=67c7e0dad8c2e8289cad0f441f1f1fac}{%
+           family={Beroza},
+           familyi={B\bibinitperiod},
+           given={GC},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Association for the Advancement of Science}%
+      }
+      \strng{namehash}{25903a16e6504d1c68465eb1f600340e}
+      \strng{fullhash}{262c8be985042ffd367d30c7eb00b49a}
+      \strng{bibnamehash}{262c8be985042ffd367d30c7eb00b49a}
+      \strng{authorbibnamehash}{262c8be985042ffd367d30c7eb00b49a}
+      \strng{authornamehash}{25903a16e6504d1c68465eb1f600340e}
+      \strng{authorfullhash}{262c8be985042ffd367d30c7eb00b49a}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Science}
+      \field{number}{6169}
+      \field{title}{Strong Ground Motion Prediction Using Virtual Earthquakes}
+      \field{volume}{343}
+      \field{year}{2014}
+      \field{dateera}{ce}
+      \field{pages}{399\bibrangedash 403}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1126/science.1245678
+      \endverb
+    \endentry
     \entry{dodge1997source}{article}{}
       \name{author}{2}{}{%
         {{hash=49aabce52cf0709a41c420c4e024ad7c}{%
@@ -5254,6 +5304,9 @@
       \range{pages}{16}
       \verb{doi}
       \verb 10.1785/0120030025
+      \endverb
+      \verb{file}
+      \verb /Users/zhh076/Documents/Papers_zotero/storage/56Z89H4K/Graves and Wald_2004_Observed and simulated ground motions in the San B.pdf
       \endverb
     \endentry
     \entry{gravesSimulatingSeismicWave1996}{article}{}
@@ -9401,70 +9454,6 @@
       \verb https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/GL005i001p00005
       \endverb
     \endentry
-    \entry{oreillySimulationElasticWaves2019}{inproceedings}{}
-      \name{author}{8}{}{%
-        {{hash=8751937bc9bee508d4983c0552ea566a}{%
-           family={O’Reilly},
-           familyi={O\bibinitperiod},
-           given={Ossian},
-           giveni={O\bibinitperiod}}}%
-        {{hash=44ce0b351775b4a0c78e3876a997e8f3}{%
-           family={Breuer},
-           familyi={B\bibinitperiod},
-           given={Alex\bibnamedelima N.},
-           giveni={A\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
-        {{hash=3acab39796869caa93a920a9a200d20c}{%
-           family={Cui},
-           familyi={C\bibinitperiod},
-           given={Yifeng},
-           giveni={Y\bibinitperiod}}}%
-        {{hash=9cd40e6a2638139644515ebaecb6b4c2}{%
-           family={Goulet},
-           familyi={G\bibinitperiod},
-           given={Christine},
-           giveni={C\bibinitperiod}}}%
-        {{hash=0efbdd9ff11d2742080d1fc296db6db4}{%
-           family={Olsen},
-           familyi={O\bibinitperiod},
-           given={Kim\bibnamedelima B.},
-           giveni={K\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
-        {{hash=afd9cb363c9cca22fb26180613af2764}{%
-           family={Roten},
-           familyi={R\bibinitperiod},
-           given={Daniel},
-           giveni={D\bibinitperiod}}}%
-        {{hash=7587282480be67c8b0efc0f6a6a5244c}{%
-           family={Thomas-Collignon},
-           familyi={T\bibinithyphendelim C\bibinitperiod},
-           given={G.},
-           giveni={G\bibinitperiod}}}%
-        {{hash=690d282d1bffdd30a91741b6aebda05b}{%
-           family={Yeh},
-           familyi={Y\bibinitperiod},
-           given={Te-Yang},
-           giveni={T\bibinithyphendelim Y\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Palms Spring, California}%
-      }
-      \strng{namehash}{7b3d66d5ebc0ed6a344eedd6cbaee113}
-      \strng{fullhash}{93ec90f6998f094f4ac721f5db8f803c}
-      \strng{bibnamehash}{93ec90f6998f094f4ac721f5db8f803c}
-      \strng{authorbibnamehash}{93ec90f6998f094f4ac721f5db8f803c}
-      \strng{authornamehash}{7b3d66d5ebc0ed6a344eedd6cbaee113}
-      \strng{authorfullhash}{93ec90f6998f094f4ac721f5db8f803c}
-      \field{extraname}{1}
-      \field{sortinit}{O}
-      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{eventtitle}{2019 {{SCEC Annual Meeting}}}
-      \field{title}{Simulation of Elastic Waves in the Presence of Topography Using a Curvilinear Staggered Grid Finite Difference Method}
-      \field{year}{2019}
-      \field{dateera}{ce}
-    \endentry
     \entry{oreillyHighorderFiniteDifference2021}{article}{}
       \name{author}{7}{}{%
         {{hash=8751937bc9bee508d4983c0552ea566a}{%
@@ -9509,7 +9498,6 @@
       \strng{authorbibnamehash}{1c9eddcc1e4a023c55e27a75b5fc2db8}
       \strng{authornamehash}{7b3d66d5ebc0ed6a344eedd6cbaee113}
       \strng{authorfullhash}{1c9eddcc1e4a023c55e27a75b5fc2db8}
-      \field{extraname}{2}
       \field{sortinit}{O}
       \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
       \field{extradatescope}{labelyear}
@@ -9518,6 +9506,7 @@
       \field{labeltitlesource}{title}
       \field{journaltitle}{Bulletin of the Seismological Society of America}
       \field{title}{A {{High}}-Order {{Finite Difference Method}} on {{Staggered Curvilinear Grids}} for {{Seismic Wave Propagation Applications}} with {{Topography}}}
+      \field{volume}{accpeted for publication}
       \field{year}{2021}
       \field{dateera}{ce}
       \field{pages}{43}
@@ -14468,9 +14457,7 @@
       \endverb
     \endentry
   \enddatalist
-  \missing{Withers2015}
   \missing{ely2010}
-  \missing{mamaPhysicalModelWidespread2008duanSensitivityStudyPhysical2010}
 \endrefsection
 \endinput
 
