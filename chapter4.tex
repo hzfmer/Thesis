@@ -1,186 +1,150 @@
 % !TEX encoding = UTF-8 Unicode
 
 \linespread{1.7}
-\chapter{0-5 Hz Deterministic 3D Ground Motion Simulations for the 2014 La Habra, California, Earthquake}
+\chapter{Modeling of Empirical Transfer Functions with 3D Velocity Structure}
 \linespread{2.0}
 %\newrefsection
-\label{chap:highf}
+\label{chap:etf}
 
-\graphicspath{{/Users/zhh076/work/PhD_way/high_f/}}
-
-We have simulated 0-5 Hz deterministic simulations for the 2014 $M_w$ 5.1 La Habra, CA, earthquake in a mesh from the Southern California Earthquake Center Community Velocity Model Version S4.26-M01 and a finite-fault source. Our simulations include statistical distributions of small-scale crustal heterogeneities (SSHs) with an anisotropic von Karman autocorrelation to represent the effects of realistic velocity and density perturbations, frequency-dependent attenuation $Q(f)$, $V_{S30}$-based near-surface velocity calibration and surface topography using a curvilinear grid. Strong motion data at 259 sites within an 148 km by 140 km area are used to validate our simulations. Our results show that the effects of topography, SSHs and $Q(f)$ become increasingly important and should be included as frequencies increase. Topography and SSHs predominantly decrease the peak velocities and significantly increase the duration, providing an improved fit to the data. We find that a high-frequency powerlaw for $Q(f)=Q_o f^{\gamma}$ with $\gamma$ around 0.4 provides optimal fit to the data. The results provide guidance on the importance of the different features controlling high-frequency seismic hazard analysis.
-
+Empirical transfer functions (ETFs) between seismic records observed at the surface and depth represent a
+powerful tool to estimate site effects for earthquake hazard analysis. However, conventional modeling of
+site amplification, with assumptions of horizontally polarized shear waves propagating vertically through
+1D layered homogeneous media, often poorly predicts the ETFs, particularly, in which large lateral variations
+of velocity are present. Here, we test whether more accurate site effects can be obtained from theoretical
+transfer functions (TTFs) extracted from physics-based simulations that naturally incorporate the complex
+material properties. We select two well-documented downhole sites (the KiK-net site TKCH05 in Japan and
+the Garner Valley site, Garner Valley Downhole Array, in southern California) for our study. The 3D subsurface
+geometry at the two sites is estimated by means of the surface topography near the sites and information
+from the shear-wave profiles obtained from borehole logs. By comparing the TTFs to ETFs at the selected sites,
+we show how simulations using the calibrated 3D models can significantly improve site amplification estimates
+as compared to 1D model predictions. The primary reason for this improvement in 3D models is redirection of
+scattering from vertically propagating to more realistic obliquely propagating waves, which alleviates
+artificial amplification at nodes in the vertical-incidence response of corresponding 1D approximations,
+resulting in improvement of site effect estimation. The results demonstrate the importance of reliable
+calibration of subsurface structure and material properties in site response studies.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Introduction} \label{highf:intro}
-It is the ultimate goal for ground motion modelers to deliver their results to engineers and see their work used in applications beneficial for society, such as structural design. This is particularly useful in cases of infrequent observations, such as large magnitude events at small distances from the fault, where simulations may provide a viable alternative to data. Deterministic ground motion predictions, including features such as three-dimensional (3D) velocity structure and frequency-independent anelastic attenuation are now routinely produced for frequencies up to about 1 Hz with generally satisfactory fit to recorded data \citeg{gravesSimulatingSeismicWave1996,olsen2009shakeout,roten3DSimulationsEarthquakes2012,}. These simulations have proved to be useful in public earthquake emergency response and seismic hazard management \citep{gravesBroadbandGroundMotionSimulation2010}, and complementing empirical ground motion prediction models in regions with sparse stations coverage \citeg{dayModelBasinEffects2008}.
+\section{Introduction} \label{etf:intro}
+Details of how ground shaking is affected by near-surface soil properties can help reduce the uncertainty in stochastic or empirical ground-motion models, which are important components of seismic hazard calculations. Transfer functions (TFs) are widely used to quantitatively represent site response by computing the spectral ratio of ground motions between site and reference locations in the frequency domain \citeg{shearerSurfaceNearsurfaceEffects1987,steidlVariationSiteResponse1993,fieldComparisonTestVarious1995,steidlWhatReferenceSite1996,bonillaBoreholeResponseStudies2002}. Assuming that the reference site, while sharing, approximately, the same path and source with the site of interest, is largely unaffected by site effects,the spectral ratio provided by the TF isolates the site response \citep{borcherdtEffectsLocalGeology1970}. Two types of reference sites, both typically rock, have been proposed: a surface site or a downhole recording (used with the corresponding surface site). The surface downhole record pair is valuable for ensuring close proximity of the reference motions at the downhole sensor, ideally located in bedrock, whereas, it may be difficult to find an appropriate reference outcrop site within close distance to the soil site. In this article, we will only analyze TFs computed using surface-downhole site pairs.
 
-While the results of these low-frequency simulations are promising, structural engineers need ground motions with signal content up to 5 Hz and higher for design purposes. Hybrid techniques, combining deterministic low-frequency and stochastic high-frequency signals \citeg{olsen2015sdsu,gravesKinematicGroundMotion2016} can be used to generate synthetic seismograms with frequency content up to 10 Hz and higher. However, simulating both the lower and higher frequency content using a deterministic approach has the potential to lower part of the epistemic uncertainty in the resulting ground motion estimates. In this study we investigate the feasibility of increasing the highest frequency for the deterministic ground motion predictions to 5 Hz, using simulations and data for the 2014 $M_w$ 5.1 La Habra, CA, earthquake. The La Habra event was chosen due to an abundance of records available in the greater Los Angeles area, while ground motions can be considered linear due to its relatively small magnitude.
+The accuracy of site response estimates depends on the accuracy of the subsurface model used, and this is usually assumed to be controlled by the uncertainty in the site properties, in particular, the shear-wave velocity, $V_S$ \citeg{baraniInfluenceSoilModeling2013,griffithsMappingDispersionMisfit2016}. $V_s$ is the most important parameter for conventional 1D modeling of the TF, in which it is assumed that surface (and subsurface) motion consists of horizontally polarized plane S waves propagating through a stack of homogeneous layers \citeg{kramerGeotechnicalEarthquakeEngineering1996}. This modeling procedure (SH1D) ignores the lateral complexity of the often heterogeneous geology and subsurface structure and is, therefore, not able to include potential 2D and 3D amplification effects in the observations \citeg{rotenComparisonObservedSimulated2008,thompsonTaxonomySiteResponse2012}. \citet{zhuSeismicAggravationShallow2018} performed numerical analysis on 2D basins and found that a constant spectral aggravation factor \citep{chavez-garciaComplexSiteEffects2000}, which quantifies the discrepancy between 1D and 2D/3D models, is insufficient to identify basin effects, especially, in close-to-edge regions of shallow basins. Both observations and analytical solutions suggest that 1D models lack an estimate of spatial variability, caused by complex wave propagation such as basin amplification, surface-wave generation, and scattering, and are, therefore, unable to capture spatial correlations, which may be important for understanding risk, especially, to regional-scale infrastructure \citeg{olsenCausesLowfrequencyGround1995,booreCanSiteResponse2004}. Although, recent approaches have attempted to reduce velocity uncertainties in site effect estimation \citep{matavosicPracticesProceduresSitespecific2012,teagueMeasuredVsPredicted2018}, these methods either require prohibitively complex processing or are developed for specific cases only.
 
+It is impractical to constrain subsurface structure over a wide region to the resolution (on the order of meters to tens of meters) required for accurate ground-motion estimation to high frequencies (e.g., 10 Hz). Instead, some studies choose to use simple proxies, based on broad site classes to supplement estimates of soil properties and site spatial characteristics, for example, the National Earthquake Hazards Reduction Program (NEHRP) soil classification \citep{bssc2003NEHRPRecommended2003,akkarEmpiricalEquationsPrediction2010} or a weighted average of $V_S$ in the uppermost 30 m \citep[$V_{S30}$, e.g., ][]{abrahamsonSummaryAbrahamsonSilva2008,idrissNGAWest2EmpiricalModel2014}. \citet{thompsonTaxonomySiteResponse2012} proposed a scheme to classify surface-downhole site pairs by the extent of interevent variability and goodness of fit between 1D modelling and empirical site response, which can be used to calibrate the constitutive models and guide specific site studies. Despite the use of these characterizations in some generic seismic hazard estimates, for instance, via ground-motion prediction equations, recent work has pointed out the importance of considering site-to-site amplification variability \citep{atkinsonEarthquakeGroundmotionPrediction2006,atikVariabilityGroundmotionPrediction2010}. These studies show that, even within a single NEHRP or $V_{S30}$ class, the variability of site amplification and spatial correlations is strong enough to contribute significant uncertainty in ground-motion estimates.
 
-As frequencies increase above about 1 Hz, features with increasingly small length scales become important to realistically predict deterministic ground motions. For example, small-scale complexity of both the source and surrounding media, on the order of 10-100s of meters, is expected to increasingly affect the ground motion predictions at higher frequencies. Frequency-independent anelastic attenuation, often chosen as proportional to the local velocity structure \citeg{gravesBroadbandGroundMotionSimulation2010} is usually a good approximation for lower frequencies \citep[e.g., up to ~1 Hz][]{liu1976velocity,fehler1992separation}. However, models of frequency-independent anelastic attenuation appear to be inconsistent with seismic records at higher frequencies where regional studies indicate that larger Q values may be more accurate \citeg{withersMemoryEfficientSimulation2015}. Finally, ground motion simulations often artificially truncate the lowest near-surface velocities due to computational limitations, which may be a reasonable approximation for lower frequencies \citeg{olsenEstimationLongPeriodSec2003}. However, stronger effects from this near-surface material emerge as frequencies increase and wavelengths decrease \citeg{pitarka2009simulating,imperatoriBroadbandNearfieldGround2013}. Here, we quantify the effects of all of these features in our 3D simulations of the La Habra event.
-
-In southern California, two 3D state-of-the-art velocity models, namely the Community Velocity Models (CVM) versions S and H have been developed through the Southern California Earthquake Center (SCEC). These CVMs have been validated against ground motion data in a series of studies \citeg{tabordaEvaluationSouthernCalifornia2016,savranGroundMotionSimulation2019,laiShallowBasinStructure2020}, where conclusions often point to inaccuracies in the velocity structure, in particular for the near surface material. \citet{elyVs30derivedNearsurfaceSeismic2010} proposed a method to calibrate the near-surface material based on estimates of the time-averaged velocity in the upper 30 m ($V_{S30}$), and later improved by \citet{huCalibrationNearsurfaceSeismic2021}, specifically for sites with poor constraints in shallow velocities. In this study, we use the SCEC CVM-S4.26-M01 with the near-surface $V_S$ tapering method proposed by \citet{huCalibrationNearsurfaceSeismic2021}.
-
-The effects of irregular surface topography on ground motions also play an increasingly large role as frequencies increase \citeg{liuScatteringSeismicWaves2020}. In addition, in recent studies, theoretical and numerical methods have helped clarify the interaction between seismic waves and topography \citep[mainly scattering and trapping of waves, e.g.,][]{imperatoriRoleTopographyLateral2015,takemura2015scattering,rodgersBroadband04Hz2018}, as well as describing the characteristic effects on ground motions. Some of the most notable effects of topography are listed in the following. (1) Amplification tends to occur at the top of relatively steep slopes for waves with comparable wavelength to the size of the topographic features; on the other hand, deamplification tends to occur at low-elevation areas \citep{trifunacAnalysisPacoimaDam1971,booreNoteEffectSimple1972,spudichDirectionalTopographicSite1996,bouchonSeismicResponseHill1996,assimakiSoilDependentTopographicEffects2005}. Amplification can range up to a factor of 10 or more between the crest and base of a topographic feature \citep{davisObservedEffectsTopography1973,geliEffectTopographyEarthquake1988,umedaHighAccelerationsProduced1987,gaffetSiteEffectStudy2000}. (2) The amplification at mountain tops is systematically larger for incident S compared with P waves, and such difference diminishes when the slope decreases or the incidence angle increases \citep{bardDiffractedWavesDisplacement1982}. (3) Body waves and surface waves are strongly scattered by irregular topography, thus reducing ground motion amplitudes while prolonging the shaking durations \citep{sanchez-sesmaDiffractionSVRayleigh1991,leeEffectsRealisticSurface2009}. (4) Topography tends to disrupt the coherency of high-frequency ground motion and thereby distorts the S-wave radiation pattern \citep{imperatoriRoleTopographyLateral2015}. Notably, 3D models of the topography are necessary to capture the amplification effects, as noted in two-dimensional (2D) simulation results \citep{geliEffectTopographyEarthquake1988,bouchonSeismicResponseHill1996}. While geometrical characteristics, such as smoothed curvature and relative elevation, have been explored to approximate topographic effects \citeg{maufroyFrequencyScaledCurvature2015,raiEmpiricalTerrainBasedTopographic2017}, they require critical parameter constraints based on local velocity and target frequency, and thus difficult to be generalized for broadband studies.
-
-It should be noted that previous studies discussed above included only a subset of the model features deemed to be affecting high-frequency ground motions, or omitted validation of the results. In this study, we simulate ground motions for frequencies up to 5 Hz in the widely-tested SCEC CVM-S4.26M01 including high-resolution topography and compare to strong-motion data for the 2014 $M_w$ 5.1 La Habra, CA, earthquake, in order to constrain the relative contribution of topography, SSHs, and $Q(f)$. Our paper is organized as follows. We first describe the velocity model, simulation parameters, processing of the synthetic and recorded ground motions, and source description. Then the relative effects of model features such as topography, shallow near-surface velocities, small-scale heterogeneities, and $Q(f)$ will be quantified through goodness-of-fit (GOF) measures between synthetics and data, as guidelines for future simulations. Finally, we discuss future research directions based on our results.
-
+In this chapter, we propose a method to constrain the near-surface properties using surface topography and perform high-resolution 3D numerical simulations to investigate the uncertainty in site response modeling. The simulations naturally take advantage of 3D geotechnical information and are able to incorporate complicated spatially varying amplification effects. We use two downhole array sites, namely the Garner Valley Downhole Array (GVDA) in California and the TKCH05 site from the Kiban–Kyoshin network (KiK-net) surface-downhole pairs in Japan, where detailed in situ constraints of site seismic properties (e.g., $V_S$ and layer thicknesses) and abundant earthquake records are available, for our analysis. Both borehole sites have well-documented geological structure data, and previous studies have showed that SH1D modeling poorly predicts the ground motions without adjustments of subsurface properties or recalibration of constitutive models. \citet{thompsonTaxonomySiteResponse2012} found low interevent variability and poor fit using SH1D modeling for the site TKCH05, due to omission of spatial variability around the site that scatters the downgoing waves and reduces pseudoresonance. They found that no satisfactory fit could be achieved by adjusting the velocity profile, whereas \citet{taoTaxonomyEvaluatingSitespecific2020} showed that modification in the top 20 m can significantly improve the site response estimate for the outcrop TF (spectral ratio between two surface sites). \citet{bonillaBoreholeResponseStudies2002} studied the wave propagation at GVDA and reported significant S-to-P conversions that led to misfit in prediction of the empirical TF (ETF; see \Cref{etf:tfs}) by horizontal-to-vertical spectral ratios. \citet{teagueMeasuredVsPredicted2018} applied the Toro randomization model \citep{toroProbabilisticModelsSite1995} with the spectral analysis of surface waves method, to obtain the site signature with the best match of the ETF and the theoretical TF (TTF); however, this approach suffers from the nonunique nature of inverting $V_S$ profiles.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Computational Aspects}\label{approach}
+\section{Data}\label{etf:data}
 
-In this section we describe the simulation method and model setup, and summarize the features included in our model. In addition, we outline the processing parameters for simulations and data, and introduce our goodness-of-fit (GOF) measures to validate our results.
-
-\subsection{Numerical method for simulating ground motions}
-We use the staggered-grid finite-difference (FD) code AWP-ODC \citep[Anelastic Wave Propagation, Olsen-Day-Cui, from the authors of the code, hereafter denoted by AWP;][]{cuiScalableEarthquakeSimulation2010}, which is $4^{\text{th}}$-order accurate in space and $2^{\text{nd}}$-order accurate in time, to generate ground motion predictions for the La Habra event. AWP has been adapted to GPU accelerators for kinematic sources \citep{cui2013physics}, and provides support for frequency-dependent viscoelastic attenuation \citep{withersMemoryEfficientSimulation2015} and topography using a curvilinear grid \citep{oreillyHighorderFiniteDifference2021}. %The original version of AWP employs a spatially uniform grid over the entire domain, where the minimum velocity determines the grid spacing, resulting in significant over-discretization in high-velocity areas. \citet{nieFourthOrderStaggered2017} developed a method that supports discontinuous mesh (DM) for the 3D staggered-grid finite-difference scheme in AWP. The wavefields are exchanged within an overlap zone between two media partitions with a factor-of-three change in grid spacing, which significantly reduces the number of grid points needed in high-velocity regions and thereby improves the efficiency.
-
-The accuracy of AWP has been thoroughly verified. For example, large-scale earthquake simulations in realistic 3D earth models with strong heterogeneities and complex finite-fault source descriptions \citep{bielakShakeOutEarthquakeScenario2010,bielak2016verification}, revealed good agreement between AWP, another staggered-grid FD code and a finite-element code. The DM method implemented in the scalable GPU version of AWP was verified against uniform mesh solutions for the $M_w$ 5.1 La Habra earthquake \citep{rotenHighfrequencyNonlinearEarthquake2018}. The implementation of frequency-dependent anelastic attenuation was tested by \citet{withersMemoryEfficientSimulation2015} against a frequency-wavenumber solution, and the accuracy of the curvilinear topography implementation \citet{oreillyHighorderFiniteDifference2021} was verified against SPECFEM3D \citep{komatitschSpectralelementSimulationsGlobal2002}.
-
-
-\subsection{Computational Domain}
-We used a model domain of lateral dimensions 148 km by 140 km, rotated 39.9$^{\circ}$ clockwise with a depth extent of 60 km. The mesh was extracted from the SCEC CVM-S4.26-M01, an updated version of the original CVM-S4 model \citep{magistraleSCECSouthernCalifornia2000,kohlerMantleHeterogeneitiesSCEC2003} with iterative 3D full tomography inversions in Southern California \citep{leeRapidFullwaveCentroid2011}. The SCEC Uniform Community Velocity Model software framework \citep[V19.4][]{smallSCECUnifiedCommunity2017} was used for the extraction of seismic P-wave velocity ($V_P$), $V_S$ and the material density. The choice of CVM-S4.26-M01 (hereafter abbreviated with CVM-S) for this study was based on the results by \citet{tabordaEvaluationSouthernCalifornia2016} who concluded from a comprehensive validation of four velocity models with 30 earthquakes in the greater Los Angeles region that this model consistently yielded the best fit to ground motion data using a variety of metrics.
-
-\subsection{Small-scale Heterogeneities}
-Small-scale (on the order of tens to hundreds of meters) crustal heterogeneities are known to exist in nature but are insufficiently resolved in state-of-the-art velocity models. Instead, small-scale heterogeneities are commonly included in numerical simulations via statistical models of property fluctuations \citeg{imperatoriBroadbandNearfieldGround2013,savranGroundMotionSimulation2019}. Here, we superimpose a statistical model of velocity and density perturbations onto CVM-S, defined via a Von Karman shape function \citep{frankelFiniteDifferenceSimulations1986}:
-
-\begin{equation}\label{eq:highf-1}
-  \Phi_{v, a}(r)=\sigma^{2} \dfrac{2^{1-v}}{\Gamma(v)}\left(\dfrac{r}{a}\right)^{v} K_{v}\left(\dfrac{r}{a}\right)
+Dependent on the strength of the input motion, site amplification and deamplification can be caused by a combination of linear and nonlinear effects. Here, we focus on linear site effects, and reserve the nonlinear analysis for subsequent research endeavors. To limit our analysis to linear ground motions, we exclude records with maximum surface accelerations larger than 0.1g \citeg{beresnevNonlinearSoilResponse1996}. For each of the two site selections, we randomly picked 36 events of various azimuth and distance to the site that meets this criterion, with a minimum signal-to-noise ratio of five in their records. The goodness of fit between TTFs and ETFs from recordings is described by the variance reduction (VR) as follows:
+\begin{equation}\label{eq:etf-1}
+  \mathrm{VR}=1-\frac{\sum_{i=1}^{n}\left[\operatorname{TTF}\left(f_{i}\right)-\mathrm{ETF}_{\mathrm{med}}\left(f_{i}\right)\right]^{2}}{\sum_{i=1}^{n}\left[\mathrm{ETF}_{\mathrm{med}}\left(f_{i}\right)\right]^{2}}
 \end{equation}
-
-\noindent which has Fourier transform:
-
-\begin{equation}\label{eq:highf-2}
-  P(k)=\dfrac{\sigma^{2}(2 \sqrt{\pi} a)^{E} \Gamma(v+E / 2)^{v+E / 2}}{\Gamma(v)\left(1+k^{2} a^{2}\right)}
-\end{equation}
-\noindent in which $k$ is the wave number and $E$ is the Euclidean dimension, $\Gamma$ denotes the Gamma function, and $K$ stands for the modiﬁed Bessel function of the second kind with order $\nu$. The parameters of the Von Karman autocorrelation function include correlation length $a$, standard deviation $\sigma$ and Hurst number $\nu$. This approach generates a random field with zero mean, and the desired standard deviation is guaranteed by scaling the random variable at each computational node. We used a fixed Hurst number of 0.05 and introduced elliptical anisotropy with a ratio of horizontal-vertical correlation lengths of 5. We tested correlation lengths between 100-500 m, and standard deviation of 5\% and 10\%, based on previous studies in Southern California \citeg{nakataStochasticCharacterizationMesoscale2015,savranModelSmallscaleCrustal2016}. In our model, the random perturbations extend to a depth of 7.5 km, and then linearly tapered to a standard deviation of 0 at 10 km depth \citep{olsen2018constraints}. \Cref{fig:highf-2} shows an example realization of small-scale heterogeneities, compared to the original CVM-S in terms of $V_S$ at the surface.
-
-\subsection{Topography}
-While the basins of the greater Los Angeles region, including near the epicentral area of the La Habra event, are characterized by relatively flat topographic relief, the San Gabriel and Santa Ana Mountains bound the area to the North and East, respectively (see \cref{fig:highf-1}). To quantify the effects of topography on ground motions from the La Habra event, we use the curvilinear grid approach by \citet{oreillyHighorderFiniteDifference2021}. In this version of AWP, surface topography is incorporated by stretching the computational grids in the vertical direction, while keeping the horizontal grid spacing unchanged, so that the surface grid locations conform to the shape of the topography. We include surface topography into our model domain via the $\dfrac{1}{3}$ arc-second resolution Digital Elevation Model in southern California from the U.S. Geological Survey (USGS).
-
-\subsection{Frequency-Dependent Attenuation}
-Anelastic attenuation is needed for accurate simulation of seismic wave propagation through earth models at distances further than the dominant wavelength to account for the loss of intrinsic energy. Frequency-independent attenuation, resulting in identical seismic energy loss per cycle across a frequency bandwidth, has successfully been used to validate ground motion recordings for frequencies up to about 1 Hz \citeg{olsenEstimationLongPeriodSec2003,graves2004observed}. However, as frequencies increase above about 1 Hz, data often supports frequency-dependent $Q$ \citeg{raoof1999attenuation,eberhart2014imaging,wangUsingDirectCoda2017}. To address these findings, \citet{withersMemoryEfficientSimulation2015} developed an efficient coarse-grained memory variable approach to model frequency-dependent attenuation using a power law formulation
-
-\begin{equation}\label{eq:highf-3}
-  Q(f)=Q_{0} *\left(\dfrac{f}{f_{0}}\right)^{\gamma}, \quad f \geq f_{0},
-\end{equation}
-\noindent where $Q_0$ is a frequency-independent $Q$ value applied for $f<f_{0}$.  \citet{withersMemoryEfficientSimulation2015} and \citet{savranGroundMotionSimulation2019} found that $\gamma$ values of to 0.6-0.8 produced the best fit to seismic records of the 2008 Chino Hills, CA, earthquake.
-
-A widely-used parameterization of $Q_0$ is proportional to local seismic velocity, with separate values $Q_{0P}$ and $Q_{0S}$ for $V_P$ and $V_S$ quality factors, respectively, producing an expected stronger attenuation for lower velocity material pointed out by \citet{haukssonAttenuationModelsThree2006}. \citet{taborda2014ground} revised the formula expressed by \citet{brocher2008compressional} and applied a $6^{\text{th}}$-order polynomial function for $Q_{0S}$ from $V_S$, and $Q_{0P}=\dfrac{3}{4}\left(V_P/V_S\right)^2Q_{0S}$. We test a variety of these parameterizations of $Q_0$ for the La Habra event.
-
-\subsection{Near-surface Geotechnical Layer}
-CVM-S includes geotechnical data which integrates geology and geophysics data from surficial and deep boreholes, oil wells, gravity observations, seismic refraction surveys and empirical rules calibrated based on ages and depth estimates for geological horizons in southern California \citep{magistraleGeologybased3DVelocity1996,magistraleSCECSouthernCalifornia2000}. While recent validation studies, such as \citet{tabordaEvaluationSouthernCalifornia2016}, have shown that the basin structure included in CVM-S is reasonably accurate, unrealistically large surface rock site velocities (see \Cref{fig:highf-2}) motivated the method by \citet{elyVs30derivedNearsurfaceSeismic2010} to reduce the $V_S$ in the top 350 m based on available $V_{S30}$ values. Recently, \citet{huCalibrationNearsurfaceSeismic2021} proposed a method to further adjust the near-surface structure to a depth of 1000 m, resulting in an improved fit between simulated and recorded Fourier spectra below 1 Hz for the La Habra earthquake, which will be used in this simulations in this study.
-
-\subsection{Ground Motion Simulations}
-Table 1.1 lists the parameters used in our simulations. All simulations have the same duration of 120 s and resolve wave propagation up to $f_{max}=5$ Hz by at least 5 points per minimum S-wavelength. We use AWP-topo that supports uniform regular, curvilinear mesh to model wave propagation in composite models including topography and other features, with the minimum $V_S$ clamped at 500 m/s to alleviate computational cost. We use a kinematic source generated following \citet{gravesKinematicGroundMotion2016}, which creates finite-fault rupture scenarios with stochastic characteristics optimized for California events. The focal mechanism was taken from the U.S. Geological Survey \citep[strike=233$^\circ$, dip=77$^\circ$, rake=49$^\circ$; ][]{usgsEarthquakeEventsFocal2014} with a moment magnitude 5.1 and a fault area of 2.5 km x 2.5 km. %We use two different versions of AWP, namely 1) AWP-DM with discontinuous mesh and a flat free surface, and 2) AWP-topo with a regular, curvilinear mesh, as a code with support for both features was still under development. AWP-topo was used to examine the effects of topography on the ground motions, using a minimum $V_S$ of 500 m/s (Model 1 in Table 1.1). AWP-DM was used to quantify the effects of the near-surface material with a minimum $V_S$ of 200 m/s using 3 different mesh discretations: 1) dx=8 m from the surface to 1,472 m, 2) dx=24 m between 1,472 m and 10,336 m, and 3) dx=72 m at deeper levels (Model 2 in \Cref{tab:highf-1}). 
-
-
-\subsection{Data Processing}
-259 strong-motion seismic stations were used to validate the simulations. The strong motion recordings (velocity time series) are obtained from SCEC (F. Silva, Personal Communication, 07/2020), with hypocentral distance up to 90 km and signal-to-noise ratio above 3 dB. The processing procedure included the following steps: (1) low-pass filtering of the time series below 10 Hz using a zero-phase filter; (2) interpolating the time series linearly to a uniform time step; (3) tapering of at the last 2 seconds using the positive half of a Hanning window; (4) zero padding the last 5 seconds; (5) filtering the seismograms to the desired frequency, and (6) converting velocities to accelerations by a time derivative. Except for the initial 10 Hz low-pass filter, all filters used a low-cut frequency of 0.15 Hz to avoid noise interference. $4^{\text{th}}$-order Butterworth filters were used in all cases. Finally, our horizontal synthetic seismograms were rotated 39.9$^\circ$ clockwise to minimize the computational requirements needed to include all seismic stations.
-
-\subsection{Goodness of fit criteria}
-We used a modified subset of the goodness-of-fit (GOF) metrics proposed by the methods of \citet{andersonQuantitativeMeasureGoodnessOfFit2004} and \citet{olsenGoodnessoffitCriteriaBroadband2010} developed for the comparison of broadband seismic traces (0 to 10+ Hz). The method includes 10 different metrics, from which we selected 7, namely peak ground velocity (PGV), peak ground acceleration (PGA), energy duration (DUR), cumulative energy (ENER), response spectral acceleration averaged between 0.1 and 10 s (RS), and smoothed Fourier amplitude spectrum (FAS), as well as one additional metric, Arias intensity (AI), to compute our GOF scores. We computed the SA at frequencies linearly spaced from 0.2 to 5 Hz. Cumulative energy is calculated as $E N E R=\int v(t)^{2} d t$. Both ENER and DUR are defined on the interval between the arrival of 5 and 95 percent of the total energy. Arias intensity describes the cumulative energy per unit mass \citep{arias1970measure}, and is defined as $AI=\dfrac{\pi}{2 g} \int a(t)^{2} d t$, where $a(t)$ is the acceleration time series, and $g$ is the gravitational acceleration. 
-
-The GOF score for each metric is defined as
-\begin{equation}\label{qe:highf-4}
-  G_{\text {metric }}=10 \operatorname{erfc}\left(\dfrac{2|x-y|}{x+y}\right).
-\end{equation}
-\noindent where $x$ and $y$ are two positive scalars from the selected metrics. $G_{\text {metric}}$ is computed for each metric and combined into a weighted average using all 3 components. We used weights of 0.5, 0.5, 1, 0.5, 0.5, 1, and 1 for for PGV, PGA, DUR, AI, ENER, RS, and FAS, where reduced weights are chosen due to correlation between metrics \citep{olsenGoodnessoffitCriteriaBroadband2010}. The GOF score for the entire simulation is calculated as the average of $G_{\text {station }}$ across all 259 stations. GOF values between two signals above 4.5 and 6.5 are considered fair and very good fit, respectively.
-
-\section{Results}
-\subsection{Source Models}
-Due to the stochastic characteristics of the kinematic source generator by \citet{gravesKinematicGroundMotion2016}, a series of 40 source realizations with different random seeds are evaluated based on comparisons between spectral accelerations with records at stations with epicentral distance of 31 km or less (R. Graves, Personal Communication, 03/04/2020). The 40 source models were rated based on the average absolute bias between synthetics and data up to 5 Hz for the median pseudo-spectral acceleration rotated over all azimuths (rotD50), from which we selected the three best performing source descriptions with hypocentral depths at 5, 5.5 and 6 km (see \cref{fig:highf-3}). The rupture duration of the source descriptions is less than 2 s and sampled at an interval of 0.001 s, identical to the time step used in our simulations. The three sources tend to generate overall similar patterns of PGV within the same bandwidth of low (< 2.5 Hz) or high (> 2.5 Hz) frequencies (\cref{fig:highf-4}). Based on this result, we carry out our analysis with Source 1 only in order to limit the computational requirements.
-
-\subsection{Minimum \textbf{$V_S$}}
-Southern California features several low-velocity basins where the minimum (surface) $V_S$ in CVM-S can be much lower than the minimum value of 500 m/s that we imposed in our models (see \cref{tab:highf-1}). As previous studies have pointed out that soft soils, characterized by lower $V_S$, have been found to generate significant amplification of the ground motions \citeg{anderson1984model}. However, in order to maintain the capacity to resolve seismic waves up to the same frequency, reducing the minimum $V_S$ will increase the computational cost exponentially in the finite-difference method. For example, clamping the minimum $V_S$ at 200 m/s instead of 500 m/s requires about 40 times more node hours for a single simulation. Considering the prohibitive expense to use a lower minimum velocity, we decided to use an SH1D method, which models vertically-incident SH waves in a horizontally-layered halfspace \citeg{dayRMSResponseOnedimensional1996,thompsonTaxonomySiteResponse2012}, to account for effects of reducing the minimum $V_S$. 
-
-At each site, we calculated two SH1D responses, one using the velocity profile from our models, and the other using the same profile yet with minimum $V_S$ clamped at 500 m/s, the ratio of which thus characterizes the minimum $V_S$ effects. Then our 3D simulated synthetics are convolved with this SH1D response ratio in the frequency domain to incorporate the effects of using realistic low velocities. Because the SH1D method considers SH waves only, we will only apply this synthetic calibration on horizontal components only, which is supported by a lower-frequency (2 Hz) simulation using the same domain, that reducing the minimum $V_S$ amplifies the ground motions for horizontal components while yielding negligible difference in the vertical component. (\cref{fig:highf-S1}).
-
-\Cref{fig:highf-5} shows the procedure and results of applying the Sh1D method onto an example site. The two profiles have similar SH1D responses below about 0.3 Hz, then the SH1D response ratio increases with frequency with considerable fluctuation, which means lower velocities in the unclamped profile tends to amplify the ground motions. As expected, we see in \Cref{fig:highf-5}c that the PGV is increased by 32\% when no $V_S$ clamping is conducted. The shape of the waveform remains almost unchanged, except more high-frequency wiggles are present, which is better visible in comparing their Fourier spectra (smoothed) in \Cref{fig:highf-5}d. Similar effects are observed for all profiles with near-surface velocity lower than 500 m/s, and we therefore apply this technique to all our 3D simulations with the minimum $V_S$ clamped at 500 m/s. 
-%we compared the response of Model 2 (minimum $V_S$ of 200 m/s) to a variation of Model 2 with minimum $V_S$ of 500 m/s (\cref{fig:highf-5}). As expected, the largest effects are observed above the basin areas with the lowest near-surface velocities. At frequencies below 1 Hz, the PGV amplification is generally concentrated in basins with low near-surface $V_S$. However, as frequency increases, the amplification in PGV extends to the surrounding low-altitude areas, including mountain valleys. For 2.5-5 Hz seismic waves, deamplification starts to show up in the mountain regions, likely due to entrapment and attenuation of seismic energy in the basin areas. DUR is relatively less affected by reducing the minimum $V_S$, compared to PGV and AI. As the effects of the near-surface velocities are somewhat similar for PGV and AI in pattern and amplitude. %Considering the similar patterns for the ground motions calculated for 0.15-1 Hz and 0.15-2.5 Hz, we will not show 0.15-2.5 Hz and AI in the subsequent plots of ground motion metrics.
-
-%\Cref{fig:highf-6} shows the effects of the near-surface low $V_S$ quantitatively. While the low velocities can cause up to 50\% or higher local amplification in PGV (concentrated in the central basins where the lowest velocities reside), the average effect is less than 10\%. Both the mean and standard deviation of the difference between the two models increase with frequency, but remain at a relatively low level up to 5 Hz. Thus, our results suggest that despite locally large effects in particular for the higher frequencies, omitting the effects of material with $V_S < 500$ m/s does not change the overall ground motions significantly. Based on this result, we adopt a minimum $V_S$ of 500 m/s in the remaining analysis to alleviate computational cost.
-
-
-\subsection{Reference Model Response}
-\Cref{fig:highf-7} shows a comparison between PGVs extracted from records and synthetics for a simulation with source 1, CVM-S including topography, $Q(f)=0.1f^{0.6}$, $Q_P=2Q_S$, shallow velocity tapered down to 1000 m \citep{huCalibrationNearsurfaceSeismic2021}, and no small-scale heterogeneities added, which is our reference case for low frequencies (0.15-2.5 Hz) and high frequencies (2.5-5 Hz). The minimum $V_S$ is truncated at 500 m/s (at which $V_P$ is calculated from the $V_P/V_S$ ratio in CVM-S, and density is unchanged), often necessitated by limitations of computational resources. While the overall PGV distributions are similar, the reference model tends to predict larger values to the south and west of the source, especially between 20 to 40 km, both in the low and high frequencies. On the other hand, the simulations underpredicts the PGVs beyond 40 km at frequencies above 2.5 Hz. The small overprediction in the nearfield and underprediciton in the farther field at high frequencies indicates more than expected seismic energy is trapped within the Los Angeles Basin (LAB) bounded by San Bernardino and Santa Ana Mountains (see \cref{fig:highf-2}a for locations). The slightly faster decay with distance compared to data may also suggest a slightly lower $Q$ within the LAB, and a higher $Q$ at hypocentral distances further than 40 km, especially above 2.5 Hz.
-
-\subsection{Topography}
-In this section we investigate the effects of topography, which are often ignored in numerical simulations \citeg{graves2004observed,olsenStrongShakingAngeles2006,savranGroundMotionSimulation2019}. Our analysis of topographic effects uses a reference model with topography removed.
-\Cref{fig:highf-8} shows the percent difference between models with and without topography for PGV, DUR and AI for bandwidths of 0.15-1 Hz, 0.15-2.5 and 2.5-5 Hz. It is clear that topography complicates the wavefield pattern significantly, even at frequencies below 1 Hz in terms of DUR and thus AI. Consistent with previous studies \citeg{hartzell1994initial, leeEffectsRealisticSurface2009}, we observe a weak deamplification of PGV below 1 Hz in basin areas, while that mountain peaks and ridges may amplify PGV by less than 50\%. In addition, we find that PGV is reduced by about 30\% in the Chino Basin and northwest of San Gabriel Mountains. These results are in agreement with \citet{maEffectsLargeScaleSurface2007} who found that the San Gabriel Mountains scatter surface waves from a northern rupture on the San Andreas Fault and reduce the PGVs in the LAB by up to 50\%. We interpret these results as shielding and focusing effects on the front and back sides of the mountains, respectively, which become more significant at higher frequencies, in agreement with \citet{liuScatteringSeismicWaves2020}. In addition, at frequencies increase above 2.5 Hz, we observe a clear pattern of “amplification-deamplification-amplification” along the N-S (short) axis of the San Gabriel Mountains, which is predicted in numerical experiments by \citet{liuScatteringSeismicWaves2020}.
-
-It is particularly noticeable that DUR within 10 km of the source is strongly amplified for both low and high frequencies, mostly to the north (northwest end of the Santa Ana Mountains). Here, topography seems to act as a significant source of scattering that increases the wave duration on the sides of the mountain facing the incoming wavefields, while DUR is reduced on the 'back' sides of the mountain seen from the source location. At further distance from the source, our results show a clear negative correlation between the effects on PGV amplification and DUR lengthening, suggesting that topography redistributes seismic energy from the large-amplitude first arrivals to the adjacent coda waves, particularly at the higher frequencies. These results are in agreement with \citet{leeEffectsRealisticSurface2009} who noticed that the effects from topography can interfere with those from path and directivity.
-
-
-\subsection{Frequency-Dependent Attenuation}\label{highf:qf}
-\Cref{fig:highf-9} shows the horizontal- and vertical-component FAS generated from three different attenuation models, namely $Q_S=0.1V_S$ (constant $Q$), $Q_S=0.75V_Sf^{0.4}$, $Q_S=0.1V_Sf^{0.3}$, $Q_S=0.1V_Sf^{0.6}$. The $Q(f)$ models and the constant $Q$ model diverges above 1 Hz as expected, with more high-frequency energy sustained in the former, resulting in a better match to data until $Q_S=0.1V_Sf^{0.6}$, which tends to overpredict towards the high end of the bandwidth and yields equally poor match compared to the constant $Q$ model. Among the four attenuation models, $Q_S=0.075V_Sf^{0.4}$ and $Q_S=0.1V_Sf^{0.3}$ best predict the FAS of the data, though the former slightly underpredicts the horizontal components above 1 Hz and the latter slightly overpredicts the vertical component between 1.3 to 3.2 Hz. The finding that the power-law exponent of about 0.4 being optimal in our models is consistent with the inversion results in Southern California by \citet{linFrequencyDependentAttenuationWaves2018}.
-
-
-Despite the significant amplification of FAS in high frequencies above about 2.5 Hz for the frequency-dependent $Q$ models, PGV at distance farther than 40 km from the source is still underpredicted (\cref{fig:highf-10}). Considering the overall good fit within 40 km, the $Q$ models explored are fair good approximation of the real attenuation. However, we note that the good fit is a balanced product of overprediction in the LAB to the west and underpredition to the north and east, which indicates potential inaccuracy in the background velocity model. \Cref{fig:highf-8} has shown that topography itself is not responsible for producing this bipartitional discrepancy, which may suggests artificial effects from the shear impedance near the basin edges in the CVM (see \cref{fig:highf-2}) that needs further calibration, or indicates different $Q$ models to be considered for basins and rock/shallow sediments, or both.
-
-%% [only the a = 5000 m SSH is available now]
-\subsection{Small-scale heterogeneities}
-\Cref{fig:highf-11} shows the effects of adding a von Karman distribution of small-scale heterogeneities (SSHs) with $\sigma = 5\%$ and horizontal correlation length of 5000 m compared to the reference model on PGV and DUR in the frequency bands 0.15-2.5 Hz and 2.5-5 Hz. \citet{savranGroundMotionSimulation2019} studied a smaller region up to 2.5 Hz, roughly in the center of our simulated domain, found that SSH presents itself as a second-order source of misfit that yields relatively small influence on ground motions. Our results generally agree with their findings, and further show that SSHs have stronger effects at farther distance and in higher frequencies.
-
-\citet{przybillaEstimationCrustalScattering2009} performed analysis using elastic radiative transfer theory and showed that the direction dependence of scattering can be identified by $ak$, where $a$ is the correlation length and $k$ is the wave number. For $ak \approx 1$, waves interact with heterogeneous medium most intensively because the wavelength and correlation length are in the same order. When $ak\gg 1$ waves are predominantly scattered in the forward direction, which generates geometric focusing in the early arrivals and leads to larger peak amplitudes, and vice versa for $ak \ll 1$. In the case with $a=5000$ m, our model generally confines to the forward scattering regime and PGV is amplified, which is shown quantitatively in \Cref{fig:highf-12}. As the frequency increases, $k$ and thus $ak$ tends to increase as well, causing generally weaker scattering effects as deviating from the most intensive scattering regime, thus the median difference closer to 0 for both PGV and DUR. However, higher frequencies wavefields are capable of resolving finer structure, and may induce larger spatial variability in scattering effects, represented by larger standard deviations.
-
+\noindent in which $n$ is the number of frequencies at which the ETFs and TTFs are computed, and ETF med is the median of the ETFs from the events that we selected. We evaluate a set of linearly spaced frequencies between 0.5 and 10 Hz, with the lower limit determined by the noise level of the data, and the upper limit from the resolution of our simulations. The VR ranges within $[-\inf, 1]$, in which VR = 1 means a perfect match, and smaller values indicate poorer fit.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Discussions}
-With the effects of various model features on ground shaking discussed above, we have reached a point to further explore whether it is possible and how we are able to combine theses known effects into a sophisticated model to better represent the realistic crust structure, and therefore the characteristics of ground motions extending to a significantly higher frequency range than previous physics-based simulations. \Cref{tab:highf-2} lists part of models explored in our simulations and thse composite models will be refered to by their model ID in the following discussions to avoid tedious model descriptions. Note that model ID does not represent any ranking of goodness of fit.
 
-\subsection{Topography and Shallow Velocity Taper}\label{highf:topoandtaper}
-\citet{huCalibrationNearsurfaceSeismic2021} showed the improvements from reducing shallow velocities in CVM-S, especially in regions poorly constrained by limited geological information, by applying a generic taper function based on $V_{S30}$.
-Their validation process is, however, restricted to frequency below 1 Hz with flat surface. Here we extend the examination of this method to higher frequency, particularly with the topography considered, as previous studies have suggested the combined effects by topography with local geology including stratigraphy and low-velocity near-surface layers \citep{lebrun1999experimental,rovelli2002can}.
+\section{TFs}\label{etf:tfs}
+We compute TFs between surface and downhole locations as follows:
+\begin{equation}\label{eq:etf-2}
+  TF = \frac{G_s(f)}{G_d(f)}
+\end{equation}
+\noindent in which $G_s(f)$ and $G_d(f)$ are the root mean squares of the Fourier amplitude spectra of horizontal accelerations at the surface and downhole locations, respectively. It is worthwhile to note that the downhole recordings include the upgoing incident wavefield as well as downgoing waves that are reflected back from the free surface. This phenomenon complicates the wavefields recorded at downhole sites, and, therefore, the use of surface-downhole pairs to study site response. For records obtained at depths shallower than 200 m, as in this study, the upgoing and downgoing pulses overlap in the records, with differences in arrival times as small as 0.2 s, complicating a separation of the two contributions in the presence of extended source duration and site response \citep{shearerSurfaceNearsurfaceEffects1987}. For example, \citet{bonillaBoreholeResponseStudies2002}  found from simulations at the GVDA site using the f -k method that the downgoing wave effect is predominant above the soil-bedrock interface and strongly degraded below that depth. Because it is almost impossible to eliminate downgoing waves from the records, we include the total wavefields at the surface and downhole sites, when calculating the TFs for both synthetics and records.
 
-We followed \citet{huCalibrationNearsurfaceSeismic2021} and divided the 259 stations into two groups: type A representing sites with good geological constraints and type B representing sites with poor geological constraints. Type B is characterized by unrealistically large surface $V_S$ and lack of change with depth in the top 500-1000 m in CVMs. \Cref{fig:highf-13} shows the median FAS over both types of sites from various models (see \cref{tab:highf-2} for model features). Similar with \citet{huCalibrationNearsurfaceSeismic2021}, type A sites are insensitive to the shallow velocity tapering, while the model with shallow velocities from the original, untapered CVM-S (Model 8) is found to significantly underpredict the FAS at type B sites in the full bands. The underprediction becomes smaller as frequency increases, suggesting that even higher-frequency response is not captured by either the CVM-S or the tapered shallow velocity structure. Topography appears to yield only small effects in terms of FAS (Model 1 versus Model 10) by reducing the FAS in vertical component between 1-3 Hz for both types of sites and horizontal components between 0.4-1.1 Hz for type B site. It is interesting that we observed equally strong effects in vertical components compared to horizontal components, which is somewhat different from previous experiments \citep[][and the references therein]{massaOverviewTopographicEffects2014}. Moreover, the models with $\gamma=0.6$ (Model 1, 8, 10) show a trend of growing overprediction above 2-3 Hz, which can be improved by reducing $\gamma$ to 0.3 (Model 2).
-
-Topographic effects are further complicated by the presence of shallow low velocities, i.e. reflection and trapping of seismic energies due to irregular geometry and scattering due to low velocities. Therefore, direct comparison between a model with topography against a flat model may be inaccurate, especially at high frequencies where both these effects are more prominent. Following \citet{maufroyFrequencyScaledCurvature2015} and \citet{raiEmpiricalTerrainBasedTopographic2017}, who conducted numerical experiments and both found topographic curvature a good proxy characterizing irregular surface in evaluating topographic effects, we calculated the smoothed curvature of topography with a smoothing window of 640 m (a much shorter smoothing window of 120 m is also tested considering our high frequency bound, as shown in \Cref{fig:highf-S1}, which yields similar results). Steeper protruding areas are characterized by larger curvature values and flat regions are of curvatures close to zero. \Cref{fig:highf-14} shows the percent difference in PGV caused by including topography, over various curvatures in the simulated region. Two sets of models are shown, one with 1000 m $V_S$ taper and the other without. Similar PGV difference is obtained from models with and without shallow (1000 m) $V_S$ taper below 2.5 Hz, while significant different trends appear at frequencies above 2.5 Hz as curvature increases. Without the near-surface low velocities introduced by the $V_S$ taper method, topography tends to reduce the PGVs by about 10-40\% over almost the full range of curvatures, though showing a small trend toward less reduction when the curvature is greater than 1. This trend, however, becomes much more notable when the shallow low velocities are present, and topography will increase PGVs at most curved areas, e.g., mountain summits and local steep hills. This result may in part explain the reason that previous simulations underestimate topographic amplification at mountain tops compared to observations \citeg{pischiuttaTopographicEffectsHill2010,lovati2011estimation} as their velocity models lack near-surface low velocities, which we found will enhance topographic amplification in such specific areas. It should be noted that because the greater Los Angeles region is dominated by relatively flat basins, topography tends to reduce PGVs on average in our model. 
-
-
-\subsection{Anelastic Attenuation and $\kappa$}
-The shape and amplitude of the FAS for strong ground motions reveal fundamental information about the physical processes of source rupture and wave propagation through the earth crust. At high frequencies above the corner frequency up to the noise level of Nyquist frequency, the FAS is observed to decay exponentially \citep{anderson1984model}, which can be described by the spectral decay parameter $\kappa$. Anderson and Hough found consistent $\kappa$ values in the range of 0.04-0.07 for Southern California, and only weak distance dependency that $\kappa$ increases with distance. The authors endorsed the hypothesis by \citet{hanksFmax1982} that the behavior of $\kappa$ is primarily caused by the subsurface geological structure close to the stations.
-
-With the processed synthetics and records, we calculated $\kappa$ from a least-square fit to the spectra, taking the average of the two horizontal components, between 2-5 Hz in frequency-log (FAS) space. The spectra is then stacked over either the whole set of stations or the stations grouped into bins separated by the hypocentral distance to reduce the high-frequency oscillations in FAS at a single station. The frequency bandwidth was selected so that spectral decay starts to show up yet below the highest frequency our simulations can resolve.
-
-\Cref{fig:highf-14} shows the stacked FAS for a series of models. We have examined that topography and $V_S$ taper depth has minor effects on the stacked FAS, thus are not shown in the figure. The model with frequency-independent attenuation (i.e., $Q_S=0.1V_S$) appears to decay too rapidly and yields larger $\kappa$ than data; while frequency-dependent attenuation models produce a slower decay as frequency increases. As a result, the model with frequency-independent attenuation tends to underpredict the FAS at higher frequencies (above 1-1.5 Hz), which is improved for $Q_S=0.05V_Sf^{0.6}$, and overprediction is even observed when the coefficient $Q_S/V_S$ further increases from 0.05 to 0.1, with the power-law exponent of 0.6.
-
-Our calculated $\kappa$ from data at the entire set of stations is 0.061, which is consistent with that measured by \citet{anderson1984model}. The single $\kappa$, though representing an across-domain attenuation characteristics, is oversimplified and neglects site-specific information when our domain contains two distinctive geological structures, i.e. mountains and valleys, and thus rock types. It is natural to calculate $\kappa$ for each subset of stations grouped by their distance to the source to ensure the similarity among each group of stations. Panel (b) in \Cref{fig:highf-14} shows the stacked FAS for the same models as in panel (a) and the corresponding $\kappa$ values as a function of $R_{hypo}$. The models with power-law attenuation are generally in good agreement with data, especially in the distance range with dense site distribution, e.g., 20-45 km. We observed that $\kappa$ first increases slowly with distance, as reported by \citet{anderson1984model}, but then decreases to a low level rapidly at some distance bins beyond 45 km. This is likely due to the relatively fewer site numbers, or the fact that $\kappa$ is a strong localized parameter with spatial variability determined by site effects, which is evidence in \citet{anderson1984model} as well. Nonetheless, The smaller $\kappa$ at distance greater than 45 km may indicate stronger attenuation in these regions compared to near-source regions which are mostly sedimentary basins.
-
-The small difference between $Q_S=0.05V_Sf^{0.6}$ and $Q_S=0.1V_Sf^{0.6}$ suggests that the central parameter governing $\kappa$ is the power-law exponent, instead of $Q_S/V_S$. While it is straightforward to rule out the poor-fitting frequency-independent attenuation model, determination of the best frequency-determined attenuation model is more difficult, considering the spatial variability. The three models $Q_S=0.05V_Sf^{0.6}$, $Q_S=0.075V_Sf^{0.4}$, $Q_S=0.1V_Sf^{0.3}$ produce similar $\kappa$ values. Based on the results in \Cref{highf:qf} and \Cref{highf:topoandtaper}, we prefer the models with $\gamma=0.3-0.4$. The overall good match obtained by frequency-dependent attenuation models indicates that frequency dependency is critical in fitting the high-frequency spectral decay.
+Our procedure for processing the recorded time series is similar to that documented in \citet{taoInsightsModelingSmallstrain2019}. First, we collected acceleration time series at the surface and downhole accelerometers. Second, a fifth-order Butterworth filter, with a passband of 0.5–12 Hz, was applied to the demeaned and detrended accelerations, in which signal at frequencies below 0.5 Hz was discarded to minimize the contribution from low-frequency noise interference. Third, a second-order polynomial baseline correction was applied to the observed displacement time series, obtained by integrating the accelerations twice. Then, the ETFs were obtained as the ratio of the Fourier spectral amplitude between the surface and downhole acceleration time series for all the events. We further smoothed the TFs using the Konno–Ohmachi smoothing window in the frequency domain \citep{konnoGroundmotionCharacteristicsEstimated1998}. Although, not necessary for the synthetics, we applied the preprocessing (steps 2 and 3) to both synthetics and data for consistency.
 
 
-%% To be continued
-\subsection{Goodness of Fit}
-We calculate the GOF scores for a series of models.
+\section{Model Construction}\label{etf:model}
+It is reasonable to assume that, in the vicinity of a site of interest, bedrock depth varies in accordance with surface topography. In such models, sites located in a mountainous area have near-zero bedrock depth, whereas, sites in valley regions are characterized by larger depths to bedrock. Under this assumption, our 3D mesh is generated by mapping the topography to bedrock depth, with the constraints from borehole logging measurements. Oftentimes, bedrock depth increases
+rapidly from the edge toward the center of a sedimentary valley and approaches a maximum near the center of the valley, suggesting that depth to bedrock in a valley can be estimated using the topographic signature from digital elevation models. \citet{gallantMultiresolutionIndexValley2003} proposed an algorithm that operates at multiple scales and combines topographic elevations into a single continuous multiresolution index of valley bottom flatness (MRVBF). Values of MRVBF below 0.5 represent areas with the steepest topography, values between 0.5 and 1.5 relate to the steep areas with few flat valley bottoms, and larger MRVBF values indicate broader and flatter valley bottoms. Here, we adopt the MRVBF technique and used the same threshold value (1.5) as in \citet{gallantMultiresolutionIndexValley2003}, to discriminate valley and mountainous regions. The quantitative relationship between the bedrock depth (D) and MRVBF values are assumed to obey a logarithmic formula:
+\begin{equation}\label{eq:etf-3}
+  D = max(0,\quad D_0 * log_{10}(\frac{MRVBF}{MRVBF_t}))
+\end{equation}
+\noindent in which $MRVBF_t$ is the threshold MRVBF value (here, 1.5), and $D_0$ is a coefficient, which is calculated by substituting the MRVBF value and bedrock depth at the borehole site into the borehole equation, that is, $D_0=D_{borehole}/log_{10}(\frac{MRVBF_{borehole}}{MRVBF_t})$.
 
-\section{Conclusions}
+In addition to the modifications of the velocity model from the MRVBF method, we explore the extent to which scattering effects from statistical distributions of near-surface small-scale heterogeneities (SSHs) can improve site effect estimation. Previous studies using 1D modeling show that including SSHs may improve the prediction of ETFs, likely by weakening the downgoing wave effects \citep{nourFiniteElementModel2003,thompsonTaxonomySiteResponse2012}. Here, we use guidance from published studies on spectral coloring of Gaussian random numbers with von Karman spatial correlation functions for characterizing the statistics of heterogeneities \citep[see \cref{app:A}; as well as, e.g.,][]{frankelFiniteDifferenceSimulations1986,withersGroundMotionIntraevent2019}. We use a Hurst number of 0.05, a correlation length of 100 m, a standard deviation of 5\%, and a horizontal-to-vertical anisotropy of five, as constrained from sonic borehole logs in the Los Angeles basin by \citet{savranModelSmallscaleCrustal2016}. We include SSHs with these parameters, when generating TFs at our two selected locations, whereas, the sensitivity of the TFs to variation in the parameters is explored in the Discussion section.
 
-% The fractal structure of topography, causing interaction of seismic waves at different wavelengths, greatly complicates interpretation of its effects on the ground motion at frequencies, as noted by \citet{booreNoteEffectSimple1972} and \citet{panzeraEvidenceTopographicEffects2011}. We thus expect stronger ground motion variability caused by complex topography, which will generate stronger regional concentration of amplification and deamplification, especially at higher frequencies. 
+\subsection{Numerical simulations}
+Our goal to quantify the effects of 3D Earth structure on highfrequency (<10 Hz) TFs, using 3D modeling, is computationally challenging. We use the parallel and scalable discontinuous-mesh velocity–stress staggered-grid finite-difference code AWP-ODC-DM \citep{olsenSimulationThreeDimensional1994,cuiScalableEarthquakeSimulation2010,nieFourthOrderStaggered2017} to simulate the site response. One-dimensional TTFs are computed under the SH1D assumption, in which the model consists of a stack of homogeneous layers, to provide a point of comparison for the 3D models. The model definition for the 3D TTF computation is more complicated. We include the effects of frequency-dependent attenuation using the model:
+\begin{equation}
+  Q(f) =
+  \begin{cases}
+    Q_0 \times f_\gamma, & f > 1   \\
+    Q_0,                 & f \le 1
+    \label{eq:etf-4}
+  \end{cases}
+\end{equation}
 
-% We notice that most features we explored tend to prolong the signal duration except reducint the minimum $V_S$. \citet{o2009volcano} reported that intrinsic attenuation reduces coda wave duration without introducing waveform complexity. Thus, including a lower-velocity layer and stronger intrisic attenuation is likely to improve the fitting.
+\noindent in which $Q_0$ is a frequency-independent constant attenuation proportional to the velocity, and $\gamma$ is a power-law exponent describing the attenuation above 1 Hz \citep{withersMemoryEfficientSimulation2015}. Here, we adopt area-specific parameters suggested in the literature; for GVDA, we use $Q_{S,0}=0.05 \times V_S$ ($V_S$ in meters per second), $Q_{P,0}=2 \times Q_{S,0}$ , and $\gamma=0.6$ \citep[for southern Calfornia]{withersMemoryEfficientSimulation2015}, and for TKCH05, we use a model for $Q_{P,0}=Q_{S,0}=Q_0$, given by
+\begin{equation}
+  Q_{0}=\left\{\begin{array}{ll}
+    60,  & V_{S} \leq 600       \\
+    100, & 600<V_{S} \leq 1100  \\
+    150, & 1100<V_{S} \leq 2100 \\
+    \label{eq:etf-5}
+    200, & 2100<V_{S} \leq 3200 \\
+    300, & V_{S}>3200
+  \end{array}\right.
+\end{equation}
+\noindent in which $V_S$ is in meters per second, from the Japan Seismic Hazard Information Station (J-SHIS) and $\gamma=0.2$, following the study by \citet{nakajimaSeismicAttenuationNortheastern2013}. We discretize the velocity models using two partitions in our discontinuous mesh, with grid spacings small enough to resolve the minimum $V_S$ wavelengths (20 m and 14 m for the GVDA and TKCH05 cases, respectively), anywhere in the model with, at least, five points. In our simulations, the surface recordings at a neighboring outcrop site are deconvolved from its local subsurface property layers, up to the bottom of the simulation domain; the resulting three-component acceleration time series (converted to body forces in AWP-ODC-DM) are then distributed on the entire bottom surface of the computational domain, to generate a oneway upward propagating plane wave. We verified that such vertical-incident plane wave sources are reasonable approximations, considering our shallow simulation domains (0.4 km and 1 km deep at GVDA and TKCH05, respectively), as well as earthquake hypocenters at depths of 10 km+ and distances of tens of kilometers. We used an elastic boundary condition at the bottom grid boundary, which is transparent to downgoing waves, to avoid artificial resonance of the soil column \citep{roten3DSimulationsEarthquakes2012}. We part from the common way of placing the model base at the downhole site and have the input motion as the downhole motion, due to our boundary conditions. We perform the numerical simulations on the Oak Ridge National Laboratory Summit supercomputer, in which each of our simulations with the 3D model at TKCH05, including 64 million cells, requires a wall-clock time of 100 min on 32 graphic processing units for 750,000 timesteps. Similar computational requirements are needed for the 3D GVDA simulations.
 
-% Within 10-20 km away from the source, which is generally deemed to be dominated by source effects, velocity heterogeneities and topography can induce ground motion variability. SSHs are found to result more PGV amplification than topography, which almost has no influence; while topography increases the duration remarkably over the full bandwidth we studied. Considering the relatively moderate relief near the source, topographic effects should be underlined in ground motion prediction even in less mountainous reginos.
 
-% Based on accessibility of more accurate surface elevation information, mathematical descriptions of small-scale heterogeneities and frequency-dependent attenuation and community efforts in assessing shallow material structure, we explored various features and the complicated trade-offs between them. We have shown that physics-based deterministic numerical simulations are capable of capturing the most important characteristics of the ground motions incited by the $M_w$ 5.1 2014 La habra earthquake. Our results show that such high-frequency simulations can be a valuable complement to the stochastic models that evaluate seismic hazard up to 25 Hz. Because of our great advance in pushing up the frequency range of deterministic simulations (from 1-2 Hz in most previous simulations to 5 Hz), the uncertainties in stochastic methods generating higher-frequency synthetics can be reduced significantly.
-% The fact that the GOFs at lower frequencies tend to be higher than at high frequencies is attributed to lack of enough high-resolution geological structure. The best geologically-constrained fine structure is surface topography, which increases peak ground motions at mountain tops and yields stronger effects at higher frequency, especially decreasing the ground shaking amplitude and prolonging the duration at low reliefs. The inclusion of more realistic low velocities is of relative minor importance, due to its sparsity in the model. However, stations underlain by very soft soils, with $V_S$ as low as 200 m/s, can still experience at most 80\% overprediction in PGV that is not captured when velocities are clamped at a higher value, e.g. 500 m/s. Small-scale heterogeneities (SSHs), generally reduce the peak ground motions and increase the durations, in a way similar to that of topography. More importantly, the models with SSHs always generate a better fit in duration compared to the model without SSHs. The frequency-dependent attenuation mainly amplifies the ground motions, and is critical in fitting the spectra decay according to our examination of the high-frequency decay ($\kappa$) as a function of distance.
+\section{GVDA}\label{etf:gvda}
+The GVDA is located in a seismically active region of California, 7 km from the San Jacinto fault and 35 km from the San Andreas fault \citep[see \cref{fig:etf-1};][]{archuletaGarnerValleyDownhole1992}. The site is situated in a narrow valley within the Peninsular Ranges Batholith \citep{bonillaBoreholeResponseStudies2002}, 23 km east of Hemet and 20 km southwest of Palm Springs, California. The near-surface stratigraphy beneath GVDA consists of extensive lake-bed alluvium and decomposed crystalline rocks \citep{hillGeologyGarnerValley1981}. Soft silty and clayey sands makes up the top 18–25 m across the site \citep{steidlWhatReferenceSite1996}, followed by 50–60 m thick, decomposed, and weathered granite down to about 64–87 m, as constrained by seismic downhole testing and shallow and deep P–S velocity suspension logging \citep{gibbsNearsurfaceSwaveVelocities1989,stellerNewBoreholeGeophysical1996}. The GVDA site is equipped with multiple downhole accelerometers, at depths of 15, 22, 50, and 150 m that are capable of measuring accelerations from $3 \times 10^{-6}$ to $2.0g$ below 100 Hz. The 150 m deep accelerometer is the only downhole sensor that penetrates the granitic rock, which is used to compute TTFs in this study.
 
-% Generally speaking, the measurements related to peak values, response spectra and duration are almost always best predicted; while the fits of the Arias intensity, energy and Fourier amplitude spectra are more difficult to improve. Furthermore, among the poor measures, the large standard deviations of Arias and energy across various models indicate the even greater difficulty in fitting, in contrary to Anderson’s (\citeyear{andersonQuantitativeMeasureGoodnessOfFit2004}) speculation; while the Fourier spectra shows a very low standard deviation, which implies some systematic misfit. By examining the velocity profiles and FAS at rock sites, we found the unrealistic near-surface velocities in the CVM-S likely explains this misfit. Furthermore, introducing near-surface low velocities, e.g. via a $V_{S30}$-based method, can greatly improve the underprediction. [[Brief description of the refinement model up to 5 Hz]]
-% With the effects and importance of the feature summarized, a subset of our well-performed models with these features included, achieve a fair improvement in terms of the proposed GOF criterion. In contrast, the simplest models without incorporating any additional features yield consistently lower GOF scores with the increase of frequency. Our results suggest that the major source of misfits is the poor constraints in the underlying velocity model at the high resolution required for our high-frequency simulations.  The composite models that generated the best fit suggests that incorporating topography, frequency-dependent attenuations (e.g. $Q_S=0.05V_Sf^{0.6}$ or $Q_S=0.1V_Sf^{0.6}$) and SSHs is a valid supplement to the velocity model in numerical simulations.
-In the future, we expect advancements in community velocity models, with further calibrated features that are explored in this study, can help improve the fit to data. In addition, the computational cost is still a barrier for us to perform more detailed investigations, which will be partly solved once the AWP code with discontinuous mesh and topography is available. It will be possible to extend such studies to larger earthquakes, possibly with nonlinear effects, which remains a major concern for residents in Southern California.
+To be able to resolve frequencies up to 10 Hz at the GVDA site, we generated a mesh of size 4 km × 4 km × 0.4 km (length × width × depth), with mesh properties compressional wave velocity ($V_P$), $V_S$ and density from the 3D Community Velocity Model (CVM) S4.26.M01, which is developed and maintained by the Southern California Earthquake Center \citep[SCEC;][]{smallSCECUnifiedCommunity2017}. The borehole logs show $V_S$ of the near-surface soft soils between 180 and 220 m/s, with the value of $V_S$ smaller than 200 m/s only at depths between 1.4 and 2.8 m \citep{stellerNewBoreholeGeophysical1996}. The minimum velocity in our model was truncated at 200 m/s, which is about the average of the top 4 m, resolving frequencies up to 10 Hz, with, at least, five points per minimum S wavelength, using a smallest grid spacing of 4 m. The SCEC CVM S4.26.M01, however, fails to resolve the 3D Garner Valley structure to the accuracy required by our analysis, and we use the MRVBF method to describe the depth to bedrock instead.
 
+At every surface location, we first compute the MRVBF value and bedrock depth, as described in the Numerical simulations section. We then force the $V_P$, $V_S$ , and densities above the bedrock to be the same as those in the measured borehole log, while keeping the seismic velocities and densities unchanged in the bedrock. \Cref{fig:etf-2} illustrates how we estimate bedrock depth from the MRVBF values, using surface topography. The deeper parts of the valley are represented by larger MRVBF values. The areas with MRVBF smaller than the threshold value at 1.5 are shown in dark shading, corresponding to steeper terrain. The borehole site GVDA, at the center of the region, has a MRVBF value of 5.8 and bedrock depth of 64 m, consistent with the borehole log from \citet{gibbsNearsurfaceSwaveVelocities1989}. The 3D geometry inferred from the spatially varying bedrock depth is shown in the left panels of \Cref{fig:etf-3}, compared to the original borehole profile in the right panel.
+
+Although we computed the ETFs for all the selected 36 events (\cref{tb:etf-1,fig:etf-S1}), only one event (ID = 33) was used to generate the upgoing waves in the simulations and to compute the TTF. The selection of event ID 33 was arbitrary for two reasons: (1) the ETFs at GVDA show low interevent source variability, indicated by the narrow $\rm \sigma$ band in \Cref{fig:etf-4}, and (2) the modeling is constrained to linear wave propagation. The use of a realistic source allows straightforward extension to multiple sites, as well as to nonlinear analysis in the future. The source time function was obtained by deconvolving the surface recordings of this event at the neighboring outcrop site GVAR (see \cref{fig:etf-1}) to the maximum depth of our domain.
+
+The TTFs and ETFs for GVDA are compared in \Cref{fig:etf-4}. The two-sigma scatter of all the ETFs is fairly narrow above 1 Hz and not sensitive to the azimuths and distances of the events, which implies that the ETFs are primarily determined by the site characteristics, and confers greater predictive power on an ETF (and presumably also on a TTF). Although the peaks for the ETFs and both 3D and 1D TTFs generally occur near the same frequencies, the goodness of fit predicted from the 1D model (VR = 0.64) is significantly smaller compared to the 3D model (VR = 0.85). This result suggests that the shallow 3D structure contributes first-order effects to the local site amplification at GVDA (see \cref{etf:discussion}).
+
+\section{TKCH05}\label{etf:tkch05}
+The KiK-net strong-motion seismograph network in Japan provides, approximately, 700 sites, with pairs of surface and downhole seismographs installed that have recorded earthquakes with a wide range of magnitudes. KiK-net also provides geological and geophysical data, including velocity structure for each site, derived from borehole logs. \citet{thompsonTaxonomySiteResponse2012} analyzed the interevent variability and goodness of fit between SH1D models and data at 100 sites from KiK-net, and identified some sites where the standard 1D site response analysis provided poor results. Among these sites, we targeted TKCH05, which is located in Honbetsu, Hokkaido, Japan, to investigate the contributions from its underlying 3D structure on site effects. \Cref{fig:etf-5} shows the location of TKCH05, in a narrow valley surrounded by mountains. The large gradients of the surface topography at the valley boundaries suggest the presence of significant 3D variation of the bedrock interface below the valley. The stratigraphy at TKCH05 is, approximately, 6 m of soil and sandy gravel with $V_S$ = 140 m/s, overlying tens of meters of sandstone over gravel stone and siltstone \citep[see \cref{fig:etf-6};][]{nationalresearchinstituteforearthscienceanddisasterresilienceNIEDKNETKiKnet2019}. \Cref{tb:etf-2} lists the events included in our analysis of the ETFs at TKCH05 (see \cref{fig:etf-S2} for their locations and time series), among which the event with an ID of 1 was selected to generate the incoming waves in our simulations. As we did at site GVDA, we deconvolved the surface records at the closest outcrop site, F-net site URH, which is about 21.7 km away from TKCH05 to the domain bottom.
+
+\Cref{fig:etf-6} shows the downhole profile at TKCH05, and Figure 7a shows a comparison between the corresponding 1D TTF compared to the ETFs. The 1D TTF fails to match the frequency peaks and strongly overpredicts the amplifications at lower frequencies, producing a relatively low VR (VR = 0.35). We also considered the adjacent K-Net site HKD090, due to its proximity to TKCH05 (only 4 m relative distance), in our analysis. The available information from the measured $V_S$ profile at HKD090 only extends to a depth of about 18 m, but, varies notably from those at TKCH05, considering the close distance. Because the top layers are as thin as 2 m, it is possible that the accuracy was degraded when the downhole logging measurements of travel time were converted to piecewise constant profiles. For this reason, we tested a simplified profile combining the two borehole logs, by replacing the TKCH05 $V_S$ profile between 5 and 100 m, with an average value of 680 m/s. The adjustment reduces the strong discrepancy in shallow $V_S$ values between the two borehole logs and retains the travel time from the bedrock to the surface. The SH1D model with the simplified profile produces a poorer fit to the ETF (VR = 0.181) than that obtained using the TKCH05 profile. Although, the simplified profile agrees better with the location of the second spectral peak of the ETF, the overall response compares less favorably to that obtained using the original profile due to larger amplitudes, especially at frequencies between 1 and 3 Hz.
+
+Next, we extract our background 3D models at TKCH05 with a 1 km × 1 km × 1 km region, with the top boundary centered at TKCH05, from the Japanese national subsurface $V_S$ model provided by J-SHIS. The J-SHIS model provides $V_S$ and $V_P$ and density with a horizontal spatial resolution of 1 km. Along the vertical direction, J-SHIS provides the depths of 33 layers with various thicknesses. Each layer is homogeneous and of increasing $V_S$ with depth, ranging from 350 to 3400 m/s. Given the coarse horizontal resolution, the J-SHIS model is essentially 1D, with small stepwise discontinuities present close to the southern edge of the model (\cref{fig:etf-8}d). The bedrock depth was then estimated using the MRVBF method. The $V_S$ below the downhole array is 1100 m/s, which increases to 1700 m/s at the bottom of our domain (\cref{fig:etf-8}). Based on the surface $V_S$ of 140 m/s, we interpolated the initial mesh to a grid spacing of $\Delta{h}$ = 2.5 m in the top partition of the mesh, to ensure at least 5–6 points per minimum S wavelength. In the discontinuous mesh setup, the lower mesh partition starts at a depth of 400 m, with a grid spacing of 7.5 m. \Cref{fig:etf-7}a compares ETFs to TTFs, based on the 3D models generated by the MRVBF technique, as well as the soil profile at TKCH05 and our simplified profile. Compared to the 1D models, the 3D models are able to fit the ETFs much better, with VR values of 0.50 and 0.86 for the 3D models with the original and simplified profiles, respectively. The 3D models, while both producing a shift of the second peak compared with their corresponding 1D models, show remarkable improvement in the amplitudes of the first peak, especially when using the simplified profile. The results suggest that the simplified velocity profile, combining the borehole logs from the two adjacent sites, characterizes the local subsurface velocity structure below TKCH05 significantly better than the TKCH05 borehole log.
+
+In general, a site response model can be evaluated by comparing the predicted surface ground motions (obtained by convolving the TF with the records at the reference site), with those recorded at the site of interest. We follow the traditional procedure for the calculation of TFs, neglecting the phase in the convolution process and quantifying the goodness of fit by the amplitudes only. \Cref{fig:etf-7}b,c compares the 1.5-8 Hz band-pass filtered surface recordings to the predicted motions from TTFs, illustrating the improvement in synthetic waveforms, as compared to data obtained at TKCH05 using the 3D as compared to the 1D model.
+
+\section{Discussion}\label{etf:discussion}
+We have demonstrated for two borehole sites (GVDA and TKCH05) that site amplification estimation using TTFs can be significantly improved by including effects of the underlying 3D structure. However, the 3D TTFs still leave some room for improvement. A likely important cause of the remaining misfit between TTFs computed using 3D structure and the ETFs is the uncertainty in seismic velocity estimates as a function of depth. It is common practice in soil analysis to approximate the near-surface geology as a stack of layers with constant velocity. \citet{booreUsingSurfacesourceDownholereceiver2007} showed that the effects of approximating logging measurements with 10 m thick, constant-slowness layers are small for frequencies less than about 5 Hz. However, \citet{dayRMSResponseOnedimensional1996} examined analytically the relation between site response in the frequency domain and elastic structure and found that the spectral average of bandwidth ${\Delta{f}}$ is only constrained by the elastic structure up to a two-way travel-time depth of ${1/\Delta{f}}$. This means that the average TF (predominantly at higher frequencies) can be biased due to uncertainty in the shallow structure. Because the first layer is often thin, a bias in the thickness estimate can contribute relatively large error in the site effects.
+
+The deeper structure, in particular, the bedrock depth, can also be important in determining the TFs. In conventional 1D models, the bedrock topography is simplified as a layer with fixed depth; whereas, our approach incorporates lateral variations by mapping surface topography. The subsurface structure in our model is, therefore, composed of multiple irregular interfaces, each of which is anchored to the borehole log right beneath the site of interest. In some cases, the exact depth of the soil-bedrock interface is unclear. For example, the weathered granite boundary below the GVDA site is reported at 64 m by \citet{gibbsNearsurfaceSwaveVelocities1989} and 87 m by Steller \citet{stellerNewBoreholeGeophysical1996}. The two velocity profiles are similar, except for the bedrock depth (\cref{fig:etf-9}a). In the following discussion, the two models utilize their respective bedrock depth and velocity profiles. \Cref{fig:etf-9}b shows the TFs from two 3D models assembled with the Gibbs and Steller profiles (the latter shifted 1 m deeper than the reported value due to the 4 m spatial resolution of our model). The Steller model response matches the ETF at high frequencies better than that from the Gibbs model, whereas, the latter model fits better at 1.5–7 Hz, with a slightly better overall fit (VR = 0.85 vs. 0.82). It is noticeable that the Steller model, representing lower average velocity in the soil column, results in a shift of the peaks of the TF to the left at low frequencies. We conclude that both the lateral variation and the location of the subsurface strata are important in modeling the site response. The 3D-to-1D comparison shown in \Cref{fig:etf-4} indicates that the lateral variations lead to changes in both the amplitudes and the frequency of the TF, whereas the variability of the bedrock depth mainly results in shifts in frequency of the TF.
+
+Another source of uncertainty in the site amplification estimates arises from unconstrained (mostly high frequency) scattering effects from crustal SSHs, and we test the effects thereof from a range of different parameters of the von Karman autocorrelation functions. \Cref{fig:etf-10} shows the 3D TTFs modeled with a nine-realization ensemble of von Karman velocity and density perturbations, by varying the Hurst number from 0.05 to 0.15, the correlation length from 50 to 500 m, and the standard deviation of 5\% and 10\%, while keeping the horizontal-to-vertical anisotropy at 5. We find that the TTFs computed from these 3D models are relatively insensitive to the SSHs, except near the upper limit of our modeling bandwidth (> ~9 Hz). The median VR (0.83) of the resulting TTFs is similar to that without including the SSHs, suggesting that the random fields do not contribute first-order effects to the site amplification. However, our sensitivity study included only limited realizations for each set of von Karman parameters due to computational limitations, and, we recommend a more thorough analysis, estimating the uncertainty of the site amplification estimates arising from additional ensembles of statistical distributions of small-scale crustal perturbations.
+
+To better understand the reasons why the 3D models better predict the observed site amplification, as compared to their 1D counterparts, we show snapshots of wave propagation for our 3D and 1D (simplified) models of TKCH05 in \Cref{fig:etf-S3,fig:etf-S4}. The snapshots are extracted for frequencies between 4.5 and 5 Hz, in which the 3D TTF provides a much improved fit to the ETF, as compared to the 1D TTF. As expected, the 3D models naturally increase the complexity of the wave propagation compared to the SH1D model, for example, the presence of wave energy trapped in basins, and reflections at interfaces between geological units with different $V_S$ (\cref{fig:etf-S3}). For example, note the horizontally propagating energy in the upper tens of meters in the snapshots from the 3D model, naturally absent in the 1D results. Of course, the improvement in the site response from the 3D model depends on the accuracy of the added degrees of freedom.
+
+To further illustrate this added complexity, we compare the horizontal and vertical cumulative energy along the borehole profile (Fig. \Cref{fig:etf-11}a,b) to the theoretical (1D) response (Fig. \Cref{fig:etf-11}c) for different incidence angles at TKCH05. We carry out our analysis for the bandwidth 1.6–1.9 Hz, centered on the largest SH1D ETF peak at about 1.75 Hz (see  \cref{fig:etf-7}a). The depth-dependent theoretical particle velocities, with the internal reflections neglected, can be described as follows:
+
+\begin{equation}\label{eq:etf-6}
+  v(z, t)=\cos \left(\omega\left(t-\frac{z \cos \theta}{V_{S}}\right)\right)+\cos \left(\omega\left(t+\frac{z \cos \theta}{V_{S}}\right)\right)
+\end{equation}
+
+\noindent in which $z$ is the depth, $t$ is the time, $\omega$ is the angular frequency, and $\theta$ is the incidence angle. As inferred from the SH1D solution in \Cref{fig:etf-11}c, the peak at ~1.75 Hz is, primarily, due to a node at the downhole sensor location in the vertical-incidence response. This theoretical solution implies that a small departure from vertical incidence, which, in practice, is caused by interactions with the 3D bedrock interface, scatters some vertically propagating seismic waves to obliquely propagating waves, and moves the node to greater depth, thereby, increasing the response at the sensor depth point. Such wave scattering changes the energy distribution along depth, including the reduced horizontal-component energy near a depth of 100 m in the 3D model compared to the 1D model (\cref{fig:etf-11}a) and the increase in vertical-component energy (\cref{fig:etf-11}b). The results indicate that at TKCH05, the site response remains a first-order 1D resonance effect, but coupled with 3D effects from horizontally propagating waves, which, when included, greatly improves the fit to the ETF compared with the SH1D model.
+
+\section{Summary and Conclusions}\label{etf:conclusions}
+We present a method to obtain refined site effect measurements by taking into account 3D structural variation below a downhole array site and a path to refine estimates of the elastic properties of the underlying stratigraphy via the MRVBF technique. The approach requires layer properties (e.g., S-wave velocities) along a vertical profile (typically obtained from the downhole array) as well as regional elevation data, which is widely available for most areas.
+
+Application of the method to two sites, GVDA in southern California and TKCH05 in Japan, illustrates the extent of improvement over the conventional 1D site effect amplifications that can be expected. The relatively poor fit of the SH1D model at TKCH05 indicates that it deviates strongly from 1D behavior, supported by the complex 3D structure in the vicinity of the downhole array obtained by the MRVBF technique. Although significant improvement of the fit was obtained at GVDA as well, our results suggest that the medium below the borehole site is more horizontally stratified than is the case at TKCH05 (smaller improvements from including the effects of a MRVBFestimated 3D model). This interpretation is also supported by the horizontally stratified nature of the resulting 3D model around the GVDA site, except for smaller patches of near-surface low-velocity material produced by the method.
+
+Thus, our method is likely to improve the prediction of site response in the presence of significant 3D structure, as well as at sites with an oversimplified or otherwise less accurate $V_S$ profile. However, the accuracy of the site effects estimated by our proposed technique depends strongly on the fidelity of the available soil properties in the borehole, in particular at the upper end of our target bandwidth, near 10 Hz. The variability of the bedrock depth, beneath the site, as one of the controlling parameters in constructing our 3D model, can be a significant source of error in the prediction of the TF, by introducing frequency shifts at low frequencies. Finally, our results show that the improvement of the TTFs produced by incorporating small-scale crustal heterogeneities via a statistical model is secondary to that obtained by including 3D subsurface information.
+
+Our results generally support the conclusions by \citet{thompsonImpedimentsPredictingSite2009} that the theoretical formulation to map soil properties to site amplification largely limits our ability to accurately model site response transfer functions, rather than the uncertainties of the soil property. However, our method provides a realistic constitutive framework, suitable for predicting site response, regardless of the spatial variability in material properties across the site. Furthermore, this approach can be extended to explore nonlinear soil effects, another important component of site effects not explored here. For future work, we also recommend that the assumption of the quantitative relationship between topography and bedrock depth receive further scrutiny with 3D simulations at more sites, especially where the interevent variability is large.
 
 \section*{Data and Resources}
-The UCVM program used to extract velocity meshes can be obtained from SCEC on \url{https://github.com/SCECcode/UCVMC} (last accessed 12/2020). The simulations were performed on Summit at the Oak Ridge Leadership Computing Facility in Tennessee. Most of the data-processing work was done using Python and the Generic Mapping Tools package (\url{https://www.generic-mapping-tools.org}, last accessed 04/2021).
-
+The seismograms and borehole log data used in this study were collected from the National Research Institute for Earth Science and Disaster Prevention \citep{nationalresearchinstituteforearthscienceanddisasterresilienceNIEDKNETKiKnet2019} in Japan for TKCH05, and the Earthquake Engineering Group, Earth Research Institute at University of California, Santa Barbara (UCSB) (\url{http://nees.ucsb.edu/}) for Garner Valley Downhole Array (GVDA). The transfer functions for all earthquakes and simulations at both sites used in the analysis can be obtained from the authors upon request. Some plots were made using the Generic Mapping Tools (GMT) version 6.0.0 (https:// www.generic-mapping-tools.org/; \citealt{wesselGenericMappingTools2019}). We used the open-source project ObsPy version 1.2.0 (\url{https://github.com/obspy/obspy}) to compute the Konno–Ohmachi smoothing window for Transfer functions (TFs). All websites were last accessed in June 2020. We included figures on the event locations and recorded accelerations, as well as snapshots of the 3D and 1D simulations, for GVDA and TKCH05 in the supplemental material to this article.
 
 \section*{Acknowledgements}
 \addcontentsline{toc}{section}{\protect\numberline{}Acknowledgements}
 
-This research was supported through the U.S. Geological Survey External Program (award \#G19AS00021), as well as the Southern California Earthquake Center (SCEC; Contribution Number xx). SCEC is funded by the National Science Foundation (NSF) Cooperative Agreement EAR-1600087 and the U.S. Geological Survey (USGS) Cooperative Agreement G17AC00047. We thank Robert W. Graves for providing the source models and Fabio Silva for providing the station records of the 2014 La Habra earthquake.
+Computations in this project were performed on Rhea and Summit, which are part of the Oak Ridge Leadership Facility at the Oak Ridge National Laboratory. This research was supported by the Southern California Earthquake Center (SCEC; Contribution Number 10885) and by the National Science Foundation under Grant Number EAR-1664203. SCEC is funded by National Science Foundation (NSF) Cooperative Agreement EAR-1600087 and U.S. Geological Survey (USGS) Cooperative Agreement G17AC00047. \Cref{fig:etf-6}a is reprinted from \citet{thompsonTaxonomySiteResponse2012}. The authors thank two anonymous reviewers and the Associate Editor Jim Kaklamanos for valuable suggestions that helped to improve this article.
 
-\Cref{chap:highf}, in full, is a reformatted version of a paper currently being prepared: Hu, Z., Olsen, K.B. and Day, S.M. (2021), 0-5 Hz Deterministic 3D Ground Motion Simulations for the 2014 $M_w$ 5.1 LaHabra Earthquake. The dissertation author was the primary investigator and author of this paper.
+\Cref{chap:etf}, in full, is a reformatted version of the material as it appears in Bulletin of the Seismological Society of America: Hu, Z., Roten, D., Olsen, K. B, and Day, S.M. (2020). Modeling of Empirical Transfer Functions with 3D Velocity Structure. \emph{Bulletin of the Seismological Society of America}. The dissertation author was the primary investigator and author of this paper.
 
 \newpage
 \section*{Tables and Figures}
@@ -193,225 +157,203 @@ This research was supported through the U.S. Geological Survey External Program 
 % \begin{adjustbox}{width=\textwidth,center}
 % \begin{tabular}{|c|cccccccccccccccccccccccccccccccc|c|}
 % \end{tabular}
-% \label{tab:5-S3}
+% \label{tb:5-S3}
 % \end{adjustbox}
 % \end{sidewaystable}
 
+% resizebox{\columnwidth}{!}{...} to adjust table width 
 \begin{table}[!ht]
   \vrule depth12pt width 0pt
-  \caption{Simulation parameters used for the deterministic ground motion simulations of the 2014 La Habra earthquake.}
-  \label{tab:highf-1}
-  \resizebox{0.7\textwidth}{!}{%
-    \renewcommand{\arraystretch}{1.2}%
-    \begin{tabular}{@{}lc@{}}
+  \caption{Earthquakes Used to Compute the Empirical Transfer Functions at Garner Valley Downhole Array (GVDA)}
+  \label{tb:etf-1}
+  \resizebox{\columnwidth}{!}{\begin{tabular}{@{}ccccccccc@{}}
       \toprule
-      \textbf{Model}               &  \\ \midrule
-      Topography                    & Yes\\
-      Length                        & 147.840 km\\
-      Width                         & 140.400 km\\
-      Depth                         & 58.000 km\\
-      Northwest corner              & \multicolumn{1}{l}{-118.0154409, 34.8921683}\\
-      Southwest corner              & \multicolumn{1}{l}{-118.9774168, 33.9093124}\\
-      Southeast corner              & \multicolumn{1}{l}{-117.7401908, 33.0695780}\\
-      Northeast corner              & \multicolumn{1}{l}{-116.7729754, 34.0429241}\\[1.5mm]%  \midrule
-      \textbf{Spatial resolution}   & \multicolumn{1}{l}{}\\[1mm]%  \midrule
-      Maximum frequency             & 5 Hz\\
-      Minimum $V_S$                 & 500 m/s\\
-      Points per minimum wavelength & 5\\
-      Grid discretization           & 20 m\\
-      Number of cells               & 150,486,336,000\\
-      Number of GPU processors      & 1,512\\
-      Wall-clock time               & 5 hr\\[1.5mm]% \midrule
-      \textbf{Temporal resolution}  & \multicolumn{1}{l}{}\\[1mm]% \midrule
-      Time discretization           & 0.0006 s\\
-      Simulation time               & 120 s\\
-      Number of timesteps           & 200,000\\ \bottomrule
-    \end{tabular}%
-  }
+      \textbf{ID}              &
+      \textbf{Date (yy/mm/dd)} &
+      \textbf{Time (hh:mm:ss)} &
+      \textbf{$M_L$}           &
+      \textbf{Latitude (°)}    &
+      \textbf{Longitude (°)}   &
+      \textbf{Depth (km)}      &
+      \textbf{Distance (km)}   &
+      \textbf{Azimuth (°)}                                                                       \\ \midrule
+      1                        & 7/6/02   & 05:11:26 & 4.3 & 33.872  & -116.212 & 5  & 48  & 242 \\
+      2                        & 7/6/13   & 14:50:34 & 3.4 & 33.697  & -116.042 & 12 & 59  & 267 \\
+      3                        & 8/7/29   & 18:42:16 & 5.4 & 33.953  & -117.761 & 15 & 106 & 108 \\
+      4                        & 8/12/06  & 04:18:43 & 5.1 & 34.813  & -116.419 & 7  & 130 & 190 \\
+      5                        & 9/3/13   & 03:42:22 & 3   & 34.016  & -117.197 & 15 & 62  & 129 \\
+      6                        & 9/11/15  & 07:54:23 & 3.3 & 33.914  & -117.059 & 14 & 45  & 127 \\
+      7                        & 10/3/13  & 16:32:32 & 4.2 & 32.991  & -116.358 & 6  & 81  & 339 \\
+      8                        & 10/6/15  & 04:26:58 & 5.7 & 32.7    & -115.921 & 5  & 129 & 327 \\
+      9                        & 10/7/08  & 01:07:11 & 3   & 33.445  & -116.406 & 12 & 35  & 315 \\
+      10                       & 10/11/17 & 09:46:15 & 3.2 & 33.987  & -117.159 & 15 & 57  & 128 \\
+      11                       & 11/6/14  & 08:25:41 & 3.6 & 33.69   & -116.74  & 18 & 7   & 111 \\
+      12                       & 11/11/19 & 20:32:21 & 3.9 & 33.245  & -116.265 & 10 & 61  & 321 \\
+      13                       & 12/3/30  & 06:09:27 & 3.3 & 33.304  & -116.879 & 15 & 45  & 25  \\
+      14                       & 12/5/18  & 10:37:12 & 3.6 & 33.319  & -116.402 & 8  & 46  & 327 \\
+      15                       & 12/8/08  & 16:33:22 & 4.5 & 33.904  & -117.791 & 10 & 107 & 105 \\
+      16                       & 12/8/27  & 04:41:37 & 4.9 & 33.021  & -115.519 & 4  & 129 & 304 \\
+      17                       & 12/10/02 & 08:28:15 & 4.1 & 32.805  & -116.144 & 10 & 108 & 333 \\
+      18                       & 13/03/11 & 16:56:06 & 4.7 & 33.502  & -116.457 & 13 & 27  & 313 \\
+      19                       & 13/03/27 & 17:50:29 & 3.4 & 33.495  & -116.445 & 8  & 29  & 312 \\
+      20                       & 14/01/16 & 07:40:06 & 3.6 & 33.829  & -117.687 & 10 & 95  & 101 \\
+      21                       & 14/03/29 & 04:09:42 & 5.1 & 33.932  & -117.917 & 5  & 119 & 105 \\
+      22                       & 14/05/19 & 20:08:52 & 3.8 & 34.253  & -116.825 & 8  & 66  & 168 \\
+      23                       & 14/07/10 & 20:41:44 & 3.2 & 33.505  & -116.507 & 15 & 24  & 320 \\
+      24                       & 14/11/03 & 08:53:35 & 3.3 & 34.017  & -117.232 & 18 & 65  & 127 \\
+      25                       & 14/12/04 & 16:53:21 & 3.6 & 33.963  & -116.635 & 16 & 33  & 186 \\
+      26                       & 15/05/31 & 13:02:56 & 3.6 & 33.313  & -116.282 & 13 & 54  & 317 \\
+      27                       & 16/01/09 & 11:43:11 & 3.3 & 33.66   & -116.774 & 14 & 9   & 84  \\
+      28                       & 16/02/14 & 09:01:10 & 3.4 & 33.892  & -117.118 & 14 & 48  & 121 \\
+      29                       & 16/06/10 & 08:04:39 & 5.2 & 33.431  & -116.443 & 12 & 34  & 321 \\
+      30                       & 16/09/26 & 14:31:08 & 4.3 & 33.298  & -115.714 & 2  & 98  & 295 \\
+      31                       & 17/06/25 & 13:53:25 & 3.5 & 34.001  & -116.903 & 14 & 43  & 150 \\
+      32                       & 17/12/09 & 20:45:24 & 3.5 & 33.4987 & -116.801 & 5  & 22  & 32  \\
+      33                       & 18/04/23 & 00:46:09 & 3.9 & 33.921  & -116.322 & 8  & 43  & 229 \\
+      34                       & 18/05/19 & 19:26:51 & 3.5 & 33.4958 & -116.808 & 3  & 23  & 33  \\
+      35                       & 18/08/04 & 13:48:49 & 3.1 & 33.9323 & -116.828 & 6  & 33  & 154 \\
+      36                       & 18/09/01 & 16:50:29 & 3.1 & 33.4878 & -116.807 & 2  & 24  & 31  \\ \bottomrule
+    \end{tabular}}
 \end{table}
 \clearpage
 
-\begin{table}[!ht]
-  \begin{threeparttable}
-    \vrule depth12pt width 0pt
-    \centering
-    \caption{Summary and main features of the models used in this study.}
-    \label{tab:highf-2}
-    \resizebox{\textwidth}{!}{%
-      \renewcommand{\arraystretch}{1.4}%
-      \begin{tabular}{@{}cccccc@{}}
-        \toprule
-        Model ID & Topography & $Q(f)$\tnote{\textsuperscript{*}} & SSH\tnote{\textdagger} & $V_S$ Taper Depth (m) & Minimum $V_S$ (m/s) \\ \midrule
-        1        & Yes        & $Q_S=0.1V_Sf^{0.6}$               & No                     & 1000                  & 500                 \\
-        2        & Yes        & $Q_S=0.1V_Sf^{0.3}$               & No                     & 1000                  & 500                 \\
-        3        & Yes        & $Q_S=0.1V_S$                      & No                     & 1000                  & 500                 \\
-        4        & Yes        & $Q_S=0.075V_Sf^{0.4}$             & No                     & 1000                  & 500                 \\
-        5        & Yes        & $Q_S=0.05V_Sf^{0.6}$              & No                     & 1000                  & 500                 \\
-        6        & Yes        & $Q_S=0.1V_Sf^{0.6}$               & No                     & 700                   & 500                 \\
-        7        & Yes        & $Q_S=0.1V_Sf^{0.6}$               & No                     & 350                   & 500                 \\
-        8        & Yes        & $Q_S=0.1V_Sf^{0.6}$               & No                     & 0                     & 500                 \\
-        9        & Yes        & $Q_S=0.1V_Sf^{0.35}$              & $\sigma=5\%$,$a=5000m$ & 1000                  & 500                 \\
-        10       & No         & $Q_S=0.1V_Sf^{0.6}$               & No                     & 1000                  & 500                 \\
-        11       & No         & $Q_S=0.1V_Sf^{0.6}$               & No                     & 700                   & 500                 \\
-        12       & No         & $Q_S=0.1V_Sf^{0.6}$               & No                     & 350                   & 500                 \\
-        13       & No         & $Q_S=0.1V_Sf^{0.6}$               & No                     & 0                     & 500                 \\
-        14       & No         & $Q_S=0.1V_S$                      & No                     & 0                     & 500                 \\
-        15       & No         & $Q_S=0.1V_S$                      & No                     & 0                     & 200                 \\\bottomrule
-        \\[-5mm]
-      \end{tabular}%
-    }
-    \begin{tablenotes}
-      \item[\textsuperscript{*}] \footnotesize $Q_P=2Q_S$\\[-10pt]
-      \item[\textdagger] \footnotesize When included, hurst number = 0.05, Horizontal to vertical correlation length ratio = 5
-    \end{tablenotes}
-  \end{threeparttable}
-\end{table}
 \clearpage
+\begin{table}[!ht]
+  \vrule depth12pt width 0pt
+  \caption{Earthquakes Used to Compute the Empirical Transfer Functions at TKCH05}
+  \label{tb:etf-2}
+  \resizebox{\columnwidth}{!}{\begin{tabular}{@{}ccccccccc@{}}
+      \toprule
+      ID & Date (yy/mm/dd) & Time (hh:mm:ss) & $M_w$ & Latitude (°) & Longitude (°) & Depth (km) & Distance (km) & Azimuth (°) \\ \midrule
+      1  & 8/8/29          & 23:41:00        & 4.1   & 42.935       & 144.035       & 96         & 40            & 301         \\
+      2  & 8/11/09         & 09:11:00        & 3.8   & 42.712       & 143.698       & 93         & 46            & 352         \\
+      3  & 9/1/11          & 14:57:00        & 4.7   & 42.593       & 143.415       & 68         & 61            & 16          \\
+      4  & 9/2/28          & 09:36:00        & 5.3   & 42.583       & 142.188       & 113        & 131           & 63          \\
+      5  & 9/3/20          & 15:52:00        & 5     & 42.6         & 144.535       & 64         & 95            & 307         \\
+      6  & 9/6/05          & 12:30:00        & 6.4   & 41.812       & 143.62        & 31         & 145           & 360         \\
+      7  & 10/1/15         & 03:46:00        & 5     & 42.352       & 143.117       & 51         & 95            & 26          \\
+      8  & 10/4/09         & 03:41:00        & 4.8   & 42.917       & 144.722       & 57         & 93            & 284         \\
+      9  & 10/7/08         & 21:23:00        & 4.7   & 42.573       & 144.528       & 59         & 96            & 309         \\
+      10 & 10/7/28         & 08:06:00        & 4.5   & 42.337       & 143.798       & 56         & 88            & 350         \\
+      11 & 10/10/14        & 22:59:00        & 5.5   & 42.312       & 143.068       & 53         & 101           & 27          \\
+      12 & 12/3/11         & 17:33:00        & 4.4   & 42.537       & 143.265       & 63         & 71            & 24          \\
+      13 & 12/3/14         & 19:49:00        & 6     & 40.68        & 144.967       & 69         & 293           & 337         \\
+      14 & 12/7/22         & 13:42:00        & 5.1   & 42.488       & 143.025       & 61         & 85            & 35          \\
+      15 & 12/8/22         & 10:33:00        & 5.2   & 42.347       & 143.052       & 53         & 98            & 29          \\
+      16 & 12/10/26        & 19:52:00        & 3.7   & 42.702       & 143.212       & 104        & 57            & 36          \\
+      17 & 12/11/19        & 10:37:00        & 4.1   & 42.773       & 143.942       & 103        & 47            & 326         \\
+      18 & 13/03/09        & 21:16:00        & 5     & 43.13        & 144.77        & 101        & 94            & 269         \\
+      19 & 13/05/17        & 04:20:00        & 4.3   & 42.672       & 143.417       & 74         & 53            & 18          \\
+      20 & 13/08/22        & 15:53:00        & 4.8   & 42.318       & 142.995       & 54         & 103           & 30          \\
+      21 & 13/10/21        & 12:33:00        & 4.6   & 42.32        & 143.047       & 50         & 101           & 28          \\
+      22 & 14/04/21        & 16:46:00        & 4.2   & 42.492       & 143.563       & 77         & 70            & 4           \\
+      23 & 15/03/25        & 09:34:00        & 5     & 42.352       & 143.095       & 50         & 96            & 27          \\
+      24 & 15/08/14        & 13:43:00        & 5.1   & 42.752       & 143.112       & 80         & 58            & 45          \\
+      25 & 15/09/26        & 18:49:00        & 4.5   & 42.212       & 141.957       & 94         & 170           & 54          \\
+      26 & 15/11/11        & 00:50:00        & 3.9   & 42.955       & 143.758       & 116        & 22            & 328         \\
+      27 & 16/07/24        & 11:51:00        & 4.9   & 42.873       & 143.173       & 96         & 46            & 53          \\
+      28 & 16/09/07        & 18:42:00        & 4.7   & 42.493       & 142.68        & 110        & 104           & 48          \\
+      29 & 16/10/09        & 03:36:00        & 3.9   & 42.877       & 143.923       & 115        & 37            & 317         \\
+      30 & 16/10/12        & 04:02:00        & 5     & 42.325       & 143.042       & 50         & 100           & 28          \\
+      31 & 17/02/27        & 18:10:00        & 4.7   & 42.348       & 143.048       & 52         & 98            & 29          \\
+      32 & 17/03/14        & 12:57:00        & 4.7   & 42.815       & 142.7         & 82         & 82            & 66          \\
+      33 & 17/04/30        & 23:42:00        & 5.4   & 42.322       & 143.07        & 53         & 99            & 27          \\
+      34 & 17/09/10        & 17:44:00        & 5.6   & 41.758       & 142.877       & 43         & 163           & 22          \\
+      35 & 17/11/03        & 12:45:00        & 5     & 42.563       & 143.748       & 66         & 63            & 350         \\
+      36 & 18/04/14        & 04:00:00        & 5.4   & 43.175       & 145.737       & 53         & 172           & 267         \\ \bottomrule
+    \end{tabular}}
+\end{table}
+
 
 % %%%%%%%%%%%%% figures 
 
+\clearpage
 \begin{figure}[!ht]
   \centering
-  \includegraphics[width=0.9\textwidth]{figures/figure_highf_1.png}
-  \caption{Simulation domain for the La Habra earthquake (purple solid rectangle) and locations of 259 strong motion stations (black dots). The geographical coordinates of the corners of the simulated domain is listed in \cref{tab:highf-1}, which is used in subsequency map views. [The names stations are just random sites, may be changed later]}
-  \label{fig:highf-1}
+  \includegraphics[width=0.9\textwidth]{figures/figure_etf_1.pdf}
+  \caption{Site map of Garner Valley Downhole Array (GVDA), denoted by the star. The rectangle depicts the extent of the modeling domain, where the contours depict elevation in meters. The triangle denotes a nearby outcrop site GVAR. The color version of this figure is available only in the electronic edition.}
+  \label{fig:etf-1}
 \end{figure}
-\clearpage
 
+\clearpage
 \begin{figure}[!ht]
   \centering
-  \includegraphics[width=0.9\textwidth,height=0.85\textheight,keepaspectratio]{figures/figure_highf_2.png}
-  \caption{Illustration of the imprint of small-scale heterogeneities at the surface. (a) $V_S$ extracted from the CVM-S. (b) Same as (a) but superimposed with a statistical model of heterogeneities with a correlation length of 100 m, anisotropy factor of 5, Hurst number of 0.05 and standard deviation of 5\%. The epicenter for the La Habra earthquake is depicted with a star.}
-  \label{fig:highf-2}
+  \includegraphics[width=0.9\textwidth]{figures/figure_etf_2.pdf}
+  \caption{(a) Multiresolution index of valley bottom flatness (MRVBF) and (b) the bedrock depth map surrounding GVDA, which is depicted by a triangle in both figures. (c) The mapping function from MRVBF to bedrock depth, with GVDA marked with an asterisk. The color version of this figure is available only in the electronic edition.}
+  \label{fig:etf-2}
 \end{figure}
-\clearpage
 
-\begin{figure}[!ht]
-  \includegraphics[width=0.9\textwidth,height=0.9\textheight,keepaspectratio]{figures/figure_highf_3.pdf}
-  \caption{Source models used in this study. Sources 1, 2 and 3 (from left to right in the first row) are characterized by their hypocenter depths at 5, 5.5 and 6 km, respectively. The contours represent rupture time at a 0.4 s interval starting from 0. Source 1 is the default source model used elsewhere in this paper.}
-  \label{fig:highf-3}
-\end{figure}
 \clearpage
-
-\begin{figure}[!ht]
-  \includegraphics[width=0.9\textwidth,height=0.9\textheight,keepaspectratio]{figures/figure_highf_4.png}
-  \caption{PGVs for sources 1, 2 and 3 (from left to right; see \cref{fig:highf-3}). The top and bottom rows represent the band-pass filtered results for 0.15-2.5 Hz and 2.5-5 Hz, respectively. The star denotes the epicenter.}
-  \label{fig:highf-4}
-\end{figure}
-\clearpage
-
 \begin{figure}[!ht]
   \centering
-  \includegraphics[width=0.9\textwidth,height=0.9\textheight,keepaspectratio]{figures/figure_highf_5.pdf}
-  \caption{Application of the SH1D method upon an example site. (a) shows the $V_S$ profile extracted from CVM-S (red dashed curve) and the one clamped at 500 m/s (blue). (b) shows the SH1D response ratio between the profiles without clamping and with clamping of 500 m/s. (c) shows the synthetics from a 3D simulation using the clamping profile, and after convolving the SH1D response ratio in frequency domain. (d) shows the Fourier amplitude spectra corresponding to the waveforms in (c).}
-  \label{fig:highf-5}
+  \includegraphics[width=0.9\textwidth]{figures/figure_etf_3.pdf}
+  \caption{Cross sections of $V_S$ in the 3D mesh (see \cref{fig:etf-2}) intersecting GVDA along (a) A–A' and (c) B–B'; the downhole accelerometer is denoted with the asterisk. (b) The 1D $V_S$ profile, with its location denoted by the dashed line in the left panels, obtained from the borehole log, and used in the SH1D model. The color version of this figure is available only in the electronic edition.}
+  \label{fig:etf-3}
 \end{figure}
+
 \clearpage
-
-% \begin{figure}[!ht]
-%   \centering
-%   \includegraphics[width=0.9\textwidth,height=0.9\textheight,keepaspectratio]{figures/figure_highf_6.pdf}
-%   \caption{Histogram of the difference between the model with minimum $V_S$ of 200 m/s and the model with minimum $V_S$ of 500 m/s. The definition of percent difference is the same as in \cref{fig:highf-5}.
-%   }
-%   \label{fig:highf-6}
-% \end{figure}
-% \clearpage
-
 \begin{figure}[!ht]
   \centering
-  \includegraphics[width=0.9\textwidth,height=0.9\textheight,keepaspectratio]{figures/figure_highf_7.png}
-  \caption{Comparison of interpolated PGVs measured at 259 stations, depicted by triangles, for (a) data and (b) synthetics using our reference model (including topography, 1000 m shallow velocity refinement and frequency-dependent attenuation $Q_S=0.1V_Sf^{0.6}$, $Q_P=2Q_S$). The star denotes the epicenter. (c) PGV against $R_{hypo}$ for data and synthetics. The left and right columns show band-limited results for 0.15-2.5 Hz, and 2.5-5 Hz, respectively.
-  }
-  \label{fig:highf-7}
+  \includegraphics[width=0.9\textwidth]{figures/figure_etf_4.pdf}
+  \caption{Comparison between the theoretical transfer functions (TTFs) computed using the 3D model and the SH1D model at GVDA, with the two-sigma scatter of empirical transfer functions (ETFs) shaded in gray. The color version of this figure is available only in the electronic edition.}
+  \label{fig:etf-4}
 \end{figure}
-\clearpage
 
+\clearpage
 \begin{figure}[!ht]
   \centering
-  \includegraphics[width=0.9\textwidth,height=0.9\textheight,keepaspectratio]{figures/figure_highf_8.png}
-  \caption{Percent difference of PGV (the first row) and DUR (the second row) at the surface determined by the model with topography and the model without topography for (left) 0.15-1 Hz, (center) 0.15-2.5 Hz,, and (right) 2.5-5 Hz. The star denotes the epicenter.
-  }
-  \label{fig:highf-8}
+  \includegraphics[width=0.9\textwidth]{figures/figure_etf_5.pdf}
+  \caption{Site map of TKCH05, denoted by the star. The rectangle depicts the extent of the modeling domain, where the contours depict elevation in meters. The color version of this figure is available only in the electronic edition.}
+  \label{fig:etf-5}
 \end{figure}
-\clearpage
 
+\clearpage
 \begin{figure}[!ht]
   \centering
-  \includegraphics[width=0.9\textwidth,height=0.9\textheight,keepaspectratio]{figures/figure_highf_9.pdf}
-  \caption{The FAS computed from records and models with various attenuation models. The left (right) row shows horizontal (vertical) component. The top row shows the FAS amplitudes and the bottom show bias between models and records, calculated as 10-based log between simutation results and data. All models are based on the reference model except for different attenuation models. The solid line is the median FAS over all 259 stations; the shade depicts the 95\% confidence interval (CI) and the dashed lines denote one standard deviation centered at the median.
-  }
-  \label{fig:highf-9}
+  \includegraphics[width=0.9\textwidth]{figures/figure_etf_6.pdf}
+  \caption{(a) Borehole log at TKCH05 (from \citealt{thompsonTaxonomySiteResponse2012}). (b) Borehole $V_S$ profiles at TKCH05 and HKD090, as well as for our simplified 1D model. The color version of this figure is available only in the electronic edition.}
+  \label{fig:etf-6}
 \end{figure}
-\clearpage
 
+\clearpage
 \begin{figure}[!ht]
   \centering
-  \includegraphics[width=0.9\textwidth,height=0.9\textheight,keepaspectratio]{figures/figure_highf_10.png}
-  \caption{Spatial distribution of the bias in the PGV. The bias values are computed as the base 10 logarithm of the ratio of the PGV from the simulations over the PGV in records at each validation site. The positive value represents overprediction in the simulation, and negative values indicate otherwise. (d) The bias of PGV from the three $Q$ models versus hypocentral distance.
-  }
-  \label{fig:highf-10}
+  \includegraphics[width=0.9\textwidth]{figures/figure_etf_7.pdf}
+  \caption{(a) Comparison between TTFs and the two-sigma scatter of the ETF for 3D and 1D models at TKCH05. Solid and dashed lines without markers are the 3D and 1D models based on the borehole log profile, respectively; solid and dashed lines with diamond markers depict the 3D and 1D models, based on the simplified downhole profile. (b,c) Comparison of 1.5–8 Hz observed east–west component surface ground motions with those obtained from convolution of the downhole records with the TTFs from models using the simplified profile for the (b) 3D model and (c) 1D model. The color version of this figure is available only in the electronic edition.}
+  \label{fig:etf-7}
 \end{figure}
+
 \clearpage
-
-
 \begin{figure}[!ht]
   \centering
-  \includegraphics[width=0.9\textwidth,height=0.9\textheight,keepaspectratio]{figures/figure_highf_11.png}
-  \caption{Comparison of PGV (top) and DUR (bottom) at the surface from the model including SSH with $\sigma = 5\%$ and $a = 5000$ m versus the reference model . The left and right columns are for bandwidths 0.15-2.5 Hz and 2.5-5 Hz, respectively. The colormap indicates the percent difference, calculated in the same way as \Cref{fig:highf-5}, between the model with SSH and the model without SSH. The star depicts the epicenter.
-  }
-  \label{fig:highf-11}
+  \includegraphics[width=0.9\textwidth]{figures/figure_etf_8.pdf}
+  \caption{(a) MRVBF and (c) depth to bedrock in the vicinity of TKCH05, with the site location denoted by the triangle. (b) West–east A–A' and (d) north–south B–B' cross sections intersecting TKCH05, the downhole sensor is marked with the asterisk. The color version of this figure is available only in the electronic edition.}
+  \label{fig:etf-8}
 \end{figure}
-\clearpage
 
+\clearpage
 \begin{figure}[!ht]
   \centering
-  \includegraphics[width=0.9\textwidth,height=0.9\textheight,keepaspectratio]{figures/figure_highf_12.pdf}
-  \caption{Probability density histogram of the difference between the model with SSH ($\sigma = 5\%$ and $a = 500$ m) and the reference model without SSHs. The definition of percent difference (x-axis) is the same as in \Cref{fig:highf-11}.
-  }
-  \label{fig:highf-12}
+  \includegraphics[width=0.9\textwidth]{figures/figure_etf_9.pdf}
+  \caption{(a) The Gibbs and Steller velocity profiles at GVDA, in which the bedrock depth is 64 (solid line) and 88 m (dashed line), respectively. (b) Comparison between the two-sigma scatter of the ETFs (gray shaded) and the TTFs from the 3D models assembled with the Gibbs and Steller profiles, respectively. The color version of this figure is available only in the electronic edition.}
+  \label{fig:etf-9}
 \end{figure}
-\clearpage
 
+\clearpage
 \begin{figure}[!ht]
   \centering
-  \includegraphics[width=0.9\textwidth,height=0.9\textheight,keepaspectratio]{figures/figure_highf_13.pdf}
-  \caption{Bias of FAS on the (a) east-west, (b) north-south and (c) vertical components, calculated from models labeled by their IDs. A positive (negative) value depicts overprediction (underprediction). The left column shows type A sites, which are well constrained by geological information and right right column shows type (B) sites which are poorly constrained in CVM-S. The solid line is the median of FAS, where the narrow band is the 95\% confidence interval of the median, and the dashed lines depict the standard deviation centered at the median.
-  }
-  \label{fig:highf-13}
+  \includegraphics[width=0.9\textwidth]{figures/figure_etf_10.pdf}
+  \caption{Comparison between the median ensemble ETF, the TTF from the 3D model without and with small-scale heterogeneities (SSHs) at TKCH05. The gray shaded region is the range of maximum and minimum values encountered in TTFs from these realizations of SSHs. The color version of this figure is available only in the electronic edition.}
+  \label{fig:etf-10}
 \end{figure}
-\clearpage
 
+\clearpage
 \begin{figure}[!ht]
   \centering
-  \includegraphics[width=0.9\textwidth,height=0.9\textheight,keepaspectratio]{figures/figure_highf_14.pdf}
-  \caption{
-  Density histogram of percent difference of PGV (same as in \cref{fig:highf-8}) calculated from models with topography compared to models without topography for 0.15-2.5 Hz and 2.5-5 Hz. The y-axis is topographic curvature, using a smoothing window of 640 m. The first row (a and b) shows models with an 1000 m shallow $V_S$ taper and the bottom row (c and d) shows models without velocity taper. The darker color denotes more grid points and the lighter color denotes the opposite. Note that equally dark color does not indicate equal number of grid points in a single plot, i.e. at a certain curvature, the darkest color denotes the percent difference of PGV from the most points among all points with this curvature.
-  }
-  \label{fig:highf-14}
+  \includegraphics[width=0.9\textwidth]{figures/figure_etf_11.pdf}
+  \caption{Energy on the (a) horizontal and (b) vertical components at the site TKCH05. (c) Total energy along depth using the simplified velocity profile at TKCH05 with different incidence angles. The gray horizontal line, at around 100 m depth, depicts the downhole site depth. The color version of this figure is available only in the electronic edition.}
+  \label{fig:etf-11}
 \end{figure}
-\clearpage
-
-
-\begin{figure}[!ht]
-  \centering
-  \includegraphics[width=0.9\textwidth,height=0.9\textheight,keepaspectratio]{figures/figure_highf_15.pdf}
-  \caption{$\kappa$ calculated for various different $Q(f)$ models from the FAS in bandwidth 2-5 Hz. (a) Average $\kappa$ value for stacked FAS over all stations. The labels denote their model ID (see \cref{tab:highf-2}) as well as the attenuation model. (b) Average $\kappa$ values calculated at stations grouped at a 5 km interval of $R_{hypo}$ for records and the same models as in (a). The gray bars (the right y-axis) show the number of sites in each bin.
-  }
-  \label{fig:highf-15}
-\end{figure}
-\clearpage
-% \floatsetup[figure]{style=plain,subcapbesideposition=top,font=Large}
-% % \captionsetup[figure]{justification=justified,
-% %     labelfont={color={magenta},bf},textfont={color={green}},
-% %     labelsep=newline}
-% \begin{figure}[!ht]
-%   \sidesubfloat[]{\includegraphics[width=0.85\textwidth]{figures/figure_highf_9a.pdf}\label{fig:highf-9a}} \\[1.2\baselineskip]% %\hfil
-%   \sidesubfloat[]{\includegraphics[width=0.85\textwidth]{figures/figure_highf_9a.pdf}\label{fig:highf-9b}} %% \\[\baselineskip]% $$\hfil
-%   \caption{The histogram of the percent differences between models with topography and without topography. Models in (a) have shallow velocity tapered down to 1000 m, while models in (b) do not.}
-%   \label{fig:highf-9}
-% \end{figure}
-% \clearpage
-
 
 
 %% supplement
@@ -425,28 +367,82 @@ This research was supported through the U.S. Geological Survey External Program 
 \section*{Supplementary Materials}
 \addcontentsline{toc}{section}{\protect\numberline{}Supplementary Materials}
 
-\begin{figure}[!ht]
-  \centering
-  \includegraphics[width=0.9\textwidth,height=0.85\textheight,keepaspectratio]{figures/figure_highf_S1.pdf}
-  \caption{
-  The FAS bias, calculated as 10-based log ratio, between simulated synthetics with minimum $V_S$ clamped at 200 m/s (blue) or 500 m/s (green) and records. (a) and (b) show two horizontal components and (c) show the vertical component. A positive bias means overpredition and a negative value means the opposite. The solid line is the median FAS bias over all 259 stations; the shade depicts the 95\% confidence interval (CI) and the dashed lines denote one standard deviation centered at the median.
-  }
-  \label{fig:highf-S1}
-\end{figure}
+This supplement includes one figure (\Cref{fig:etf-S1}) showing the location of the events used in the GVDA study and recorded accelerations at a subset of events, one figure (\Cref{fig:etf-S2}) showing the locations of the events used in the TKCH05 study and recorded accelerations at a subset of events, and two figures (\Cref{fig:etf-S3,fig:etf-S4}) showing the comparison of snapshots generated in 3D and 1D models at the TKCH05 site in Japan.
+
 \clearpage
-
+\floatsetup[figure]{style=plain,subcapbesideposition=top}
 \begin{figure}[!ht]
-  \centering
-  \includegraphics[width=0.9\textwidth,height=0.9\textheight,keepaspectratio]{figures/figure_highf_S2.pdf}
-  \caption{
-  Density histogram of percent difference of PGV (same as in \cref{fig:highf-8}) calculated from models with topography compared to models without topography for 0.15-2.5 Hz and 2.5-5 Hz. The y-axis is topographic curvature, using a smoothing window of 120 m. The first row (a and b) shows models with an 1000 m shallow $V_S$ taper and the bottom row (c and d) shows models without velocity taper. The darker color denotes more grid points and the lighter color denotes the opposite. Note that equally dark color does not indicate equal number of grid points in a single plot, i.e. at a certain curvature, the darkest color denotes the percent difference of PGV from the most points among all points with this curvature.
-  }
-  \label{fig:highf-S2}
+  \sidesubfloat[]{\includegraphics[width=0.31\textwidth]{figures/figure_etf_S1a.pdf}\label{fig:etf-S1a}} \hfil
+  \sidesubfloat[]{\includegraphics[width=0.45\textwidth]{figures/figure_etf_S1b.pdf}\label{fig:etf-S1b}} % \\[\baselineskip]%
+  \caption{(a) Map of events (purple triangles) used for computing the ETFs at GVDA. The red triangle depicts the event used in simulations. (b) Recorded accelerations (normalized) along West-East direction at 10 randomly selected sites. The maximum amplitude is showed to the left of each line.}
+  \label{fig:etf-S1}
 \end{figure}
+
+
 \clearpage
+\floatsetup[figure]{style=plain,subcapbesideposition=top}
+\begin{figure}[!ht]
+  \sidesubfloat[]{\includegraphics[width=0.33\textwidth]{figures/figure_etf_S2a.pdf}\label{fig:etf-S2a}} \hfil
+  \sidesubfloat[]{\includegraphics[width=0.42\textwidth]{figures/figure_etf_S2b.pdf}\label{fig:etf-S2b}} % \\[\baselineskip]%
+  \caption{(a) Map of events (purple triangles) used for computing the ETFs at TKCH05. The red triangle depicts the event used in simulations. (b) Recorded accelerations (normalized) along West-East direction at 10 randomly selected sites. The maximum amplitude is showed to the left of each line.}
+  \label{fig:etf-S2}
+\end{figure}
 
 
+\clearpage
+\floatsetup[figure]{style=plain,subcapbesideposition=top}
+\begin{figure}[!ht]
+  \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_etf_S3a.pdf}\label{fig:etf-S3a}} \hfil
+  \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_etf_S3b.pdf}\label{fig:etf-S3b}} \\[\baselineskip]%
+  \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_etf_S3a.pdf}\label{fig:etf-S3c}} \hfil
+  \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_etf_S3b.pdf}\label{fig:etf-S3d}} \\[\baselineskip]%
+  \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_etf_S3a.pdf}\label{fig:etf-S3e}} \hfil
+  \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_etf_S3b.pdf}\label{fig:etf-S3f}} \\[\baselineskip]%
 
+  \caption{Snapshots of ${V_X}$ at TKCH05 along the A-A' cross section in \Cref{fig:etf-8}c, bandpass filtered between 4.5 and 5 Hz. (a), (c) and (e) display snapshots of the 3D model, where the gray contour lines represent interfaces between bulks with difference Vs; the green star denotes the downhole site and the green line marks its depth. (b), (d) and (f) are for the 1D model.}
+  \label{fig:etf-S3}
+\end{figure}
+
+\clearpage
+\floatsetup[figure]{style=plain,subcapbesideposition=top}
+\begin{figure}[!ht]
+  \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_etf_S4a.pdf}\label{fig:etf-S4a}} \hfil
+  \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_etf_S4b.pdf}\label{fig:etf-S4b}} \\[\baselineskip]%
+  \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_etf_S4a.pdf}\label{fig:etf-S4c}} \hfil
+  \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_etf_S4b.pdf}\label{fig:etf-S4d}} \\[\baselineskip]%
+  \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_etf_S4a.pdf}\label{fig:etf-S4e}} \hfil
+  \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_etf_S4b.pdf}\label{fig:etf-S4f}} \\[\baselineskip]%
+
+  \caption{Same as \Cref{fig:etf-S3}, except along the B-B’ cross section in \Cref{fig:etf-8}c.}
+  \label{fig:etf-S4}
+\end{figure}
+
+% \clearpage
+% \section*{Appendix}\label{app:2-1}
+% \addcontentsline{toc}{section}{\protect\numberline{}Appendix}
+
+% The form of the Von Karman autocorrelation function \citep{frankel_finite_1986} is
+
+% \begin{equation}\label{eq:2-A1}
+%   \Phi_{v, a}(r)=\sigma^{2} \frac{2^{1-v}}{\Gamma(v)}\left(\frac{r}{a}\right)^{v} K_{v}\left(\frac{r}{a}\right)
+% \end{equation}
+
+% \noindent in which $\nu$ is the Hurst component, $a$ is the correlation length, $K_{\nu}$ is the modified Bessel function of order $\nu$, $\Gamma(\nu)$ is the gamma function, and $\sigma^2$ is the variance with Fourier transform:
+
+% \begin{equation}\label{eq:2-A2}
+%   P(k)=\frac{\sigma^{2}(2 \sqrt{\pi} a)^{E} \Gamma(v+E / 2)^{v+E / 2}}{\Gamma(v)\left(1+k^{2} a^{2}\right)}
+% \end{equation}
+
+% \noindent in which $E$ is the Euclidean dimension.
+
+
+% %% Bibilography
+% \newpage
+% \linespread{1.0}
+% \setlength\bibitemsep{2\itemsep}
+% \AtNextBibliography{\normalsize}
+% \addcontentsline{toc}{section}{\protect\numberline{}References}
+% \printbibliography[section=\therefsection,title=References, heading=subbibliography]
 
 \renewcommand{\thetable}{\arabic{table}}
 \renewcommand{\thefigure}{\arabic{figure}}

@@ -567,31 +567,31 @@ is approved, and it is acceptable in quality and form for publication
 on microfilm and electronically. }}\\
 \begin{tabular*}{4in}[t]{r@{\extracolsep{\fill}}r}
 & \rule{0pt}{\@approvalspace} \\
-\hline
+% \hline
 \ifnum \@numberofmembers > 2
   & \rule{0pt}{\@approvalspace} \\
-  \hline
+  % \hline
 \fi
 \ifnum \@numberofmembers > 3
   & \rule{0pt}{\@approvalspace} \\
-  \hline
+  % \hline
 \fi
 \ifnum \@numberofmembers > 4
   & \rule{0pt}{\@approvalspace} \\
-  \hline
+  % \hline
 \fi
 \ifnum \@numberofmembers > 5
   & \rule{0pt}{\@approvalspace} \\
-  \hline
+  % \hline
 \fi
 \ifnum \@numberofmembers > 6
   & \rule{0pt}{\@approvalspace} \\
-  \hline
+  % \hline
 \fi
 
 \ifx\UCSD@cochair\@isnotdefined% No cochair
   &\rule{0pt}{\@approvalspace} \\
-  \hline
+  % \hline
 \else% Cochair
   &
   % Add the Co-Chair label below the last line and make
@@ -605,7 +605,7 @@ on microfilm and electronically. }}\\
   \hline
 \fi
 
-& \UCSD@text@chair
+& %\UCSD@text@chair
 \end{tabular*}\\[\@approvalspace]
 {\fmfont University of California {\@campus}} \\
 {\fmfont {\@campus} State University} \\

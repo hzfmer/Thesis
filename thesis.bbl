@@ -11553,7 +11553,7 @@
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{isbn}{978-3-540-89622-7 978-3-540-89623-4}
+      \field{isbn}{978-3-540-89623-4}
       \field{langid}{english}
       \field{title}{Seismic {{Wave Propagation}} and {{Scattering}} in the {{Heterogeneous Earth}}}
       \field{urlday}{9}
@@ -14457,7 +14457,6 @@
       \endverb
     \endentry
   \enddatalist
-  \missing{ely2010}
 \endrefsection
 \endinput
 
