@@ -32,7 +32,9 @@ In this study, we quantify the accuracy of ground motion simulations based upon 
 \section{Numerical Approach}\label{vs30:approach}
 We perform 0-1 Hz wave propagation simulations of the 2014 $M_w$ 5.1 La Habra earthquake to explore the accuracy of ground motion predictions in terms of the shallow velocity structure. The simulations use the SCEC velocity model CVM-S4.26-M01 (hereafter referred to as CVM-S). Fig. 1 shows the computational domain and strong motion seismic stations in the greater Los Angeles area used in this study. We discretize a 148 km $\times$ 140 km $\times$ 58 km region from CVM-S and the computational domain is rotated 39.9$^\circ$ clockwise to reduce the mesh size while optimizing the data coverage in our region of interest. \Cref{tab:vs30-1} lists the simulation parameters.
 
-The GPU-supported staggered-grid finite difference code AWP-ODC \citep[Anelastic Wave Propagation - Olsen, Day, and Cui, from the authors of the code;][]{cuiScalableEarthquakeSimulation2010} with discontinuous mesh \citep{nieFourthOrderStaggered2017} was used for the simulations analyzed in this study. We used spatial grid spacings of 20 m and 60 m in the grid partitions above and below 7.5 km, respectively, and a minimum $V_S$ of 500 m/s. To facilitate the use of these simulations in a companion, high-frequency study \citep{hu05HzDeterministic2021}, we computed frequencies up to 5 Hz. However, we restrict our analysis to a maximum frequency of 1 Hz in this study, which precludes some of the complicating effects that may become important at higher frequencies, e.g. topography, frequency-dependent attenuation, etc.  We also verified that reducing the minimum $V_S$ to 200m/s makes only negligible difference to the spectral amplifications of interest (see \cref{fig:vs30-S1}). Anelastic attenuation is incorporated with the quality factors given by linear velocity-dependent relations $Q_S=0.1V_S$ ($V_S$ in m/s) and $Q_P=2Q_S$, as suggested by previous results \citep{bielakShakeOutEarthquakeScenario2010,withersGroundMotionIntraevent2019}. We applied sponge zones \citep{cerjanNonreflectingBoundaryCondition1985} with a width of 64 nodes at the exterior grid boundaries (except at the flat free surface) to limit artificial reflections.
+The GPU-supported staggered-grid finite difference code AWP-ODC \citep[Anelastic Wave Propagation - Olsen, Day, and Cui, from the authors of the code;][]{cuiScalableEarthquakeSimulation2010} with discontinuous mesh \citep{nieFourthOrderStaggered2017} was used for the simulations analyzed in this study. We used spatial grid spacings of 20 m and 60 m in the grid partitions above and below 7.5 km, respectively, and a minimum $V_S$ of 500 m/s. To facilitate the use of these simulations in a companion, high-frequency study \citep{hu05HzDeterministic2021}, we computed frequencies up to 5 Hz. However, we restrict our analysis to a maximum frequency of 1 Hz in this study, which precludes some of the complicating effects that may become important at higher frequencies, e.g. topography, frequency-dependent attenuation, etc. 
+%We also verified that reducing the minimum $V_S$ to 200m/s makes only negligible difference to the spectral amplifications of interest (see \cref{fig:vs30-S1}).
+Anelastic attenuation is incorporated with the quality factors given by linear velocity-dependent relations $Q_S=0.1V_S$ ($V_S$ in m/s) and $Q_P=2Q_S$, as suggested by previous results \citep{bielakShakeOutEarthquakeScenario2010,withersGroundMotionIntraevent2019}. We applied sponge zones \citep{cerjanNonreflectingBoundaryCondition1985} with a width of 64 nodes at the exterior grid boundaries (except at the flat free surface) to limit artificial reflections.
 
 The 2014 $M_w$ 5.1 La Habra earthquake was well recorded by broadband strong motion sensors. We selected 259 stations with the epicentral distance up to 90 km and signal-to-noise larger than 3 dB for our study. The assessment of the ground motion synthetics is made using the Fourier amplitude spectra (FAS) of accelerations at all 259 stations, and the goodness of fit to data is described by the FAS bias between model and data:
 
@@ -401,13 +403,15 @@ The dissertation author was the primary investigator and author of this paper.
 \section*{Supplementary Materials}
 \addcontentsline{toc}{section}{\protect\numberline{}Supplementary Materials}
 
-\begin{figure}[!ht]
-  \centering
-  \includegraphics[width=0.9\textwidth]{figures/figure_vs30_S1.pdf}
-  \caption{Bias of FAS of the (a) east-west, (b) north-south and (c) vertical component, calculated from 3D simulations in CVM-S with minimum $V_S$ of 200 m/s (blue) and 500 m/s (green). A positive (negative) value means overprediction (underprediction). The left (right) columns show type A (B) sites. The solid line is the median of FAS, where the narrow band is the 95\% confidence interval of the median, and the dashed lines depict the standard deviation centered at the median.}
-  \label{fig:vs30-S1}
-\end{figure}
-\clearpage
+
+%% Removed on 071821
+% \begin{figure}[!ht]
+%   \centering
+%   \includegraphics[width=0.9\textwidth]{figures/figure_vs30_S1.pdf}
+%   \caption{Bias of FAS of the (a) east-west, (b) north-south and (c) vertical component, calculated from 3D simulations in CVM-S with minimum $V_S$ of 200 m/s (blue) and 500 m/s (green). A positive (negative) value means overprediction (underprediction). The left (right) columns show type A (B) sites. The solid line is the median of FAS, where the narrow band is the 95\% confidence interval of the median, and the dashed lines depict the standard deviation centered at the median.}
+%   \label{fig:vs30-S1}
+% \end{figure}
+% \clearpage
 
 \begin{figure}[!ht]
   \centering
