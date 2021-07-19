@@ -97,12 +97,12 @@ To be able to resolve frequencies up to 10 Hz at the GVDA site, we generated a m
 
 At every surface location, we first compute the MRVBF value and bedrock depth, as described in the Numerical simulations section. We then force the $V_P$, $V_S$ , and densities above the bedrock to be the same as those in the measured borehole log, while keeping the seismic velocities and densities unchanged in the bedrock. \Cref{fig:etf-2} illustrates how we estimate bedrock depth from the MRVBF values, using surface topography. The deeper parts of the valley are represented by larger MRVBF values. The areas with MRVBF smaller than the threshold value at 1.5 are shown in dark shading, corresponding to steeper terrain. The borehole site GVDA, at the center of the region, has a MRVBF value of 5.8 and bedrock depth of 64 m, consistent with the borehole log from \citet{gibbsNearsurfaceSwaveVelocities1989}. The 3D geometry inferred from the spatially varying bedrock depth is shown in the left panels of \Cref{fig:etf-3}, compared to the original borehole profile in the right panel.
 
-Although we computed the ETFs for all the selected 36 events (\cref{tb:etf-1,fig:etf-S1}), only one event (ID = 33) was used to generate the upgoing waves in the simulations and to compute the TTF. The selection of event ID 33 was arbitrary for two reasons: (1) the ETFs at GVDA show low interevent source variability, indicated by the narrow $\rm \sigma$ band in \Cref{fig:etf-4}, and (2) the modeling is constrained to linear wave propagation. The use of a realistic source allows straightforward extension to multiple sites, as well as to nonlinear analysis in the future. The source time function was obtained by deconvolving the surface recordings of this event at the neighboring outcrop site GVAR (see \cref{fig:etf-1}) to the maximum depth of our domain.
+Although we computed the ETFs for all the selected 36 events (\cref{tb:etf-1,fig:etf-A1}), only one event (ID = 33) was used to generate the upgoing waves in the simulations and to compute the TTF. The selection of event ID 33 was arbitrary for two reasons: (1) the ETFs at GVDA show low interevent source variability, indicated by the narrow $\rm \sigma$ band in \Cref{fig:etf-4}, and (2) the modeling is constrained to linear wave propagation. The use of a realistic source allows straightforward extension to multiple sites, as well as to nonlinear analysis in the future. The source time function was obtained by deconvolving the surface recordings of this event at the neighboring outcrop site GVAR (see \cref{fig:etf-1}) to the maximum depth of our domain.
 
 The TTFs and ETFs for GVDA are compared in \Cref{fig:etf-4}. The two-sigma scatter of all the ETFs is fairly narrow above 1 Hz and not sensitive to the azimuths and distances of the events, which implies that the ETFs are primarily determined by the site characteristics, and confers greater predictive power on an ETF (and presumably also on a TTF). Although the peaks for the ETFs and both 3D and 1D TTFs generally occur near the same frequencies, the goodness of fit predicted from the 1D model (VR = 0.64) is significantly smaller compared to the 3D model (VR = 0.85). This result suggests that the shallow 3D structure contributes first-order effects to the local site amplification at GVDA (see \cref{etf:discussion}).
 
 \section{TKCH05}\label{etf:tkch05}
-The KiK-net strong-motion seismograph network in Japan provides, approximately, 700 sites, with pairs of surface and downhole seismographs installed that have recorded earthquakes with a wide range of magnitudes. KiK-net also provides geological and geophysical data, including velocity structure for each site, derived from borehole logs. \citet{thompsonTaxonomySiteResponse2012} analyzed the interevent variability and goodness of fit between SH1D models and data at 100 sites from KiK-net, and identified some sites where the standard 1D site response analysis provided poor results. Among these sites, we targeted TKCH05, which is located in Honbetsu, Hokkaido, Japan, to investigate the contributions from its underlying 3D structure on site effects. \Cref{fig:etf-5} shows the location of TKCH05, in a narrow valley surrounded by mountains. The large gradients of the surface topography at the valley boundaries suggest the presence of significant 3D variation of the bedrock interface below the valley. The stratigraphy at TKCH05 is, approximately, 6 m of soil and sandy gravel with $V_S$ = 140 m/s, overlying tens of meters of sandstone over gravel stone and siltstone \citep[see \cref{fig:etf-6};][]{nationalresearchinstituteforearthscienceanddisasterresilienceNIEDKNETKiKnet2019}. \Cref{tb:etf-2} lists the events included in our analysis of the ETFs at TKCH05 (see \cref{fig:etf-S2} for their locations and time series), among which the event with an ID of 1 was selected to generate the incoming waves in our simulations. As we did at site GVDA, we deconvolved the surface records at the closest outcrop site, F-net site URH, which is about 21.7 km away from TKCH05 to the domain bottom.
+The KiK-net strong-motion seismograph network in Japan provides, approximately, 700 sites, with pairs of surface and downhole seismographs installed that have recorded earthquakes with a wide range of magnitudes. KiK-net also provides geological and geophysical data, including velocity structure for each site, derived from borehole logs. \citet{thompsonTaxonomySiteResponse2012} analyzed the interevent variability and goodness of fit between SH1D models and data at 100 sites from KiK-net, and identified some sites where the standard 1D site response analysis provided poor results. Among these sites, we targeted TKCH05, which is located in Honbetsu, Hokkaido, Japan, to investigate the contributions from its underlying 3D structure on site effects. \Cref{fig:etf-5} shows the location of TKCH05, in a narrow valley surrounded by mountains. The large gradients of the surface topography at the valley boundaries suggest the presence of significant 3D variation of the bedrock interface below the valley. The stratigraphy at TKCH05 is, approximately, 6 m of soil and sandy gravel with $V_S$ = 140 m/s, overlying tens of meters of sandstone over gravel stone and siltstone \citep[see \cref{fig:etf-6};][]{nationalresearchinstituteforearthscienceanddisasterresilienceNIEDKNETKiKnet2019}. \Cref{tb:etf-2} lists the events included in our analysis of the ETFs at TKCH05 (see \cref{fig:etf-A2} for their locations and time series), among which the event with an ID of 1 was selected to generate the incoming waves in our simulations. As we did at site GVDA, we deconvolved the surface records at the closest outcrop site, F-net site URH, which is about 21.7 km away from TKCH05 to the domain bottom.
 
 \Cref{fig:etf-6} shows the downhole profile at TKCH05, and Figure 7a shows a comparison between the corresponding 1D TTF compared to the ETFs. The 1D TTF fails to match the frequency peaks and strongly overpredicts the amplifications at lower frequencies, producing a relatively low VR (VR = 0.35). We also considered the adjacent K-Net site HKD090, due to its proximity to TKCH05 (only 4 m relative distance), in our analysis. The available information from the measured $V_S$ profile at HKD090 only extends to a depth of about 18 m, but, varies notably from those at TKCH05, considering the close distance. Because the top layers are as thin as 2 m, it is possible that the accuracy was degraded when the downhole logging measurements of travel time were converted to piecewise constant profiles. For this reason, we tested a simplified profile combining the two borehole logs, by replacing the TKCH05 $V_S$ profile between 5 and 100 m, with an average value of 680 m/s. The adjustment reduces the strong discrepancy in shallow $V_S$ values between the two borehole logs and retains the travel time from the bedrock to the surface. The SH1D model with the simplified profile produces a poorer fit to the ETF (VR = 0.181) than that obtained using the TKCH05 profile. Although, the simplified profile agrees better with the location of the second spectral peak of the ETF, the overall response compares less favorably to that obtained using the original profile due to larger amplitudes, especially at frequencies between 1 and 3 Hz.
 
@@ -117,7 +117,7 @@ The deeper structure, in particular, the bedrock depth, can also be important in
 
 Another source of uncertainty in the site amplification estimates arises from unconstrained (mostly high frequency) scattering effects from crustal SSHs, and we test the effects thereof from a range of different parameters of the von Karman autocorrelation functions. \Cref{fig:etf-10} shows the 3D TTFs modeled with a nine-realization ensemble of von Karman velocity and density perturbations, by varying the Hurst number from 0.05 to 0.15, the correlation length from 50 to 500 m, and the standard deviation of 5\% and 10\%, while keeping the horizontal-to-vertical anisotropy at 5. We find that the TTFs computed from these 3D models are relatively insensitive to the SSHs, except near the upper limit of our modeling bandwidth (> \textasciitilde 9 Hz). The median VR (0.83) of the resulting TTFs is similar to that without including the SSHs, suggesting that the random fields do not contribute first-order effects to the site amplification. However, our sensitivity study included only limited realizations for each set of von Karman parameters due to computational limitations, and, we recommend a more thorough analysis, estimating the uncertainty of the site amplification estimates arising from additional ensembles of statistical distributions of small-scale crustal perturbations.
 
-To better understand the reasons why the 3D models better predict the observed site amplification, as compared to their 1D counterparts, we show snapshots of wave propagation for our 3D and 1D (simplified) models of TKCH05 in \Cref{fig:etf-S3,fig:etf-S4}. The snapshots are extracted for frequencies between 4.5 and 5 Hz, in which the 3D TTF provides a much improved fit to the ETF, as compared to the 1D TTF. As expected, the 3D models naturally increase the complexity of the wave propagation compared to the SH1D model, for example, the presence of wave energy trapped in basins, and reflections at interfaces between geological units with different $V_S$ (\cref{fig:etf-S3}). For example, note the horizontally propagating energy in the upper tens of meters in the snapshots from the 3D model, naturally absent in the 1D results. Of course, the improvement in the site response from the 3D model depends on the accuracy of the added degrees of freedom.
+To better understand the reasons why the 3D models better predict the observed site amplification, as compared to their 1D counterparts, we show snapshots of wave propagation for our 3D and 1D (simplified) models of TKCH05 in \Cref{fig:etf-A3,fig:etf-A4}. The snapshots are extracted for frequencies between 4.5 and 5 Hz, in which the 3D TTF provides a much improved fit to the ETF, as compared to the 1D TTF. As expected, the 3D models naturally increase the complexity of the wave propagation compared to the SH1D model, for example, the presence of wave energy trapped in basins, and reflections at interfaces between geological units with different $V_S$ (\cref{fig:etf-A3}). For example, note the horizontally propagating energy in the upper tens of meters in the snapshots from the 3D model, naturally absent in the 1D results. Of course, the improvement in the site response from the 3D model depends on the accuracy of the added degrees of freedom.
 
 To further illustrate this added complexity, we compare the horizontal and vertical cumulative energy along the borehole profile (Fig. \Cref{fig:etf-11}a,b) to the theoretical (1D) response (Fig. \Cref{fig:etf-11}c) for different incidence angles at TKCH05. We carry out our analysis for the bandwidth 1.6–1.9 Hz, centered on the largest SH1D ETF peak at about 1.75 Hz (see  \cref{fig:etf-7}a). The depth-dependent theoretical particle velocities, with the internal reflections neglected, can be described as follows:
 
@@ -361,60 +361,60 @@ Computations in this project were performed on Rhea and Summit, which are part o
 \setcounter{figure}{0}
 \numberwithin{figure}{chapter}
 \numberwithin{table}{chapter}
-\renewcommand{\thetable}{S\arabic{chapter}.\arabic{table}}
-\renewcommand{\thefigure}{S\arabic{chapter}.\arabic{figure}}
+\renewcommand{\thetable}{A\arabic{chapter}.\arabic{table}}
+\renewcommand{\thefigure}{A\arabic{chapter}.\arabic{figure}}
 \newpage
 \section*{Appendix}
 \addcontentsline{toc}{section}{\protect\numberline{}Appendix}
 
-This supplement includes one figure (\Cref{fig:etf-S1}) showing the location of the events used in the GVDA study and recorded accelerations at a subset of events, one figure (\Cref{fig:etf-S2}) showing the locations of the events used in the TKCH05 study and recorded accelerations at a subset of events, and two figures (\Cref{fig:etf-S3,fig:etf-S4}) showing the comparison of snapshots generated in 3D and 1D models at the TKCH05 site in Japan.
+This appendix includes one figure (\Cref{fig:etf-A1}) showing the location of the events used in the GVDA study and recorded accelerations at a subset of events, one figure (\Cref{fig:etf-A2}) showing the locations of the events used in the TKCH05 study and recorded accelerations at a subset of events, and two figures (\Cref{fig:etf-A3,fig:etf-A4}) showing the comparison of snapshots generated in 3D and 1D models at the TKCH05 site in Japan.
 
 \clearpage
 \floatsetup[figure]{style=plain,subcapbesideposition=top}
 \begin{figure}[!ht]
-  \sidesubfloat[]{\includegraphics[width=0.31\textwidth]{figures/figure_etf_S1a.pdf}\label{fig:etf-S1a}} \hfil
-  \sidesubfloat[]{\includegraphics[width=0.45\textwidth]{figures/figure_etf_S1b.pdf}\label{fig:etf-S1b}} % \\[\baselineskip]%
+  \sidesubfloat[]{\includegraphics[width=0.31\textwidth]{figures/figure_etf_S1a.pdf}\label{fig:etf-A1a}} \hfil
+  \sidesubfloat[]{\includegraphics[width=0.45\textwidth]{figures/figure_etf_S1b.pdf}\label{fig:etf-A1b}} % \\[\baselineskip]%
   \caption{(a) Map of events (purple triangles) used for computing the ETFs at GVDA. The red triangle depicts the event used in simulations. (b) Recorded accelerations (normalized) along West-East direction at 10 randomly selected sites. The maximum amplitude is showed to the left of each line.}
-  \label{fig:etf-S1}
+  \label{fig:etf-A1}
 \end{figure}
 
 
 \clearpage
 \floatsetup[figure]{style=plain,subcapbesideposition=top}
 \begin{figure}[!ht]
-  \sidesubfloat[]{\includegraphics[width=0.33\textwidth]{figures/figure_etf_S2a.pdf}\label{fig:etf-S2a}} \hfil
-  \sidesubfloat[]{\includegraphics[width=0.42\textwidth]{figures/figure_etf_S2b.pdf}\label{fig:etf-S2b}} % \\[\baselineskip]%
+  \sidesubfloat[]{\includegraphics[width=0.33\textwidth]{figures/figure_etf_S2a.pdf}\label{fig:etf-A2a}} \hfil
+  \sidesubfloat[]{\includegraphics[width=0.42\textwidth]{figures/figure_etf_S2b.pdf}\label{fig:etf-A2b}} % \\[\baselineskip]%
   \caption{(a) Map of events (purple triangles) used for computing the ETFs at TKCH05. The red triangle depicts the event used in simulations. (b) Recorded accelerations (normalized) along West-East direction at 10 randomly selected sites. The maximum amplitude is showed to the left of each line.}
-  \label{fig:etf-S2}
+  \label{fig:etf-A2}
 \end{figure}
 
 
 \clearpage
 \floatsetup[figure]{style=plain,subcapbesideposition=top}
 \begin{figure}[!ht]
-  \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_etf_S3a.pdf}\label{fig:etf-S3a}} \hfil
-  \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_etf_S3b.pdf}\label{fig:etf-S3b}} \\[\baselineskip]%
-  \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_etf_S3a.pdf}\label{fig:etf-S3c}} \hfil
-  \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_etf_S3b.pdf}\label{fig:etf-S3d}} \\[\baselineskip]%
-  \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_etf_S3a.pdf}\label{fig:etf-S3e}} \hfil
-  \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_etf_S3b.pdf}\label{fig:etf-S3f}} \\[\baselineskip]%
+  \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_etf_S3a.pdf}\label{fig:etf-A3a}} \hfil
+  \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_etf_S3b.pdf}\label{fig:etf-A3b}} \\[\baselineskip]%
+  \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_etf_S3a.pdf}\label{fig:etf-A3c}} \hfil
+  \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_etf_S3b.pdf}\label{fig:etf-A3d}} \\[\baselineskip]%
+  \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_etf_S3a.pdf}\label{fig:etf-A3e}} \hfil
+  \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_etf_S3b.pdf}\label{fig:etf-A3f}} \\[\baselineskip]%
 
   \caption{Snapshots of ${V_X}$ at TKCH05 along the A-A' cross section in \Cref{fig:etf-8}c, bandpass filtered between 4.5 and 5 Hz. (a), (c) and (e) display snapshots of the 3D model, where the gray contour lines represent interfaces between bulks with difference Vs; the green star denotes the downhole site and the green line marks its depth. (b), (d) and (f) are for the 1D model.}
-  \label{fig:etf-S3}
+  \label{fig:etf-A3}
 \end{figure}
 
 \clearpage
 \floatsetup[figure]{style=plain,subcapbesideposition=top}
 \begin{figure}[!ht]
-  \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_etf_S4a.pdf}\label{fig:etf-S4a}} \hfil
-  \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_etf_S4b.pdf}\label{fig:etf-S4b}} \\[\baselineskip]%
-  \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_etf_S4a.pdf}\label{fig:etf-S4c}} \hfil
-  \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_etf_S4b.pdf}\label{fig:etf-S4d}} \\[\baselineskip]%
-  \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_etf_S4a.pdf}\label{fig:etf-S4e}} \hfil
-  \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_etf_S4b.pdf}\label{fig:etf-S4f}} \\[\baselineskip]%
+  \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_etf_S4a.pdf}\label{fig:etf-A4a}} \hfil
+  \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_etf_S4b.pdf}\label{fig:etf-A4b}} \\[\baselineskip]%
+  \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_etf_S4a.pdf}\label{fig:etf-A4c}} \hfil
+  \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_etf_S4b.pdf}\label{fig:etf-A4d}} \\[\baselineskip]%
+  \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_etf_S4a.pdf}\label{fig:etf-A4e}} \hfil
+  \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_etf_S4b.pdf}\label{fig:etf-A4f}} \\[\baselineskip]%
 
-  \caption{Same as \Cref{fig:etf-S3}, except along the B-B’ cross section in \Cref{fig:etf-8}c.}
-  \label{fig:etf-S4}
+  \caption{Same as \Cref{fig:etf-A3}, except along the B-B’ cross section in \Cref{fig:etf-8}c.}
+  \label{fig:etf-A4}
 \end{figure}
 
 % \clearpage

@@ -12,28 +12,29 @@
 
 \graphicspath{{/Users/zhh076/work/PhD_way/high_f/}}
 
-We have simulated 0-5 Hz deterministic simulations for the 2014 $M_w$ 5.1 La Habra, CA, earthquake in a mesh from the Southern California Earthquake Center Community Velocity Model Version S4.26-M01 with a finite-fault source. Our simulations include statistical distributions of small-scale crustal heterogeneities (SSHs), frequency-dependent attenuation $Q(f)$, surface topography, and effects of near-surface low velocity material. Strong motion data at 259 sites within an 148 km by 140 km area are used to validate our simulations. Amplification from the near-surface low-velocity soil column (shear-wave velocities $<$ 500 m/s) appears at about 0.3 Hz, increasing to factors of 2-3 approaching 5 Hz. 
+We have simulated 0-5 Hz deterministic simulations for the 2014 $M_w$ 5.1 La Habra, CA, earthquake in a mesh from the Southern California Earthquake Center Community Velocity Model Version S4.26-M01 with a finite-fault source. Our simulations include statistical distributions of small-scale crustal heterogeneities (SSHs), frequency-dependent attenuation $Q(f)$, surface topography, and effects of near-surface low velocity material. Strong motion data at 259 sites within an 148 km by 140 km area are used to validate our simulations. %Amplification from the near-surface %low-velocity soil column (shear-wave %velocities $<$ 500 m/s) appears at %about 0.3 Hz, increasing to factors %of 2-3 approaching 5 Hz. 
 %We find that a $Q(f)$ model with a %high-frequency exponent higher %than 0.6
 %high-frequency power law $Q(f)=Q_o %V_S f^{\gamma}$ with $\gamma$ less %than 0.6 
 %is inconsistent with the seismic %data. 
+Accuracy of the velocity model, particularly the  near-surface low velocities and 3D structure, controls the resolution to which the anelastic attenuation can be determined. Our results indicate that low-frequency ($<$1 Hz) shear-wave $Q$ values ($Q_{S,0}$) parameterized as a function of shear-wave speed ($V_S$), with faster increase for larger $V_S$, provide optimal fit to the seismic data. Power-law exponents {$\gamma$} for high-frequency ($>$1 Hz) frequency-dependent shear-wave $Q_S$ expressed as $Q_S=Q_{S,0} f^{\gamma}$ larger than about 0.6 appear incompatible with the seismic records. 
 Topography, and to a lesser extent SSHs, predominantly decrease the peak velocities and significantly increase the duration, by energy redistribution. A weathering layer with realistic near-surface low velocities is found to enhance the amplification at mountain peaks and ridges. Our results show that the effects of, and trade-offs between, near-surface low-velocity material, topography, SSHs and $Q(f)$ become increasingly important as frequencies increase.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction} \label{highf:intro}
-It is the ultimate goal for ground motion modelers to deliver their results to engineers and see their work used in applications beneficial for society, such as structural design. This is particularly useful in cases of infrequent observations, such as large for magnitude events at short distances from the fault, where simulations may provide a viable alternative to data. Deterministic ground motion predictions, including features such as three-dimensional (3D) velocity structure and frequency-independent anelastic attenuation are now routinely produced for frequencies up to about 1 Hz with generally satisfactory fit to recorded data \citeg{gravesSimulatingSeismicWave1996,olsen2009shakeout,roten3DSimulationsEarthquakes2012}. These simulations have proved to be useful in public earthquake emergency response and seismic hazard management \citep[e.g., the SHAKEOUT scenario; ][]{jones2008shakeout}, and complementing empirical ground motion prediction models in regions with sparse stations coverage \citeg{dayModelBasinEffects2008}.
+It is the ultimate goal for ground motion modelers to deliver their results to engineers and see their work used in applications beneficial for society, such as structural design. This is particularly useful in cases of infrequent observations, such as for large magnitude events at short distances from the fault, where simulations may provide a viable alternative to data. Deterministic ground motion predictions, including features such as three-dimensional (3D) velocity structure and frequency-independent anelastic attenuation are now routinely produced for frequencies up to about 1 Hz with generally satisfactory fit to recorded data \citeg{gravesSimulatingSeismicWave1996,olsen2009shakeout,roten3DSimulationsEarthquakes2012}. These simulations have proved to be useful in public earthquake emergency response and seismic hazard management \citep[e.g., the SHAKEOUT scenario; ][]{jones2008shakeout}, and complementing empirical ground motion prediction models in regions with sparse stations coverage \citeg{dayModelBasinEffects2008}.
 
 While the results of these low-frequency simulations are promising, structural engineers need ground motions with signal content up to 5 Hz and higher for design purposes. Hybrid techniques, combining deterministic low-frequency and stochastic high-frequency signals \citeg{olsen2015sdsu,gravesKinematicGroundMotion2016} can be used to generate synthetic seismograms with frequency content up to 10 Hz and higher. However, simulating both the lower and higher frequency content using a deterministic approach has the potential to lower part of the epistemic uncertainty in the resulting ground motion estimates. In this study we investigate the feasibility of increasing the highest frequency for deterministic ground motion predictions to 5 Hz, using simulations and data for the 2014 $M_w$ 5.1 La Habra, CA, earthquake. The La Habra event was chosen due to an abundance of records available in the greater Los Angeles area, while ground motions can be considered linear due to its relatively small magnitude.
 
 
 As frequencies increase above about 1 Hz, features with increasingly small length scales become important to realistically predict deterministic ground motions. For example, small-scale complexity of both the source and surrounding media, on the order of 10-100s of meters, is expected to increasingly affect ground motion predictions at higher frequencies. Frequency-independent anelastic attenuation, often chosen as proportional to the local velocity structure \citeg{gravesBroadbandGroundMotionSimulation2010} is usually a good approximation for lower frequencies \citep[up to \textasciitilde 1 Hz; e.g., ][]{liu1976velocity,fehler1992separation}. However, models of frequency-independent anelastic attenuation appear to be inconsistent with seismic records at higher frequencies where regional studies indicate that larger Q values may be more accurate \citeg{withersMemoryEfficientSimulation2015}. Finally, ground motion simulations often artificially truncate the lowest near-surface velocities due to computational limitations, which may be a reasonable approximation for lower frequencies \citeg{olsenEstimationLongPeriodSec2003}. However, stronger effects from this near-surface material emerge as frequencies increase and wavelengths decrease \citeg{pitarka2009simulating,imperatoriBroadbandNearfieldGround2013}. Here, we quantify the effects of all of these features in our 3D simulations of the La Habra event.
 
-In southern California, two 3D state-of-the-art velocity models, namely the Community Velocity Models (CVM) versions S and H, have been developed through the Southern California Earthquake Center (SCEC). These CVMs have been validated against ground motion data in a series of studies \citeg{tabordaEvaluationSouthernCalifornia2016,savranGroundMotionSimulation2019,laiShallowBasinStructure2020}.
+In southern California, two state-of-the-art 3D velocity models, namely the Community Velocity Models (CVM) versions S and H, have been developed through the Southern California Earthquake Center (SCEC). These CVMs have been validated against ground motion data in a series of studies \citeg{tabordaEvaluationSouthernCalifornia2016,savranGroundMotionSimulation2019,laiShallowBasinStructure2020}.
 \citet{elyVs30derivedNearsurfaceSeismic2010} proposed a method to calibrate the near-surface material based on estimates of the time-averaged velocity in the upper 30 m ($V_{S30}$), and later improved by \citet{huCalibrationNearsurfaceSeismic2021}, specifically for sites with poor constraints for shallow rock site velocities. Here, we use the SCEC CVM-S with the update by \citet{huCalibrationNearsurfaceSeismic2021}.
 
 The effects of irregular surface topography on ground motions also play an increasingly large role as frequencies increase \citeg{liuScatteringSeismicWaves2020}. In recent studies, theoretical and numerical methods have helped clarify the interaction between seismic waves and topography \citep[mainly scattering and trapping of waves, e.g.,][]{imperatoriRoleTopographyLateral2015,takemura2015scattering,rodgersBroadband04Hz2018}, as well as describing the characteristic effects on ground motions. Some of the most notable effects of topography found by these studies are listed in the following. (1) Amplification tends to occur at the top of relatively steep slopes for waves with comparable wavelength to the size of the topographic features; on the other hand, deamplification tends to occur at low-elevation areas \citep{trifunacAnalysisPacoimaDam1971,booreNoteEffectSimple1972,spudichDirectionalTopographicSite1996,bouchonSeismicResponseHill1996,assimakiSoilDependentTopographicEffects2005}. Amplification can range up to a factor of 10 or more between the crest and base of a topographic feature \citep{davisObservedEffectsTopography1973,geliEffectTopographyEarthquake1988,umedaHighAccelerationsProduced1987,gaffetSiteEffectStudy2000}. (2) The amplification at mountain tops is systematically larger for incident S compared with P waves, with diminishing effect when the slope decreases or the incidence angle increases \citep{bardDiffractedWavesDisplacement1982}. (3) Body and surface waves are strongly scattered by irregular topography, thus reducing ground motion amplitudes while prolonging the shaking duration \citep{sanchez-sesmaDiffractionSVRayleigh1991,leeEffectsRealisticSurface2009}. (4) Topography tends to disrupt the coherency of high-frequency ground motion and thereby distorting the S-wave radiation pattern \citep{imperatoriRoleTopographyLateral2015}. Notably, 3D models of the topography are necessary to capture the amplification effects, as noted in two-dimensional simulation results \citep{geliEffectTopographyEarthquake1988,bouchonSeismicResponseHill1996}. While geometrical characteristics, such as smoothed curvature and relative elevation, have been explored to approximate topographic effects \citeg{maufroyFrequencyScaledCurvature2015,raiEmpiricalTerrainBasedTopographic2017}, they require critical parameter constraints based on local velocity and target frequency, and are thus difficult to generalize for broadband studies.
 
-It should be noted that previous studies discussed above included only a subset of the model features deemed to be affecting high-frequency ground motions, or omitted validation of the results. In this study, we simulate ground motions for frequencies up to 5 Hz in the widely-tested SCEC CVM-S4.26M01 including high-resolution topography, and compare to strong-motion data for the 2014 $M_w$ 5.1 La Habra, CA, earthquake, in order to constrain the relative contributions from topography, SSHs, and $Q(f)$ on the ground motions. Our paper is organized as follows. We first describe the velocity model, simulation parameters, processing of the synthetic and recorded ground motions, and the source description. Then the relative effects of model features such as topography, shallow near-surface velocities, small-scale heterogeneities, and $Q(f)$ are quantified through goodness-of-fit (GOF) measures between synthetics and data. Finally, we discuss future research directions based on our results.
+It should be noted that previous studies discussed above included only a subset of the model features deemed to be affecting high-frequency ground motions, or omitted validation of the results. In this study, we simulate ground motions for frequencies up to 5 Hz in the widely-tested SCEC CVM-S4.26M01 including high-resolution topography, and compare to strong-motion data for the 2014 $M_w$ 5.1 La Habra, CA, earthquake, in order to constrain the relative contributions from topography, SSHs, and $Q(f)$ on the ground motions. This chapter is organized as follows. We first describe the velocity model, simulation parameters, processing of the synthetic and recorded ground motions, and the source description. Then the relative effects of model features such as topography, shallow near-surface velocities, small-scale heterogeneities, and $Q(f)$ are quantified through goodness-of-fit (GOF) measures between synthetics and data. Finally, we discuss future research directions based on our results.
 
 
 
@@ -78,7 +79,7 @@ Anelastic attenuation is needed for accurate simulation of seismic wave propagat
 \end{equation}
 \noindent where $Q_0$ is a frequency-independent $Q$ value applied for $f<f_{0}$.  %\citet{withersMemoryEfficientSimulat%ion2015} and %\citet{savranGroundMotionSimulation2%019} found that $\gamma$ values of %to 0.6-0.8 produced the best fit to %seismic records of the 2008 Chino %Hills, CA, earthquake.
 
-A widely-used parameterization of $Q_0$ is proportional to local seismic velocity, with separate values $Q_{P,0}$ and $Q_{S,0}$ for $V_P$ and $V_S$ quality factors, respectively, producing an expected stronger attenuation for lower velocity material, as pointed out by \citet{haukssonAttenuationModelsThree2006}. \citet{taborda2014ground} revised the formula expressed by \citet{brocher2008compressional} and applied a $6^{\text{th}}$-order polynomial function for $Q_{S,0}$ from $V_S$, and $Q_{P,0}=\dfrac{3}{4}\left(V_P/V_S\right)^2Q_{S,0}$. We test a variety of these parameterizations of $Q_0$ for the La Habra event (see \cref{fig:highf-S1}).
+A widely-used parameterization of $Q_0$ is proportional to local seismic velocity, with separate values $Q_{P,0}$ and $Q_{S,0}$ for $V_P$ and $V_S$ quality factors, respectively, producing an expected stronger attenuation for lower velocity material, as pointed out by \citet{haukssonAttenuationModelsThree2006}. \citet{taborda2014ground} revised the formula expressed by \citet{brocher2008compressional} and applied a $6^{\text{th}}$-order polynomial function for $Q_{S,0}$ from $V_S$, and $Q_{P,0}=\dfrac{3}{4}\left(V_P/V_S\right)^2Q_{S,0}$. We test a variety of these parameterizations of $Q_0$ for the La Habra event (see \cref{fig:highf-A1}).
 
 \subsection{Near-surface Geotechnical Layer}
 CVM-S includes geotechnical data which integrates geology and geophysics data from surficial and deep boreholes, oil wells, gravity observations, seismic refraction surveys and empirical rules calibrated based on ages and depth estimates for geological horizons in southern California \citep{magistraleGeologybased3DVelocity1996,magistraleSCECSouthernCalifornia2000}. While recent validation studies, such as \citet{tabordaEvaluationSouthernCalifornia2016}, have shown that the basin structure included in CVM-S is reasonably accurate, unrealistically large surface rock site velocities (see \cref{fig:highf-2}) motivated the method by \citet{elyVs30derivedNearsurfaceSeismic2010} to reduce the $V_S$ in the top 350 m based on available $V_{S30}$ values. Recently, \citet{huCalibrationNearsurfaceSeismic2021} proposed a method to further adjust the near-surface structure to a depth of 1000 m, resulting in an improved fit between simulated and recorded Fourier spectra below 1 Hz for the La Habra earthquake, which will be used in the simulations in this study.
@@ -95,15 +96,15 @@ We use 7 different intensity measures to characterize the performance of our gro
 
 \section{Results}
 \subsection{Source Models}
-Due to the stochastic characteristics of the kinematic source generator by \citet{gravesKinematicGroundMotion2016}, a series of 40 source realizations with different random seeds are evaluated based on comparisons between spectral accelerations with records at stations with epicentral distance of 31 km or less (R. Graves, Personal Communication, 03/04/2020). The 40 source models, using a fault area of 2.5 km x 2.5 km, were rated based on the average absolute bias between synthetics and data up to 5 Hz for the median pseudo-spectral acceleration rotated over all azimuths (rotD50), from which we selected the three best performing source descriptions with hypocentral depths at 5, 5.5 and 6 km (see \cref{fig:highf-S2}). The rupture duration of the source descriptions is less than 2 s and sampled at an interval of 0.001 s, identical to the time step used in our simulations. The three sources tend to generate overall similar patterns of PGV within the same bandwidth of low (< 2.5 Hz) or high (> 2.5 Hz) frequencies (\cref{fig:highf-S3}). Based on this result, we carry out our analysis with Source 1 (\cref{fig:highf-3}) only in order to limit the computational requirements.
+Due to the stochastic characteristics of the kinematic source generator by \citet{gravesKinematicGroundMotion2016}, a series of 40 source realizations with different random seeds are evaluated based on comparisons between spectral accelerations with records at stations with epicentral distance of 31 km or less (R. Graves, Personal Communication, 03/04/2020). The 40 source models, using a fault area of 2.5 km x 2.5 km, were rated based on the average absolute bias between synthetics and data up to 5 Hz for the median pseudo-spectral acceleration rotated over all azimuths (rotD50), from which we selected the three best performing source descriptions with hypocentral depths at 5, 5.5 and 6 km (see \cref{fig:highf-A2}). The rupture duration of the source descriptions is less than 2 s and sampled at an interval of 0.0006 s, identical to the time step used in our simulations. The three sources tend to generate overall similar patterns of PGV within the same bandwidth of low (< 2.5 Hz) or high (> 2.5 Hz) frequencies (\cref{fig:highf-A3}). Based on this result, we carry out our analysis with Source 1 (\cref{fig:highf-3}) only in order to limit the computational requirements.
 
 \subsection{Minimum \textbf{$V_S$}}
 Southern California features several low-velocity basins where the lowest $V_S$ in CVM-S can be much lower than the minimum value of 500 m/s that we imposed in our models (see \cref{tab:highf-1}). As previous studies have pointed out, soft soils, characterized by lower $V_S$, have been found to generate significant amplification of ground motions \citeg{anderson1984model}. Reducing the minimum $V_S$ will, however, increase the computational cost for the series of 3D numerical simulations needed in our analysis beyond the available resources. For example, clamping the minimum $V_S$ at 200 m/s instead of 500 m/s requires about 40 times more node hours for a single simulation. 
 
 For this reason, we use a computationally much less expensive 1D method, which models vertically-incident SH waves in a horizontally-layered halfspace \citeg{dayRMSResponseOnedimensional1996,thompsonTaxonomySiteResponse2012}, to account for effects of the material with $V_S$ less than 500 m/s. At each site, we calculated the response from two 1D models, one using the velocity profile from our models, and the other using the same profile but with minimum $V_S$ clamped at 500 m/s. In this way, the ratio of the two 1D results characterizes the effects of the material with $V_S$ less than 500 m/s, which is then convolved with our 3D simulations. Because the SH1D method considers SH waves only, we will apply this calibration to horizontal components only. 
-%This procedure is encouraged by the %results of 3D simulations with %minimum $V_S$ of 200 m/s and 500 m/s %using the domain in %\cref{fig:highf-1}, showing %negligible differences on the %vertical component %(\cref{fig:highf-S4}).
+%This procedure is encouraged by the %results of 3D simulations with %minimum $V_S$ of 200 m/s and 500 m/s %using the domain in %\cref{fig:highf-1}, showing %negligible differences on the %vertical component %(\cref{fig:highf-A4}).
 
-\Cref{fig:highf-4} illustrates the results of applying the SD1D method low-velocity correction for an example site. The two profiles show similar SH1D responses below about 0.3 Hz, above which the SH1D response ratio slowly trends upward with frequency, depicting the amplification from the material with $V_S$ less than 500 m/s. The PGV of the horizontal synthetic with the correction is increased by 32\% \Cref{fig:highf-4}c relative to that with $V_S$ clamped at 500 m/s. The correction leaves the shape of the waveform almost unchanged. The smoothed Fourier spectra (\Cref{fig:highf-4}d) further suggests that clamping $V_S$ at 500 m/s may be reasonable for frequencies up to 0.8-1 Hz. Similar effects are observed for all profiles with near-surface velocity lower than 500 m/s, and we therefore apply this technique to all our 3D simulations with minimum $V_S$ clamped at 500 m/s.
+\Cref{fig:highf-4} illustrates the results of applying the SD1D method low-velocity correction for an example site. The two profiles show similar SH1D responses below about 0.3 Hz, above which the SH1D response ratio slowly trends upward with frequency, depicting the amplification from the material with $V_S$ less than 500 m/s. The PGV of the horizontal synthetic with the correction is increased by 32\% relative to that with $V_S$ clamped at 500 m/s (\Cref{fig:highf-4}c). The correction leaves the shape of the waveform almost unchanged. The smoothed Fourier spectra (\Cref{fig:highf-4}d) further suggests that clamping $V_S$ at 500 m/s may be reasonable for frequencies up to 0.8-1 Hz. Similar effects are observed for all profiles with near-surface velocity lower than 500 m/s, and we therefore apply this technique to all our 3D simulations with minimum $V_S$ clamped at 500 m/s.
 
 
 %%\subsection{Reference Model Response}
@@ -132,9 +133,9 @@ The consistent overprediction within 40 km for all $Q$ models may be caused by t
 The presence of shallow low velocities is crucial in determining the best-fitting $Q$ models. \Cref{fig:highf-9} shows the comparison of PGV and DUR in 0.15-2.5 Hz and 2.5-5 Hz for models with and without shallow velocity taper. In addition to the amplification on PGV due to increasing $Q$, the 1000 m taper lowers the shallow velocity and increase the PGVs beyond 30-40 km, where most rock sites locate. Furthermore, the desired larger ground motion amplitudes at farther distance cannot be achieved by even larger $Q$, which will generate substantial overprediction of DUR (\cref{fig:highf-9}); while velocity taper has minor influence on DUR and thus is preferred.
 
 \subsection{Small-scale heterogeneities}
-\Cref{fig:highf-10} shows the effects of adding a von Karman distribution of small-scale heterogeneities (SSHs) with $\sigma = 5\%$ and horizontal correlation length of 5000 m compared to the reference model on PGV and DUR in the frequency bands 0.15-2.5 Hz and 2.5-5 Hz. \citet{savranGroundMotionSimulation2019} studied a smaller region up to 2.5 Hz, roughly in the center of our simulated domain, found that SSH presents itself as a second-order source of misfit that yields relatively small influence on ground motions. Our results generally agree with their findings, and further show that SSHs have stronger effects at farther distance and in higher frequencies.
+\Cref{fig:highf-10} shows the effects of adding a von Karman distribution of small-scale heterogeneities (SSHs) with $\sigma = 5\%$ and horizontal correlation length of 5000 m compared to the reference model (without SSHs) on PGV and DUR in the frequency bands 0.15-2.5 Hz and 2.5-5 Hz. \citet{savranGroundMotionSimulation2019} studied a smaller region up to 2.5 Hz, roughly in the center of our simulated domain, found that SSH presents itself as a second-order source of misfit that yields relatively small influence on ground motions. Our results generally agree with their findings, and further show that SSHs have stronger effects at farther distance and in higher frequencies.
 
-\citet{przybillaEstimationCrustalScattering2009} performed analysis using elastic radiative transfer theory and showed that the direction dependence of scattering can be identified by $ak$, where $a$ is the correlation length and $k$ is the wave number. For $ak \approx 1$, waves interact with heterogeneous medium most intensively because the wavelength and correlation length are in the same order. When $ak\gg 1$ waves are predominantly scattered in the forward direction, which generates geometric focusing in the early arrivals and leads to larger peak amplitudes, and vice versa for $ak \ll 1$. In the case with $a=5000$ m, our model generally confines to the forward scattering regime and PGV is amplified, which is shown quantitatively in \Cref{fig:highf-11}. As the frequency increases, $k$ and thus $ak$ tends to increase as well, causing generally weaker scattering effects as deviating from the most intensive scattering regime, thus the median difference closer to 0 for both PGV and DUR. However, higher frequencies wavefields are capable of resolving finer structure, and may induce larger spatial variability in scattering effects, represented by larger standard deviations. More SSH realizations with various standard deviations and correlation lengths of the random field are examined (see \Cref{fig:highf-S5}), which shows a general trend that larger standard deviation and correlation length yield stronger SSH effects.
+\citet{przybillaEstimationCrustalScattering2009} performed analysis using elastic radiative transfer theory and showed that the direction dependence of scattering can be identified by $ak$, where $a$ is the correlation length and $k$ is the wave number. For $ak \approx 1$, waves interact with heterogeneous medium most intensively because the wavelength and correlation length are in the same order. When $ak\gg 1$ waves are predominantly scattered in the forward direction, which generates geometric focusing in the early arrivals and leads to larger peak amplitudes, and vice versa for $ak \ll 1$. In the case with $a=5000$ m, our model generally confines to the forward scattering regime and PGV is amplified, which is shown quantitatively in \Cref{fig:highf-11}. As the frequency increases, $k$ and thus $ak$ tends to increase as well, causing generally weaker scattering effects as deviating from the most intensive scattering regime, thus the median difference closer to 0 for both PGV and DUR. However, higher frequencies wavefields are capable of resolving finer structure, and may induce larger spatial variability in scattering effects, represented by larger standard deviations. More SSH realizations with various standard deviations and correlation lengths of the random field are examined (see \Cref{fig:highf-A5}), which shows a general trend that larger standard deviation and correlation length yield stronger SSH effects.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -147,19 +148,19 @@ The GOF score for each metric is defined as
 \end{equation}
 \noindent where $x$ and $y$ are two positive scalars from the selected metrics. $G_{\text {metric}}$ is computed for each metric and combined into a weighted average using all 3 components. We used weights of 0.5, 0.5, 1, 0.5, 0.5, 1, and 1 for for PGV, PGA, DUR, AI, ENER, RS, and FAS, where reduced weights are chosen due to correlation between metrics \citep{olsenGoodnessoffitCriteriaBroadband2010}. The GOF score for the entire simulation is calculated as the average of $G_{\text {station }}$ across all 259 stations. GOF values between two signals above 4.5 and 6.5 are considered fair and very good fit, respectively.
 
-The GOF scores for the models (see \cref{tab:highf-2}) explored in this study are shown in \Cref{fig:highf-S7}, see also \Cref{fig:highf-12} and \Crefrange{fig:highf-S11}{fig:highf-S32} in \Cref{highf:app} for results for individual models. 
+The GOF scores for the models (see \cref{tab:highf-2}) explored in this study are shown in \Cref{fig:highf-A7}, see also \Cref{fig:highf-12} and \Crefrange{fig:highf-A11}{fig:highf-A32} in \Cref{highf:app} for results for individual models. 
 Note that the model ID does not represent any ranking of their goodness of fit against seismic records. The models generally achieve GOF in the range of 5.1 to 5.4 for the low frequencies (< 2.5 Hz), with the lowest values for models 15, 16 and 20, and the highest value for models 4, 6, and 11. The GOF scores for the high frequencies (> 2.5 Hz) are typically about an increment of one smaller than those for the low frequencies, caused by a combination of increased uncertainty in the source description and model parameters of the former. Among the investigated models, Models 3, 4, 6, and 21 achieve the highest GOF values for 2.5-5 Hz, while Models 9, 15, and 19 reflect the lowest values. Note that Model 9, characterized by a 350 m taper of the near-surface velocity modification, yields fair GOF values for frequencies below 2.5 Hz while sacrificing the fit for high-frequency waves, consistent with the recommendations of a 1000 m taper by \citet{huCalibrationNearsurfaceSeismic2021}. The smallest GOF value is obtained for model 15, indicating that SSH with standard deviation of 10\% may be too heterogeneous. The consistently lower GOF above 2.5 Hz for Models 17-22 indicates the necessity of including mountain topography in high-frequency simulations.
 
 
 %\subsection{Topography and Shallow Velocity Taper}\label{highf:topoandtaper}
 
-\citet{huCalibrationNearsurfaceSeismic2021} showed that reducing shallow velocities in CVM-S at rock sites in the greater Los Angeles area by a generic taper function based on $V_{S30}$ was able to improve the fit of ground motion synthetics to data for the La Habra earthquake, particularly in regions constrained by limited geological information.
+\citet{huCalibrationNearsurfaceSeismic2021} showed that reducing shallow velocities in CVM-S at poorly constrained sites in the greater Los Angeles area by a generic taper function based on $V_{S30}$ was able to improve the fit of ground motion synthetics to data for the La Habra earthquake, particularly in regions constrained by limited geological information.
 However, since their tests were restricted to frequencies below 1 Hz and models with a flat free surface. Here, we examine the efficacy of the method for frequencies up to 5 Hz, while adding topography to the models from \citet{huCalibrationNearsurfaceSeismic2021}.
 As in their study we divided the 259 strong motion recording sites into two groups: type A sites representing sites with good geological constraints, and type B sites with poor geological constraints, characterized by unrealistically large surface $V_S$ in the top 500-1000 m in CVM-S. \Cref{fig:highf-13} shows the median FAS for both types of sites from various models (see \cref{tab:highf-2} for a list of model features). As observed by \citet{huCalibrationNearsurfaceSeismic2021}, type A sites are largely unaltered by the shallow velocity tapering methodology. The original CVM-S (Model 11) significantly underpredicts the FAS at type B sites up to 5 Hz. 
 
 Topography causes generally small effects in terms of FAS (\Cref{fig:highf-13}, Model 1 versus Model 17), except for the increase on the vertical component for type B sites for frequencies larger than 1.5 Hz. %It is interesting that we %observed equally strong %effects in vertical components %compared to horizontal %components, which is somewhat %different from previous %experiments \citep[][and the %references %therein]{massaOverviewTopograp%hicEffects2014}. Moreover, the %models with $\gamma=0.6$ %(Model 1, 10, 16) show a trend %%of growing overprediction %above 2-3 Hz, which can be %improved by reducing $\gamma$ %to 0.0 (Model 3, %frequency-dependent $Q$). %However, given the tendency of %slight overprediction of the %SH1D correction above 2.5 Hz, %this zero $\gamma$ value is %supposed to be aggressive. %Additionally, the vertical %component, which is not %affected by the SH1D %correction, suggests that %$\gamma=0$ may underpredict %the FAS between 3-5 Hz, and %thus an intermediate $\gamma$ %may be appropriate.
 Previous studies attempting to capture the effects of topography on ground motions and establish proxies to characterize such effects typically have used simple homogeneous models of earth material, e.g. \citet{maufroyFrequencyScaledCurvature2015} and \citet{raiEmpiricalTerrainBasedTopographic2017}.  These studies found that topographic curvature is a good proxy characterizing irregular surface in evaluating topographic effects. However, assessment of topographic effects on ground motions are complicated by amplification due to the presence of shallow weathering layer of low velocities, typically present in mountain regions, omitted in these studies. Here, we re-assess these findings including the amplification effects from the modification of near-surface material at type B sites proposed by \citet{huCalibrationNearsurfaceSeismic2021}. We calculated the smoothed curvature of topography with a smoothing window of 640 m.
-%(a much shorter smoothing %window of 120 m is also tested %considering our high frequency %bound, as shown in %\Cref{fig:highf-S3}, which %yields similar results).
+%(a much shorter smoothing %window of 120 m is also tested %considering our high frequency %bound, as shown in %\Cref{fig:highf-A3}, which %yields similar results).
 Steeper relief is characterized by larger curvature values, while flatter regions are of curvature close to zero. \Cref{fig:highf-14} shows the percent difference in PGV caused by including topography for varying curvature in the simulated region. The response of two models are shown, one with 1000 m $V_S$ taper \citep{huCalibrationNearsurfaceSeismic2021} and one without (original CVM-S). The model without the near-surface low velocities introduced by the $V_S$ taper method tends to reduce the PGVs by about up to 40\% for most curvatures below 2.5 Hz, with a broader spectrum of de-amplification (up to 75\%) and amplification (up to 40-100\%, most pronounced for the largest curvatures) at frequencies between 2.5 and 5 Hz. These trends, however, becomes much more notable when the shallow low velocities are present, where steep topography (e.g., mountain summits and local steep hills) increases PGVs. This result may partly explain why in previous studies, omitting the near-surface model complexity, topographic effects on ground motions tend to underestimate the amplification at mountain tops compared to observations \citeg{pischiuttaTopographicEffectsHill2010,lovati2011estimation}.
 
 
@@ -253,11 +254,11 @@ This research was supported through the U.S. Geological Survey External Program 
         9        & Yes        & $Q_S=0.1V_Sf^{0.6}$               & No                     & 350\\
         10        & Yes        & $Q_S=0.1V_Sf^{0.6}$               & No                     & 0  \\
         11        & Yes        & $Q_S=0.1V_S$               & No                     & 0  \\
-        12        & Yes        & $Q_S=Q_{seg}(V_S)f^{0.4}$\tnote{\textsuperscript{**}}        & $\sigma=5\%$, $a=100m$ & 100\\
-        13        & Yes        & $Q_S=Q_{seg}(V_S)f^{0.4}$\tnote{\textsuperscript{**}}        & $\sigma=5\%$, $a=500m$ & 100\\
-        14       & Yes        & $Q_S=Q_{seg}(V_S)f^{0.4}$\tnote{\textsuperscript{**}}        & $\sigma=10\%$, $a=100m$ & 100\\
-        15       & Yes        & $Q_S=Q_{seg}(V_S)f^{0.4}$\tnote{\textsuperscript{**}}        & $\sigma=10\%$, $a=500m$ & 100\\
-        16        & Yes        & $Q_S=0.1V_Sf^{0.3}$              & $\sigma=5\%$, $a=5000m$ & 100\\
+        12        & Yes        & $Q_S=Q_{seg}(V_S)f^{0.4}$\tnote{\textsuperscript{**}}        & $\sigma=5\%$, $a=100m$ & 1000\\
+        13        & Yes        & $Q_S=Q_{seg}(V_S)f^{0.4}$\tnote{\textsuperscript{**}}        & $\sigma=5\%$, $a=500m$ & 1000\\
+        14       & Yes        & $Q_S=Q_{seg}(V_S)f^{0.4}$\tnote{\textsuperscript{**}}        & $\sigma=10\%$, $a=100m$ & 1000\\
+        15       & Yes        & $Q_S=Q_{seg}(V_S)f^{0.4}$\tnote{\textsuperscript{**}}        & $\sigma=10\%$, $a=500m$ & 1000\\
+        16        & Yes        & $Q_S=0.1V_Sf^{0.3}$              & $\sigma=5\%$, $a=5000m$ & 1000\\
         17       & No         & $Q_S=0.1V_Sf^{0.6}$               & No                     & 1000  \\
         18       & No         & $Q_S=0.1V_Sf^{0.6}$               & No                     & 700\\
         19       & No         & $Q_S=0.1V_Sf^{0.6}$               & No                     & 350\\
@@ -307,7 +308,7 @@ This research was supported through the U.S. Geological Survey External Program 
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=0.9\textwidth,height=0.9\textheight,keepaspectratio]{figures/figure_highf_4.pdf}
-  \caption{Illustration of the SH1D method used to include the effects of material with $V_S$ less than 500 m/s in our 3D simulations for an example site. (a) $V_S$ profile extracted from CVM-S (red dashed curve) and clamped at 500 m/s (blue). (b) SH1D response ratio between the profiles without clamping and with clamping of $V_S$ =500 m/s. (c) Synthetics from a 3D simulation using $V_S$=500m/s, with and without the SH1D response ratio. (d) Fourier amplitude spectra corresponding to the waveforms in (c).}
+  \caption{Illustration of the SH1D method used to include the effects of material with $V_S$ less than 500 m/s in our 3D simulations for an example site. (a) $V_S$ profile extracted from CVM-S (red dashed curve) and clamped at 500 m/s (blue). (b) SH1D response ratio between the profiles without clamping and with clamping of $V_S =500$ m/s. (c) Synthetics from a 3D simulation using $V_S=500$ m/s, with and without the SH1D response ratio. (d) Fourier amplitude spectra corresponding to the waveforms in (c).}
   \label{fig:highf-4}
 \end{figure}
 \clearpage
@@ -351,7 +352,7 @@ This research was supported through the U.S. Geological Survey External Program 
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=0.9\textwidth,height=0.9\textheight,keepaspectratio]{figures/figure_highf_9.pdf}
-  \caption{Bias of (a-b) PGV and (c-d) DUR for passbands (left) 0.15-2.5 Hz and (right) 2.5-5 Hz at all 259 stations. The bias is calculated in the same way as for \Cref{fig:highf-8}. The solid lines depict the moving average of the bias using a 20-point window for each of the $Q$ models (blue: Model 11, red: Model 10, green: Model 3, orange: Model 1; see \cref{tab:highf-2}) versus hypocentral distance.
+  \caption{Bias of (a-b) PGV and (c-d) DUR for passbands (left) 0.15-2.5 Hz and (right) 2.5-5 Hz at all 259 stations. The bias is calculated in the same way as for \Cref{fig:highf-7}. The solid lines depict the moving average of the bias using a 20-point window for each of the $Q$ models (blue: Model 11, red: Model 10, green: Model 3, orange: Model 1; see \cref{tab:highf-2}) versus hypocentral distance.
   }
   \label{fig:highf-9}
 \end{figure}
@@ -429,8 +430,8 @@ This research was supported through the U.S. Geological Survey External Program 
 \numberwithin{figure}{section}
 \numberwithin{table}{section}
 \numberwithin{equation}{section}
-\renewcommand{\thetable}{S\arabic{chapter}.\arabic{table}}
-\renewcommand{\thefigure}{S\arabic{chapter}.\arabic{figure}}
+\renewcommand{\thetable}{A\arabic{chapter}.\arabic{table}}
+\renewcommand{\thefigure}{A\arabic{chapter}.\arabic{figure}}
 
 
 %% Left out on 071721
@@ -440,7 +441,7 @@ This research was supported through the U.S. Geological Survey External Program 
 % %limit comparison to flat %sites?
 % % Kim, you mean filtering sites by elevation lower than some threshold, or low velocity (soil sites), or by curvature ? I tried using sites with elevation <= 1000m, or sites with surface Vs <= 1000m/s, which both have limited influence.
 
-% \Cref{fig:highf-S4} shows the FAS bias of two 3D simulations with minimum $V_S$ of 200 m/s and 500 m/s, both using a flat free surface boundary condition. We notice  that the lower velocity material has very little effect on the vertical component, justifying only applying the correction to the horizontal components. The SH1D correction is applied to the horizontal components of the simulation with minimum $V_S$ of 500 m/s. For the horizontal components, the corrected simulation matches the minimum $V_S$ of 200 m/s simulation fairly well below about 2.5 Hz. The moderate overprediction for higher frequencies likely is caused by vertical resonance effects primarily in the 1D model.
+% \Cref{fig:highf-A4} shows the FAS bias of two 3D simulations with minimum $V_S$ of 200 m/s and 500 m/s, both using a flat free surface boundary condition. We notice  that the lower velocity material has very little effect on the vertical component, justifying only applying the correction to the horizontal components. The SH1D correction is applied to the horizontal components of the simulation with minimum $V_S$ of 500 m/s. For the horizontal components, the corrected simulation matches the minimum $V_S$ of 200 m/s simulation fairly well below about 2.5 Hz. The moderate overprediction for higher frequencies likely is caused by vertical resonance effects primarily in the 1D model.
 
 
 %%%sub-resolution sampling %of the low-velocity %material for the %simulation with minimum %$V_S$ of 200 m/s (5 %points per minimum %$V_S$).
@@ -452,21 +453,21 @@ This research was supported through the U.S. Geological Survey External Program 
   \includegraphics[width=0.9\textwidth,height=0.85\textheight,keepaspectratio]{figures/figure_highf_S1.pdf}
   \caption{
   Shear-wave quality factor ($Q_S$) plotted against $V_S$ (m/s) for several attenuation models widely used in the literature \citeg{olsenEstimationLongPeriodSec2003,taborda2014ground,savranGroundMotionSimulation2019,withersGroundMotionIntraevent2019} and investigated here. The inset figure in the upper left corner zooms into $V_S <= 1600$ m/s, denoted by the dashed black box. Note that these $Q_S$ relations are valid for constant $Q$ models, or frequency-dependent $Q$ models for frequencies below 1 Hz.}
-  \label{fig:highf-S1}
+  \label{fig:highf-A1}
 \end{figure}
 \clearpage
 
 \begin{figure}[!ht]
   \includegraphics[width=0.9\textwidth,height=0.9\textheight,keepaspectratio]{figures/figure_highf_S2.pdf}
-  \caption{Description of three candidate source models used in this study. (top) Slip distribution (shading) for sources 1, 2 and 3 (left to right), characterized by their hypocentral depths at 5, 5.5 and 6 km, respectively. Contours depict rupture time at a 0.4 s interval starting from 0. (bottom) (left) sum of the moment rates for all subfaults and (right) Fourier amplitude spectrum, respectively.  Sources 1, 2 and 3 (from left to right in the first row) are characterized by their hypocentral depths at 5, 5.5 and 6 km, respectively. The contours represent rupture time at a 0.4 s interval starting from 0. Source 1 is the default source model used elsewhere in this paper.}
-  \label{fig:highf-S2}
+  \caption{Description of three candidate source models used in this study. (top) Slip distribution (shading) for sources 1, 2 and 3 (left to right), characterized by their hypocentral depths at 5, 5.5 and 6 km, respectively. Contours depict rupture time at a 0.4 s interval starting from 0. (bottom) (left) sum of the moment rates for all subfaults and (right) Fourier amplitude spectrum, respectively.  Sources 1, 2 and 3 (from left to right in the first row) are characterized by their hypocentral depths at 5, 5.5 and 6 km, respectively. The contours represent rupture time at a 0.4 s interval starting from 0. Source 1 is the default source model used elsewhere in this chapter.}
+  \label{fig:highf-A2}
 \end{figure}
 \clearpage
 
 \begin{figure}[!ht]
   \includegraphics[width=0.9\textwidth,height=0.9\textheight,keepaspectratio]{figures/figure_highf_S3.png}
   \caption{PGVs for sources 1, 2 and 3 (from left to right; see \cref{fig:highf-3}). The top and bottom rows represent the band-pass filtered results for 0.15-2.5 Hz and 2.5-5 Hz, respectively. The star denotes the epicenter.}
-  \label{fig:highf-S3}
+  \label{fig:highf-A3}
 \end{figure}
 \clearpage
 
@@ -476,7 +477,7 @@ This research was supported through the U.S. Geological Survey External Program 
 %   \includegraphics[width=0.9\textwidth,height=0.85\textheight,keepaspectratio]{figures/figure_highf_S4.pdf}
 %   \caption{
 % FAS bias between data and synthetics with minimum $V_S$ clamped at 200 m/s (blue), 500 m/s (green), and 500 m/s with 1D correction (red) for (a) E-W, (b) N-S, and (c) vertical component. A positive (negative) bias depicts overprediction (underprediction). The solid lines show the median FAS bias over all 259 stations, shading depicts the 95\% confidence interval (CI) and the dashed lines denote one standard deviation centered at the median.}
-%   \label{fig:highf-S4}
+%   \label{fig:highf-A4}
 % \end{figure}
 % \clearpage
 
@@ -485,7 +486,7 @@ This research was supported through the U.S. Geological Survey External Program 
   \includegraphics[width=0.9\textwidth,height=0.9\textheight,keepaspectratio]{figures/figure_highf_S5.pdf}
   \caption{Probability density histogram of the PGV difference caused by SSH effects, between Models 12-14 with Model 6 (blue, green and red) , and Model 16 with Model 2 (cyan). The definition of percent difference (x-axis) is the same as in \Cref{fig:highf-11}.
   }
-  \label{fig:highf-S5}
+  \label{fig:highf-A5}
 \end{figure}
 \clearpage
 
@@ -495,7 +496,7 @@ This research was supported through the U.S. Geological Survey External Program 
   \caption{
   Density of PGV change for models with topography relative to models without topography for bandwidths of (left column) 0.15-2.5 Hz and (right column) 2.5-5 Hz, and models with (top row) and (bottom row) without modified shallow velocities. The y-axis depicts topographic curvature smoothed using a 2-D window of 120 m $\times$ 120 m. Values toward the top right (bottom left) denote strong amplification at steep areas (deamplification at flat areas). Note that density intervals do not correspond to constant bin sizes.
   }
-  \label{fig:highf-S6}
+  \label{fig:highf-A6}
 \end{figure}
 \clearpage
 
@@ -505,7 +506,7 @@ This research was supported through the U.S. Geological Survey External Program 
   \caption{
   GOF scores for a subset of the metrics used in this study, for frequency bands 0.15-1 Hz, 1-2.5 Hz, and 2.5-5 Hz. Model IDs are listed in \Cref{tab:highf-2}.} 
  
-  \label{fig:highf-S7}
+  \label{fig:highf-A7}
 \end{figure}
 \clearpage
 
@@ -514,7 +515,7 @@ This research was supported through the U.S. Geological Survey External Program 
 %   \includegraphics[width=0.9\textwidth,height=0.9\textheight,keepaspectratio]{figures/figure_highf_16.png}
 %   \caption{Similar with \Cref{fig:highf-8}, but with seismic moment reduced from $M_w$ of 5.14 ($M_0 = 5.79 \times 10^{16}$ Nm) to $M_w$4.56e16 Nm.
 %   }
-%   \label{fig:highf-S8}
+%   \label{fig:highf-A8}
 % \end{figure}
 % \clearpage
 
@@ -522,18 +523,18 @@ This research was supported through the U.S. Geological Survey External Program 
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=0.9\textwidth,height=0.9\textheight,keepaspectratio]{figures/figure_highf_S11.pdf}
-  \caption{Bias of (top row) PGV and (middle row) DUR and GOF (bottom row) for bandwidths of (left column) 0.15-2.5 Hz and (right column) 2.5-5 Hz at all 259 stations for Model 1 (see \cref{tab:highf-2} for model features). The bias is calculated in the same way as \Cref{fig:highf-10}. The solid line depicts the moving average of the bias of PGV using a 20-point window versus hypocentral distance. The shading denotes the standard deviation centered at the mean.
+  \caption{Bias of (top row) PGV and (middle row) DUR and GOF (bottom row) for bandwidths of (left column) 0.15-2.5 Hz and (right column) 2.5-5 Hz at all 259 stations for Model 1 (see \cref{tab:highf-2} for model features). The bias is calculated in the same way as \Cref{fig:highf-9}. The solid line depicts the moving average of the bias of PGV using a 20-point window versus hypocentral distance. The shading denotes the standard deviation centered at the mean.
   }
-  \label{fig:highf-S11}
+  \label{fig:highf-A11}
 \end{figure}
 \clearpage
 
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=0.9\textwidth,height=0.9\textheight,keepaspectratio]{figures/figure_highf_S12.pdf}
-  \caption{Same as \Cref{fig:highf-S11}, but for Model 2.
+  \caption{Same as \Cref{fig:highf-A11}, but for Model 2.
   }
-\label{fig:highf-S12}
+\label{fig:highf-A12}
 \end{figure}
 \clearpage
 
@@ -541,9 +542,9 @@ This research was supported through the U.S. Geological Survey External Program 
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=0.9\textwidth,height=0.9\textheight,keepaspectratio]{figures/figure_highf_S13.pdf}
-  \caption{Same as \Cref{fig:highf-S11}, but for Model 3.
+  \caption{Same as \Cref{fig:highf-A11}, but for Model 3.
   }
-\label{fig:highf-S13}
+\label{fig:highf-A13}
 \end{figure}
 \clearpage
 
@@ -551,9 +552,9 @@ This research was supported through the U.S. Geological Survey External Program 
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=0.9\textwidth,height=0.9\textheight,keepaspectratio]{figures/figure_highf_S14.pdf}
-  \caption{Same as \Cref{fig:highf-S11}, but for Model 4.
+  \caption{Same as \Cref{fig:highf-A11}, but for Model 4.
   }
-\label{fig:highf-S14}
+\label{fig:highf-A14}
 \end{figure}
 \clearpage
 
@@ -561,9 +562,9 @@ This research was supported through the U.S. Geological Survey External Program 
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=0.9\textwidth,height=0.9\textheight,keepaspectratio]{figures/figure_highf_S15.pdf}
-  \caption{Same as \Cref{fig:highf-S11}, but for Model 5.
+  \caption{Same as \Cref{fig:highf-A11}, but for Model 5.
   }
-\label{fig:highf-S15}
+\label{fig:highf-A15}
 \end{figure}
 \clearpage
 
@@ -571,9 +572,9 @@ This research was supported through the U.S. Geological Survey External Program 
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=0.9\textwidth,height=0.9\textheight,keepaspectratio]{figures/figure_highf_S17.pdf}
-  \caption{Same as \Cref{fig:highf-S11}, but for Model 7.
+  \caption{Same as \Cref{fig:highf-A11}, but for Model 7.
   }
-\label{fig:highf-S17}
+\label{fig:highf-A17}
 \end{figure}
 \clearpage
 
@@ -581,9 +582,9 @@ This research was supported through the U.S. Geological Survey External Program 
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=0.9\textwidth,height=0.9\textheight,keepaspectratio]{figures/figure_highf_S18.pdf}
-  \caption{Same as \Cref{fig:highf-S11}, but for Model 8.
+  \caption{Same as \Cref{fig:highf-A11}, but for Model 8.
   }
-\label{fig:highf-S18}
+\label{fig:highf-A18}
 \end{figure}
 \clearpage
 
@@ -591,9 +592,9 @@ This research was supported through the U.S. Geological Survey External Program 
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=0.9\textwidth,height=0.9\textheight,keepaspectratio]{figures/figure_highf_S19.pdf}
-  \caption{Same as \Cref{fig:highf-S11}, but for Model 9.
+  \caption{Same as \Cref{fig:highf-A11}, but for Model 9.
   }
-\label{fig:highf-S19}
+\label{fig:highf-A19}
 \end{figure}
 \clearpage
 
@@ -601,9 +602,9 @@ This research was supported through the U.S. Geological Survey External Program 
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=0.9\textwidth,height=0.9\textheight,keepaspectratio]{figures/figure_highf_S20.pdf}
-  \caption{Same as \Cref{fig:highf-S11}, but for Model 10.
+  \caption{Same as \Cref{fig:highf-A11}, but for Model 10.
   }
-\label{fig:highf-S20}
+\label{fig:highf-A20}
 \end{figure}
 \clearpage
 
@@ -611,9 +612,9 @@ This research was supported through the U.S. Geological Survey External Program 
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=0.9\textwidth,height=0.9\textheight,keepaspectratio]{figures/figure_highf_S21.pdf}
-  \caption{Same as \Cref{fig:highf-S11}, but for Model 11.
+  \caption{Same as \Cref{fig:highf-A11}, but for Model 11.
   }
-\label{fig:highf-S21}
+\label{fig:highf-A21}
 \end{figure}
 \clearpage
 
@@ -621,9 +622,9 @@ This research was supported through the U.S. Geological Survey External Program 
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=0.9\textwidth,height=0.9\textheight,keepaspectratio]{figures/figure_highf_S22.pdf}
-  \caption{Same as \Cref{fig:highf-S11}, but for Model 12.
+  \caption{Same as \Cref{fig:highf-A11}, but for Model 12.
   }
-\label{fig:highf-S22}
+\label{fig:highf-A22}
 \end{figure}
 \clearpage
 
@@ -631,9 +632,9 @@ This research was supported through the U.S. Geological Survey External Program 
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=0.9\textwidth,height=0.9\textheight,keepaspectratio]{figures/figure_highf_S23.pdf}
-  \caption{Same as \Cref{fig:highf-S11}, but for Model 13.
+  \caption{Same as \Cref{fig:highf-A11}, but for Model 13.
   }
-\label{fig:highf-S23}
+\label{fig:highf-A23}
 \end{figure}
 \clearpage
 
@@ -641,9 +642,9 @@ This research was supported through the U.S. Geological Survey External Program 
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=0.9\textwidth,height=0.9\textheight,keepaspectratio]{figures/figure_highf_S24.pdf}
-  \caption{Same as \Cref{fig:highf-S11}, but for Model 14.
+  \caption{Same as \Cref{fig:highf-A11}, but for Model 14.
   }
-\label{fig:highf-S24}
+\label{fig:highf-A24}
 \end{figure}
 \clearpage
 
@@ -651,9 +652,9 @@ This research was supported through the U.S. Geological Survey External Program 
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=0.9\textwidth,height=0.9\textheight,keepaspectratio]{figures/figure_highf_S25.pdf}
-  \caption{Same as \Cref{fig:highf-S11}, but for Model 15.
+  \caption{Same as \Cref{fig:highf-A11}, but for Model 15.
   }
-\label{fig:highf-S25}
+\label{fig:highf-A25}
 \end{figure}
 \clearpage
 
@@ -661,9 +662,9 @@ This research was supported through the U.S. Geological Survey External Program 
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=0.9\textwidth,height=0.9\textheight,keepaspectratio]{figures/figure_highf_S26.pdf}
-  \caption{Same as \Cref{fig:highf-S11}, but for Model 16.
+  \caption{Same as \Cref{fig:highf-A11}, but for Model 16.
   }
-\label{fig:highf-S26}
+\label{fig:highf-A26}
 \end{figure}
 \clearpage
 
@@ -671,9 +672,9 @@ This research was supported through the U.S. Geological Survey External Program 
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=0.9\textwidth,height=0.9\textheight,keepaspectratio]{figures/figure_highf_S27.pdf}
-  \caption{Same as \Cref{fig:highf-S11}, but for Model 17.
+  \caption{Same as \Cref{fig:highf-A11}, but for Model 17.
   }
-\label{fig:highf-S27}
+\label{fig:highf-A27}
 \end{figure}
 \clearpage
 
@@ -681,9 +682,9 @@ This research was supported through the U.S. Geological Survey External Program 
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=0.9\textwidth,height=0.9\textheight,keepaspectratio]{figures/figure_highf_S28.pdf}
-  \caption{Same as \Cref{fig:highf-S11}, but for Model 18.
+  \caption{Same as \Cref{fig:highf-A11}, but for Model 18.
   }
-\label{fig:highf-S28}
+\label{fig:highf-A28}
 \end{figure}
 \clearpage
 
@@ -691,9 +692,9 @@ This research was supported through the U.S. Geological Survey External Program 
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=0.9\textwidth,height=0.9\textheight,keepaspectratio]{figures/figure_highf_S29.pdf}
-  \caption{Same as \Cref{fig:highf-S11}, but for Model 19.
+  \caption{Same as \Cref{fig:highf-A11}, but for Model 19.
   }
-\label{fig:highf-S29}
+\label{fig:highf-A29}
 \end{figure}
 \clearpage
 
@@ -701,9 +702,9 @@ This research was supported through the U.S. Geological Survey External Program 
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=0.9\textwidth,height=0.9\textheight,keepaspectratio]{figures/figure_highf_S30.pdf}
-  \caption{Same as \Cref{fig:highf-S11}, but for Model 20.
+  \caption{Same as \Cref{fig:highf-A11}, but for Model 20.
   }
-\label{fig:highf-S30}
+\label{fig:highf-A30}
 \end{figure}
 \clearpage
 
@@ -711,9 +712,9 @@ This research was supported through the U.S. Geological Survey External Program 
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=0.9\textwidth,height=0.9\textheight,keepaspectratio]{figures/figure_highf_S31.pdf}
-  \caption{Same as \Cref{fig:highf-S11}, but for Model 21.
+  \caption{Same as \Cref{fig:highf-A11}, but for Model 21.
   }
-\label{fig:highf-S31}
+\label{fig:highf-A31}
 \end{figure}
 \clearpage
 
@@ -721,9 +722,9 @@ This research was supported through the U.S. Geological Survey External Program 
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=0.9\textwidth,height=0.9\textheight,keepaspectratio]{figures/figure_highf_S32.pdf}
-  \caption{Same as \Cref{fig:highf-S11}, but for Model 22.
+  \caption{Same as \Cref{fig:highf-A11}, but for Model 22.
   }
-\label{fig:highf-S32}
+\label{fig:highf-A32}
 \end{figure}
 \clearpage
 
@@ -768,7 +769,7 @@ This research was supported through the U.S. Geological Survey External Program 
 % With the effects and importance of the feature summarized, a subset of our well-performed models with these features included, achieve a fair improvement in terms of the proposed GOF criterion. In contrast, the simplest models without incorporating any additional features yield consistently lower GOF scores with the increase of frequency. Our results suggest that the major source of misfits is the poor constraints in the underlying velocity model at the high resolution required for our high-frequency simulations.  The composite models that generated the best fit suggests that incorporating topography, frequency-dependent attenuations (e.g. $Q_S=0.05V_Sf^{0.6}$ or $Q_S=0.1V_Sf^{0.6}$) and SSHs is a valid supplement to the velocity model in numerical simulations.
 
 %% Discarded on 071721
-% We estimated the effects of the near-surface low velocities by comparing the PGV, DUR and GOF with (Model 3) and without (Model 6) the 1D correction for material with $V_S$ $<$ 500 m/s, see \Cref{fig:highf-15}. As expected from \cref{fig:highf-S4} the correction generates small effects for frequencies below 2.5 Hz, while it controls the $Q$ model for the high frequencies. The near-surface low velocities tend to amplify the PGVs with little influence on DUR. Including the low velocities improves the fit at distances larger than 40 km, but tends to deteriorate in the near-source regions due to overamplification above 2.5 Hz.
+% We estimated the effects of the near-surface low velocities by comparing the PGV, DUR and GOF with (Model 3) and without (Model 6) the 1D correction for material with $V_S$ $<$ 500 m/s, see \Cref{fig:highf-15}. As expected from \cref{fig:highf-A4} the correction generates small effects for frequencies below 2.5 Hz, while it controls the $Q$ model for the high frequencies. The near-surface low velocities tend to amplify the PGVs with little influence on DUR. Including the low velocities improves the fit at distances larger than 40 km, but tends to deteriorate in the near-source regions due to overamplification above 2.5 Hz.
 
 
 
