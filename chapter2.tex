@@ -30,7 +30,7 @@ In this study, we quantify the accuracy of ground motion simulations based upon 
 \section{Numerical Approach}\label{vs30:approach}
 We perform 0-1 Hz wave propagation simulations of the 2014 $M_w$ 5.1 La Habra earthquake to explore the accuracy of ground motion predictions in terms of the shallow velocity structure. The simulations use the SCEC velocity model CVM-S4.26-M01 (hereafter referred to as CVM-S). \Cref{fig:vs30-1} shows the computational domain and strong motion seismic stations in the greater Los Angeles area used in this study. We discretize a 148 km $\times$ 140 km $\times$ 58 km region from CVM-S and the computational domain is rotated 39.9$^\circ$ clockwise to reduce the mesh size while optimizing the data coverage in our region of interest. \Cref{tab:vs30-1} lists the simulation parameters.
 
-The GPU-supported staggered-grid finite difference code AWP-ODC \citep[Anelastic Wave Propagation - Olsen, Day, and Cui, from the authors of the code;][]{cuiScalableEarthquakeSimulation2010} with discontinuous mesh \citep{nieFourthOrderStaggered2017} was used for the simulations analyzed in this study. We used spatial grid spacings of 20 m and 60 m in the grid partitions above and below 7.5 km, respectively, and a minimum $V_S$ of 500 m/s. To facilitate the use of these simulations in a companion, high-frequency study \citep{hu05HzDeterministic2021}, we computed frequencies up to 5 Hz. However, we restrict our analysis to a maximum frequency of 1 Hz in this study, which precludes some of the complicating effects that may become important at higher frequencies, e.g. topography, frequency-dependent attenuation, etc. 
+The GPU-supported staggered-grid finite difference code AWP-ODC \citep[Anelastic Wave Propagation - Olsen, Day, and Cui, from the authors of the code;][]{cuiScalableEarthquakeSimulation2010} with discontinuous mesh \citep{nieFourthOrderStaggered2017} was used for the simulations analyzed in this study. We used spatial grid spacings of 20 m and 60 m in the grid partitions above and below 7.5 km, respectively, and a minimum $V_S$ of 500 m/s. To facilitate the use of these simulations in a companion, high-frequency study \citep{hu05HzDeterministic2021}, we computed frequencies up to 5 Hz. However, we restrict our analysis to a maximum frequency of 1 Hz in this study, which precludes some of the complicating effects that may become important at higher frequencies, e.g. topography, frequency-dependent attenuation, etc.
 %We also verified that reducing the minimum $V_S$ to 200m/s makes only negligible difference to the spectral amplifications of interest (see \cref{fig:vs30-A1}).
 Anelastic attenuation is incorporated with the quality factors given by linear velocity-dependent relations $Q_S=0.1V_S$ ($V_S$ in m/s) and $Q_P=2Q_S$, as suggested by previous literature \citeg{bielakShakeOutEarthquakeScenario2010,withersGroundMotionIntraevent2019}. We applied sponge zones \citep{cerjanNonreflectingBoundaryCondition1985} with a width of 64 nodes at the exterior grid boundaries (except at the flat free surface) to limit artificial reflections.
 
@@ -64,7 +64,7 @@ We calculate the Fourier amplitude spectra (FAS) of accelerations for both recor
   \end{aligned}
 \end{equation}
 
-\noindent where $z^{\prime}$ is the depth, $z_T$ is the transition (taper) depth, $z$ is a normalized depth used in the following calculations, and $f(z)$ and $g(z)$ are functions defined for formulating the resulting $V_P$ and $V_S$. $V_{ST}$ and $V_{PT}$ are the S- and P-wave velocities extracted from the velocity model at $z_T$, respectively, and $P$ and $R$ are the \citet{brocherEmpiricalRelationsElastic2005} $V_P$ scaling law and Nafe-Drake law, respectively. The coefficient $a$ controls the ratio of surface $V_S$ to $V_{S30}$, and $b$ and $c$ control the overall and near-surface curvature, respectively. The method generates a profile as a function of depth minimally parameterized by $V_{S30}$, properties at the transition depth and three empirical coefficients only, which greatly simplifies the introduction of the model modifications into the velocity mesh. The coefficients ($a=1⁄2$, $b=2⁄3$, $c=3⁄2$) proposed by \citet{elyVs30derivedNearsurfaceSeismic2010} are calibrated to match the generic rock profiles of \citet{booreSiteAmplificationsGeneric1997} and \citet{magistraleSCECSouthernCalifornia2000}.
+\noindent where $z^{\prime}$ is the depth, $z_T$ is the transition (taper) depth, $z$ is a normalized depth used in the following calculations, and $f(z)$ and $g(z)$ are functions defined for formulating the resulting $V_P$ and $V_S$. $V_{ST}$ and $V_{PT}$ are the S- and P-wave velocities extracted from the velocity model at $z_T$, respectively, and $P$ and $R$ are the \citet{brocherEmpiricalRelationsElastic2005} $V_P$ scaling law and Nafe-Drake law, respectively. The coefficient $a$ controls the ratio of surface $V_S$ to $V_{S30}$, and $b$ and $c$ control the overall and near-surface curvature, respectively. The method generates a profile as a function of depth minimally parameterized by $V_{S30}$, properties at the transition depth and three empirical coefficients only, which greatly simplifies the introduction of the model modifications into the velocity mesh. The coefficients ($a=1 \slash 2$, $b=2 \slash 3$, $c=3 \slash 2$) proposed by \citet{elyVs30derivedNearsurfaceSeismic2010} are calibrated to match the generic rock profiles of \citet{booreSiteAmplificationsGeneric1997} and \citet{magistraleSCECSouthernCalifornia2000}.
 
 $V_{S30}$ is one of the key parameters, along with $z_T$, controlling the profile generated using the method proposed by \citet{elyVs30derivedNearsurfaceSeismic2010}. The $V_{S30}$ values adopted by \citet{elyVs30derivedNearsurfaceSeismic2010} were obtained from the geology-based $V_{S30}$ map of \citet{willsDevelopingMapGeologically2006} for California and the topography-based estimations by \citet{waldTopographicSlopeProxy2007} outside California. \citet{thompsonVS30MapCalifornia2014} proposed a $V_{S30}$ map for California based on regression kriging to incorporate multiple constraints from geology, topography and site-specific $V_{S30}$ measurements at various spatial scales based on the method by \citet{willsDevelopingMapGeologically2006}, and later updated to the $V_{S30}$ map by \citet{willsNextGeneration302015}. This approach is adopted by the US. Geological Survey \citep{thompsonUpdatedVs30Map2018} for California, which we adopt to calibrate near-surface velocities in CVM-S.
 
@@ -80,7 +80,7 @@ Before performing computationally expensive 3D numerical simulations, we use a t
 We further examined the effects on the resulting synthetics from applying these velocity tapers; we did so by combining the 3D simulations (which used the original, untapered CVM) with the SH1D amplification results, as shown in \Cref{fig:vs30-8}. At every station, and for each tapered profile, we calculated the FAS of the 3D simulated acceleration, divided by the FAS of the recorded acceleration, and multiplied by the SH1D amplification of the tapered profile. We then averaged across all sites in type A and B site groups, respectively. As expected, the type A sites show limited effects of superimposing the velocity tapering, and larger $z_T$ generally yields more amplification, with the exception of $z_T < 500$ m for 0.7-1 Hz. Unlike the muted effects of the velocity tapering for type A sites, different tapering depths produce much greater amplification effects for type B sites. Deeper tapering depths generate a favorable fit for 0.2-0.4 Hz, but tend to overpredict above 0.4-0.5 Hz for $z_T >= 750$ m. On the other hand, in the 0.5-1.0 Hz range, taper depths in the range 350 m to 750 m appear more favorable. These estimates from SH1D encourage us to explore tapering depths in the range 350 to 1000 m using 3D simulations in the next section.
 
 \section{3D Numerical Simulations}
-We carried out three additional 3D simulations using CVM-S, with $z_T$ of 350 m (default in \citename{elyVs30derivedNearsurfaceSeismic2010}, \citeyear{elyVs30derivedNearsurfaceSeismic2010}), 700 m, and 1000m, respectively. \Cref{fig:vs30-9} shows the resulting FAS bias for all three components at both type A and B sites. There is a negligible visual difference at type A sites for all components because our velocity tapering method leaves the original low velocities virtually unchanged. On the other hand, these models show significant differences at type B sites, where the original near-surface $V_S$ are deemed too large. Both the 700 m and 1000 m tapering models eliminate the critical underprediction from CVM-S for the two horizontal components. However, between these two models, the 1000 m model produces a better fit below 0.5 Hz while slightly overpredicting above 0.5 Hz for the horizontal components. Effects of the velocity taper are smaller for the vertical component, where the 1000 m model again is superior with a slight underprediction above 0.2 Hz. Thus, the 1000 m velocity tapering model provides the best fit across almost the entire frequency band.
+We carried out three additional 3D simulations using CVM-S, with $z_T$ of 350 m (\citeauthor[default in ][]{elyVs30derivedNearsurfaceSeismic2010}, \citeyear{elyVs30derivedNearsurfaceSeismic2010}), 700 m, and 1000m, respectively. \Cref{fig:vs30-9} shows the resulting FAS bias for all three components at both type A and B sites. There is a negligible visual difference at type A sites for all components because our velocity tapering method leaves the original low velocities virtually unchanged. On the other hand, these models show significant differences at type B sites, where the original near-surface $V_S$ are deemed too large. Both the 700 m and 1000 m tapering models eliminate the critical underprediction from CVM-S for the two horizontal components. However, between these two models, the 1000 m model produces a better fit below 0.5 Hz while slightly overpredicting above 0.5 Hz for the horizontal components. Effects of the velocity taper are smaller for the vertical component, where the 1000 m model again is superior with a slight underprediction above 0.2 Hz. Thus, the 1000 m velocity tapering model provides the best fit across almost the entire frequency band.
 
 It is helpful to quantify the results using a single goodness of fit (GOF) metric, which we define as the average of the median bias over (a group of) sites:
 \begin{equation}\label{eq:vs30-3}
@@ -169,7 +169,7 @@ The dissertation author was the primary investigator and author of this paper.
 \clearpage
 \begin{table}[!ht]
   \vrule depth12pt width 0pt
-  \caption{Rock site information}
+  \caption{Type B site information}
   \label{tab:vs30-2}
   \resizebox{0.85\columnwidth}{!}{%
     \begin{tabular}{@{}lcccccc@{}}
@@ -230,7 +230,7 @@ The dissertation author was the primary investigator and author of this paper.
       \renewcommand{\arraystretch}{1.4}%
       \begin{tabular}{@{}ccccccccc@{}}
         \toprule
-        \multirow{2}{*}{Model}                    & \multicolumn{4}{c}{Soil sites} & \multicolumn{4}{c}{Rock sites}                                                                       \\ \cmidrule(l){2-9}
+        \multirow{2}{*}{Model}                    & \multicolumn{4}{c}{Type A sites} & \multicolumn{4}{c}{Type B sites}                                                                       \\ \cmidrule(l){2-9}
                                                   &
         East-west                                 &
         North-south                               &
@@ -239,11 +239,11 @@ The dissertation author was the primary investigator and author of this paper.
         East-west                                 &
         North-south                               &
         Vertical                                  &
-        \textbf{Average}                                                                                                                                                                  \\ \cmidrule(r){1-1} \cmidrule(l){2-9}
-        CVM-S\tnote{\textsuperscript{*}}          & 0.034                          & 0.044                          & 0.009 & \textbf{0.029} & -0.277 & -0.261 & -0.136 & \textbf{-0.225} \\
-        CVM-S + 350 m\tnote{\textsuperscript{*}}  & 0.040                          & 0.048                          & 0.009 & \textbf{0.033} & -0.171 & -0.153 & -0.138 & \textbf{-0.154} \\
-        CVM-S + 700 m\tnote{\textsuperscript{*}}  & 0.055                          & 0.062                          & 0.018 & \textbf{0.045} & -0.020 & -0.015 & -0.087 & \textbf{-0.041} \\
-        CVM-S + 1000 m\tnote{\textsuperscript{*}} & 0.065                          & 0.073                          & 0.020 & \textbf{0.053} & 0.048  & 0.055  & -0.055 & \textbf{0.016}  \\
+        \textbf{Average}                                                                                                                                                                      \\ \cmidrule(r){1-1} \cmidrule(l){2-9}
+        CVM-S\tnote{\textsuperscript{*}}          & 0.034                            & 0.044                            & 0.009 & \textbf{0.029} & -0.277 & -0.261 & -0.136 & \textbf{-0.225} \\
+        CVM-S + 350 m\tnote{\textsuperscript{*}}  & 0.040                            & 0.048                            & 0.009 & \textbf{0.033} & -0.171 & -0.153 & -0.138 & \textbf{-0.154} \\
+        CVM-S + 700 m\tnote{\textsuperscript{*}}  & 0.055                            & 0.062                            & 0.018 & \textbf{0.045} & -0.020 & -0.015 & -0.087 & \textbf{-0.041} \\
+        CVM-S + 1000 m\tnote{\textsuperscript{*}} & 0.065                            & 0.073                            & 0.020 & \textbf{0.053} & 0.048  & 0.055  & -0.055 & \textbf{0.016}  \\
         \begin{tabular}[c]{@{}c@{}}CVM-S + 350 m \\[-5pt] + $Q_S=0.05V_S$\tnote{\textdagger}\end{tabular}                 &
         -0.039                                    &
         -0.027                                    &
@@ -252,7 +252,7 @@ The dissertation author was the primary investigator and author of this paper.
         -0.064                                    &
         -0.052                                    &
         -0.156                                    &
-        \textbf{-0.091}                                                                                                                                                                   \\
+        \textbf{-0.091}                                                                                                                                                                       \\
         \begin{tabular}[c]{@{}c@{}}CVM-S + 1000 m \\[-5pt] + $Q_S=0.15V_S$\tnote{\textdagger}\end{tabular}                &
         0.085                                     &
         0.091                                     &
@@ -261,7 +261,7 @@ The dissertation author was the primary investigator and author of this paper.
         -0.135                                    &
         -0.120                                    &
         -0.105                                    &
-        \textbf{-0.120}                                                                                                                                                                   \\ \bottomrule
+        \textbf{-0.120}                                                                                                                                                                       \\ \bottomrule
       \end{tabular}
     }
     \begin{tablenotes}
@@ -285,8 +285,8 @@ The dissertation author was the primary investigator and author of this paper.
 \clearpage
 \begin{figure}[!ht]
   \centering
-  \includegraphics[width=0.9\textwidth,height=0.9\textheight,keepaspectratio]{figures/figure_vs30_2.pdf}
-  \caption{Description of the selected source model used in this study. (a) Moment distribution (shading). The contours represent rupture time at a 0.4 s interval starting from 0. (b) and (c) represent the sum of the moment rates for all subfaults and the Fourier amplitude spectrum, respectively.  A Brune-type $\omega^{-2}$ decay source \citep{brune1970tectonic} that fits the source spectrum is plotted for reference.}
+  \includegraphics[width=0.9\textwidth,height=0.86\textheight,keepaspectratio]{figures/figure_vs30_2.pdf}
+  \caption{Description of the selected source model used in this study. (a) Moment distribution (shading). The contours represent rupture time at a 0.4 s interval starting from 0. (b) and (c) represent the sum of the moment rates for all subfaults and the Fourier amplitude spectrum, respectively. A Brune-type $\omega^{-2}$ decay source \citep{brune1970tectonic} that fits the source spectrum is plotted for reference.}
   \label{fig:vs30-2}
 \end{figure}
 
@@ -294,7 +294,7 @@ The dissertation author was the primary investigator and author of this paper.
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=0.9\textwidth]{figures/figure_vs30_3.pdf}
-  \caption{(a) Top 150 m and (b) 0-4000 m $V_S$ profiles at the 259 stations. The black and red curves represent type B (surface $V_S >= 1000$ m/s) and soil (surface $V_S < 1000$ m/s) sites, respectively. The darker curves denote the sites with farther distance from the source.}
+  \caption{(a) Top 150 m and (b) 0-4000 m $V_S$ profiles at the 259 stations. The black and red curves represent type A (surface $V_S < 1000$ m/s) and type B (surface $V_S >= 1000$ m/s) sites, respectively. The darker curves denote the sites with farther distance from the source.}
   \label{fig:vs30-3}
 \end{figure}
 
@@ -376,7 +376,7 @@ The dissertation author was the primary investigator and author of this paper.
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=0.9\textwidth]{figures/figure_vs30_13.pdf}
-  \caption{Type B site $V_S$ profiles from CVM-S, and CVM-S and CVM-H with (default) \citet{elyVs30derivedNearsurfaceSeismic2010} GTL refinement depth of 350 m.}
+  \caption{Type B site $V_S$ profiles from CVM-S, and CVM-S and CVM-H with (default) \citet{elyVs30derivedNearsurfaceSeismic2010} GTL taper depth of 350 m.}
   \label{fig:vs30-13}
 \end{figure}
 
@@ -385,7 +385,7 @@ The dissertation author was the primary investigator and author of this paper.
 \begin{figure}[!ht]
   \sidesubfloat[]{\includegraphics[width=0.4\textwidth]{figures/figure_vs30_14a.png}\label{fig:vs30-14a}} \hfil
   \sidesubfloat[]{\includegraphics[width=0.45\textwidth]{figures/figure_vs30_14b.pdf}\label{fig:vs30-14b}} % \\[\baselineskip]%
-  \caption{ (a) $V_S$ profile sample locations in California. Triangles denote type B sites and circles denote type A sites, and (b) extracted $V_S$ profiles. The top panel zooms into the top 500 m. }
+  \caption{ (a) $V_S$ profile sample locations in California. Circles denote type A sites and triangles denote type B sites, and (b) extracted $V_S$ profiles. The top panel zooms into the top 500 m. }
   \label{fig:vs30-14}
 \end{figure}
 

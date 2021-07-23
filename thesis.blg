@@ -1,15 +1,15 @@
-[1] Config.pm:311> INFO - This is Biber 2.16
-[1] Config.pm:314> INFO - Logfile is 'thesis.blg'
-[682] biber-darwin:340> INFO - === Mon Jul  5, 2021, 11:51:56
-[762] Biber.pm:415> INFO - Reading 'thesis.bcf'
-[1438] Biber.pm:952> INFO - Found 72 citekeys in bib section 0
-[1499] Biber.pm:4340> INFO - Processing section 0
-[1532] Biber.pm:4531> INFO - Looking for bibtex format file 'references.bib' for section 0
-[1681] bibtex.pm:1689> INFO - LaTeX decoding ...
-[5894] bibtex.pm:1494> INFO - Found BibTeX data source 'references.bib'
-[10176] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[10176] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[10176] Biber.pm:4168> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
-[10176] Biber.pm:4174> INFO - No sort tailoring available for locale 'en-US'
-[10765] bbl.pm:654> INFO - Writing 'thesis.bbl' with encoding 'UTF-8'
-[11278] bbl.pm:757> INFO - Output to thesis.bbl
+[2] Config.pm:311> INFO - This is Biber 2.16
+[3] Config.pm:314> INFO - Logfile is 'thesis.blg'
+[597] biber-darwin:340> INFO - === Thu Jul 22, 2021, 11:31:08
+[677] Biber.pm:415> INFO - Reading 'thesis.bcf'
+[2526] Biber.pm:952> INFO - Found 255 citekeys in bib section 0
+[2627] Biber.pm:4340> INFO - Processing section 0
+[2672] Biber.pm:4531> INFO - Looking for bibtex format file 'references.bib' for section 0
+[3136] bibtex.pm:1689> INFO - LaTeX decoding ...
+[8475] bibtex.pm:1494> INFO - Found BibTeX data source 'references.bib'
+[23471] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[23471] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[23472] Biber.pm:4168> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
+[23472] Biber.pm:4174> INFO - No sort tailoring available for locale 'en-US'
+[26549] bbl.pm:654> INFO - Writing 'thesis.bbl' with encoding 'UTF-8'
+[27655] bbl.pm:757> INFO - Output to thesis.bbl

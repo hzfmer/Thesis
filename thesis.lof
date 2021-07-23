@@ -1,0 +1,185 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {xchapter}{Introduction}{1}{chapter.1}%
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {xchapter}{Calibration of the Near-surface Seismic Structure in the SCEC Community Velocity Model Version 4}{13}{chapter.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Simulation region for the La Habra event and locations of 259 strong ground motion stations (circles represent type A sites with surface $V_S$ < 1000 m/s and red triangles represent type B sites with surface $V_S$ >= 1000 m/s). The following maps (\cref {fig:vs30-5,fig:vs30-10,fig:vs30-11}) will only show the simulated domain (black rectangle), whose dimensions and geographical coordinates are listed in \Cref {tab:vs30-1}, The named sites (triangles with black edge) are selected for further comparisons in \Cref {fig:vs30-12}. The star depicts the epicenter of the La Habra earthquake. \relax }}{35}{figure.caption.17}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Description of the selected source model used in this study. (a) Moment distribution (shading). The contours represent rupture time at a 0.4 s interval starting from 0. (b) and (c) represent the sum of the moment rates for all subfaults and the Fourier amplitude spectrum, respectively. A Brune-type $\omega ^{-2}$ decay source \citep {brune1970tectonic} that fits the source spectrum is plotted for reference.\relax }}{36}{figure.caption.18}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {2.3}{\ignorespaces (a) Top 150 m and (b) 0-4000 m $V_S$ profiles at the 259 stations. The black and red curves represent type A (surface $V_S < 1000$ m/s) and type B (surface $V_S >= 1000$ m/s) sites, respectively. The darker curves denote the sites with farther distance from the source.\relax }}{37}{figure.caption.19}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {2.4}{\ignorespaces FAS derived from the records (black) and CVM-S (blue) for the (a) east-west component, (b) north-south component and (c) vertical component. The left and right columns represent type A and B sites, respectively. The solid line is the median of FAS over the site group, the narrow band is the 95\% confidence interval of the median, and the dashed lines depict the standard deviation centered at the median. \relax }}{38}{figure.caption.20}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {2.5}{\ignorespaces (a) Surface $V_S$ extracted from CVM-S, and (b) $V_{S30}$ from \citet {thompsonUpdatedVs30Map2018} in our model domain (values in the left bottom corner are not available). The star denotes the epicenter.\relax }}{39}{figure.caption.21}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Representative $V_S$ profiles for (a) type A sites and (b) type B sites from CVM-S. The thick black curves depict the averaged velocity profiles for all 220 type A and 39 type B sites directly extracted from CVM-S. The thin lines show the $V_S$ profiles resulting from our proposed method for different $z_T$ depths between 200 m and 1500 m. The dashed curve shows the $V_S$ profile calculated using the \Cref {eq:vs30-2} tapers from our preferred $z_T$ of 1000 m (note that because the tapers are applied as upper bounds to $V_S$, they typically only affect the type A $V_S$ structure at depths exceeding 350m, where the GTL in CVM-S ceases and causes the abrupt discontinuity).\relax }}{40}{figure.caption.22}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {2.7}{\ignorespaces The SH1D response for the refined profiles using various $z_T$ depths for average (a) type A and (b) type B sites, divided by the response obtained with the averaged type A and type B profiles from CVM-S.\relax }}{41}{figure.caption.23}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Bias of FAS for the two horizontal components averaged over all (a) type A and (b) type B sites for CVM-S at all 259 stations, superimposed with the corresponding SH1D response. The black curves denote CVM-S and other labeled curves represent various tapering depths using SH1D results.\relax }}{42}{figure.caption.24}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Bias of FAS on the (a) east-west, (b) north-south and (c) vertical components, calculated from 3D simulations in CVM-S and with tapering depth of 350 m, 700 m, and 1000 m. A positive (negative) value depicts overprediction (underprediction). The left (right) column shows type A (B) sites. The solid line is the median of FAS, where the narrow band is the 95\% confidence interval of the median, and the dashed lines depict the standard deviation centered at the median.\relax }}{43}{figure.caption.25}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Maps of interpolated log10-based FAS bias between four 3D models and data: (a) CVM-S, and CVM-S with tapering depth of (b) 350 m, (c) 700 m and (d) 1000 m, calculated from the synthetics and records at 259 stations. The warm (cool) colors represent overprediction (underprediction). The circles (triangles) depict type A (B) sites. Note the log10-based colorbar.\relax }}{44}{figure.caption.26}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Maps of interpolated log10-based FAS bias for two 3D CVMs and data. (a) CVM-S with velocity tapering depth of 350 m and $Q_S=0.15V_S$, and (b) CVM-S with velocity tapering depth of 1000 m and $Q_S=0.05V_S$. Warm (cool) colors represent overprediction (underprediction). Circles depict type A sites and triangles show type B sites.\relax }}{45}{figure.caption.27}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Cumulative kinetic energy and Fourier velocity spectra at six type B sites. The subtitles show the names of the sites and their hypocentral distance. \relax }}{46}{figure.caption.28}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Type B site $V_S$ profiles from CVM-S, and CVM-S and CVM-H with (default) \citet {elyVs30derivedNearsurfaceSeismic2010} GTL taper depth of 350 m.\relax }}{47}{figure.caption.29}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {2.14}{\ignorespaces (a) $V_S$ profile sample locations in California. Circles denote type A sites and triangles denote type B sites, and (b) extracted $V_S$ profiles. The top panel zooms into the top 500 m. \relax }}{48}{figure.caption.30}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A2.1}{\ignorespaces Bias of FAS of the (a) east-west, (b) north-south and (c) vertical component, calculated from 3D simulations in CVM-S with $V_S$ tapering depths of 350 m and 1000 m along with attenuation models $Q_S=0.05V_S$, $Q_S=0.1V_S$, and $Q_S=0.15V_S$. A positive (negative) value means overprediction (underprediction). The left (right) columns show type A (B) sites. The solid line is the median of FAS, where the narrow band is the 95\% confidence interval of the median, and the dashed lines depict the standard deviation centered at the median.\relax }}{49}{figure.caption.32}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A2.2}{\ignorespaces Averaged FAS bias for frequencies between 0.15-1 Hz at poorly constrained sites plotted as a function of site surface $V_S$ for (a) three-component average, (b) east-west, (c) north-south and (d) vertical components. The shades represent 95\% confidence intervals estimated using bootstrap.\relax }}{50}{figure.caption.33}%
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {xchapter}{0-5 Hz Deterministic 3D Ground Motion Simulations for the 2014 La Habra, California, Earthquake}{51}{chapter.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Simulation domain for the La Habra earthquake (purple solid rectangle) and locations of 259 strong motion stations (black triangles). The star denotes the epicenter. The geographical coordinates of the corners of the simulated domain is listed in \cref {tab:highf-1}, which is used in subsequent map views.\relax }}{73}{figure.caption.40}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Illustration of the imprint of small-scale heterogeneities at the surface. (a) $V_S$ extracted from the CVM-S. (b) Same as (a) but superimposed with a statistical model of heterogeneities with a correlation length of 100 m, anisotropy factor of 5, Hurst number of 0.05 and standard deviation of 5\%. Topography is removed in (b) for clarity. The epicenter for the La Habra earthquake is depicted with a star.\relax }}{74}{figure.caption.41}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Description of the selected source model used in this study. (a) Slip distribution (shading), with contours representing rupture time at a 0.4 s interval starting from 0. (b) and (c) represent the sum of the moment rates for all subfaults and the Fourier amplitude spectrum, respectively. A Brune-type $\omega ^{-2}$ decay source \citep {brune1970tectonic} that fits the source spectrum is plotted for reference.\relax }}{75}{figure.caption.42}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Illustration of the SH1D method used to include the effects of material with $V_S$ less than 500 m/s in our 3D simulations for an example site. (a) $V_S$ profile extracted from CVM-S (red dashed curve) and clamped at 500 m/s (blue). (b) SH1D response ratio between the profiles without clamping and with clamping of $V_S =500$ m/s. (c) Synthetics from a 3D simulation using $V_S=500$ m/s, with and without the SH1D response ratio. (d) Fourier amplitude spectra corresponding to the waveforms in (c).\relax }}{76}{figure.caption.43}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Percent difference of PGV (the first row) and DUR (the second row) at the surface determined by the model with topography and the model without topography for (left) 0.15-1 Hz, (center) 1-2.5 Hz, and (right) 2.5-5 Hz. Positive (negative) values colored in red (blue) indicate amplification (deamplification). The star denotes the epicenter. \relax }}{77}{figure.caption.44}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Comparison of interpolated PGVs measured at 259 stations, depicted by triangles, for (a) data and (b) synthetics using Model 1 (including topography, 1000 m shallow velocity refinement and frequency-dependent attenuation $Q_S=0.1V_Sf^{0.6}$, $Q_P=2Q_S$; see \cref {tab:highf-2}). The star denotes the epicenter. (c) PGV against $R_{hypo}$ for data and synthetics. The left and right columns show band-limited results for 0.15-2.5 Hz, and 2.5-5 Hz, respectively. \relax }}{78}{figure.caption.45}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.7}{\ignorespaces FAS computed from records and models with various attenuation models (blue: Model 1, violet: Model 3, red: Model 4, green: Model 5). The left (right) column shows results for the horizontal (vertical) components. The top row shows the FAS amplitudes and the bottom show shows the FAS bias between models and records, calculated as the 10-based log between simulations and data. The solid lines depict the median FAS over all 259 stations. The shading shows the 95\% confidence interval (CI) and the dashed lines denote one standard deviation centered at the median. \relax }}{79}{figure.caption.46}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.8}{\ignorespaces (a-c) Spatial distribution of the three-component bias for PGV, band pass filtered between 2.5 and 5 Hz. The bias values are computed as the base 10 logarithm of the ratio between simulations and records at each strong motion site. Positive (negative) values represent overprediction (underprediction). (d) Moving average of the bias of PGV using a 20-point window from the three $Q$ models (red: Model 1, green: Model 3, blue: Model 4; see \cref {tab:highf-2}) shown in (a-c) versus hypocentral distance. \relax }}{80}{figure.caption.47}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Bias of (a-b) PGV and (c-d) DUR for passbands (left) 0.15-2.5 Hz and (right) 2.5-5 Hz at all 259 stations. The bias is calculated in the same way as for \Cref {fig:highf-7}. The solid lines depict the moving average of the bias using a 20-point window for each of the $Q$ models (blue: Model 11, red: Model 10, green: Model 3, orange: Model 1; see \cref {tab:highf-2}) versus hypocentral distance. \relax }}{81}{figure.caption.48}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Difference in (top row) PGV and (bottom) DUR (bottom row) from Model 16, including SSH with $\sigma = 5\%$ and $a = 5000$ m, versus Model 1 (no SSHs). Left (right) columns show results for bandwidths 0.15-2.5 Hz (2.5-5 Hz). The star depicts the epicenter. \relax }}{82}{figure.caption.49}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Probability density histogram of the difference between Model 16, including SSH with $\sigma = 5\%$ and $a = 5000$ m, and Model 1 (no SSHs). The definition of percent difference (x-axis) is the same as in \Cref {fig:highf-5}. \relax }}{83}{figure.caption.50}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Bias of (top row) PGV and (center row) DUR and (bottom row) GOF for bandwidths (left column) 0.15-2.5 Hz and (right column) 2.5-5 Hz at all 259 stations for Model 6 (see \cref {tab:highf-2} for a list of model features). The bias is calculated in the same way as for \Cref {fig:highf-9}. The solid line depicts the moving average using a 20-point window. The shading denotes the standard deviation centered at the mean.\relax }}{84}{figure.caption.51}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Bias of FAS on the (a) east-west, (b) north-south and (c) vertical components, calculated from models labeled by their IDs. A positive (negative) value depicts overprediction (underprediction). The left and right columns shows type A and B sites, respectively. The solid lines depict the median of FAS, where the narrow band is the 95\% confidence interval of the median, and the dashed lines depict the standard deviation centered at the median. \relax }}{85}{figure.caption.52}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Density of PGV change for models with topography relative to models without topography for bandwidths of (left column) 0.15-2.5 Hz and (right column) 2.5-5 Hz, and models with (top row) and without (bottom row) modified shallow velocities. The y-axis depicts topographic curvature smoothed using a 2-D window of dimensions 640 m $\times $ 640 m. Values toward the top right (bottom left) denote strong amplification at steep topography (deamplification at flat topography). Note that density intervals do not correspond to constant bin sizes.\relax }}{86}{figure.caption.53}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A3.1}{\ignorespaces Shear-wave quality factor ($Q_S$) plotted against $V_S$ (m/s) for several attenuation models widely used in the literature \citep [e.g.,][]{olsenEstimationLongPeriodSec2003,taborda2014ground,savranGroundMotionSimulation2019,withersGroundMotionIntraevent2019} and investigated here. The inset figure in the upper left corner zooms into $V_S <= 1600$ m/s, denoted by the dashed black box. Note that these $Q_S$ relations are valid for constant $Q$ models, or frequency-dependent $Q$ models for frequencies below 1 Hz.\relax }}{87}{figure.caption.55}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A3.2}{\ignorespaces Description of three candidate source models used in this study. (top) Slip distribution (shading) for sources 1, 2 and 3 (left to right), characterized by their hypocentral depths at 5, 5.5 and 6 km, respectively. Contours depict rupture time at a 0.4 s interval starting from 0. (bottom) (left) sum of the moment rates for all subfaults and (right) Fourier amplitude spectrum, respectively. Sources 1, 2 and 3 (from left to right in the first row) are characterized by their hypocentral depths at 5, 5.5 and 6 km, respectively. The contours represent rupture time at a 0.4 s interval starting from 0. Source 1 is the default source model used elsewhere in this chapter.\relax }}{88}{figure.caption.56}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A3.3}{\ignorespaces PGVs for sources 1, 2 and 3 (from left to right; see \cref {fig:highf-3}). The top and bottom rows represent the band-pass filtered results for 0.15-2.5 Hz and 2.5-5 Hz, respectively. The star denotes the epicenter.\relax }}{89}{figure.caption.57}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A3.4}{\ignorespaces Probability density histogram of the PGV difference caused by SSH effects, between Models 12-14 with Model 6 (blue, green and red) , and Model 16 with Model 2 (cyan). The definition of percent difference (x-axis) is the same as in \Cref {fig:highf-11}. \relax }}{90}{figure.caption.58}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A3.5}{\ignorespaces Density of PGV change for models with topography relative to models without topography for bandwidths of (left column) 0.15-2.5 Hz and (right column) 2.5-5 Hz, and models with (top row) and (bottom row) without modified shallow velocities. The y-axis depicts topographic curvature smoothed using a 2-D window of 120 m $\times $ 120 m. Values toward the top right (bottom left) denote strong amplification at steep areas (deamplification at flat areas). Note that density intervals do not correspond to constant bin sizes. \relax }}{91}{figure.caption.59}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A3.6}{\ignorespaces GOF scores for a subset of the metrics used in this study, for frequency bands 0.15-1 Hz, 1-2.5 Hz, and 2.5-5 Hz. Model IDs are listed in \Cref {tab:highf-2}.\relax }}{92}{figure.caption.60}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A3.7}{\ignorespaces Bias of (top row) PGV and (middle row) DUR and GOF (bottom row) for bandwidths of (left column) 0.15-2.5 Hz and (right column) 2.5-5 Hz at all 259 stations for Model 1 (see \cref {tab:highf-2} for model features). The bias is calculated in the same way as \Cref {fig:highf-9}. The solid line depicts the moving average of the bias of PGV using a 20-point window versus hypocentral distance. The shading denotes the standard deviation centered at the mean. \relax }}{93}{figure.caption.61}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A3.8}{\ignorespaces Same as \Cref {fig:highf-A11}, but for Model 2. \relax }}{94}{figure.caption.62}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A3.9}{\ignorespaces Same as \Cref {fig:highf-A11}, but for Model 3. \relax }}{95}{figure.caption.63}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A3.10}{\ignorespaces Same as \Cref {fig:highf-A11}, but for Model 4. \relax }}{96}{figure.caption.64}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A3.11}{\ignorespaces Same as \Cref {fig:highf-A11}, but for Model 5. \relax }}{97}{figure.caption.65}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A3.12}{\ignorespaces Same as \Cref {fig:highf-A11}, but for Model 7. \relax }}{98}{figure.caption.66}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A3.13}{\ignorespaces Same as \Cref {fig:highf-A11}, but for Model 8. \relax }}{99}{figure.caption.67}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A3.14}{\ignorespaces Same as \Cref {fig:highf-A11}, but for Model 9. \relax }}{100}{figure.caption.68}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A3.15}{\ignorespaces Same as \Cref {fig:highf-A11}, but for Model 10. \relax }}{101}{figure.caption.69}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A3.16}{\ignorespaces Same as \Cref {fig:highf-A11}, but for Model 11. \relax }}{102}{figure.caption.70}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A3.17}{\ignorespaces Same as \Cref {fig:highf-A11}, but for Model 12. \relax }}{103}{figure.caption.71}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A3.18}{\ignorespaces Same as \Cref {fig:highf-A11}, but for Model 13. \relax }}{104}{figure.caption.72}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A3.19}{\ignorespaces Same as \Cref {fig:highf-A11}, but for Model 14. \relax }}{105}{figure.caption.73}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A3.20}{\ignorespaces Same as \Cref {fig:highf-A11}, but for Model 15. \relax }}{106}{figure.caption.74}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A3.21}{\ignorespaces Same as \Cref {fig:highf-A11}, but for Model 16. \relax }}{107}{figure.caption.75}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A3.22}{\ignorespaces Same as \Cref {fig:highf-A11}, but for Model 17. \relax }}{108}{figure.caption.76}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A3.23}{\ignorespaces Same as \Cref {fig:highf-A11}, but for Model 18. \relax }}{109}{figure.caption.77}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A3.24}{\ignorespaces Same as \Cref {fig:highf-A11}, but for Model 19. \relax }}{110}{figure.caption.78}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A3.25}{\ignorespaces Same as \Cref {fig:highf-A11}, but for Model 20. \relax }}{111}{figure.caption.79}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A3.26}{\ignorespaces Same as \Cref {fig:highf-A11}, but for Model 21. \relax }}{112}{figure.caption.80}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A3.27}{\ignorespaces Same as \Cref {fig:highf-A11}, but for Model 22. \relax }}{113}{figure.caption.81}%
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {xchapter}{Modeling of Empirical Transfer Functions with 3D Velocity Structure}{114}{chapter.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Site map of Garner Valley Downhole Array (GVDA), denoted by the star. The rectangle depicts the extent of the modeling domain, where the contours depict elevation in meters. The triangle denotes a nearby outcrop site GVAR. The color version of this figure is available only in the electronic edition.\relax }}{136}{figure.caption.87}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.2}{\ignorespaces (a) Multiresolution index of valley bottom flatness (MRVBF) and (b) the bedrock depth map surrounding GVDA, which is depicted by a triangle in both figures. (c) The mapping function from MRVBF to bedrock depth, with GVDA marked with an asterisk. The color version of this figure is available only in the electronic edition.\relax }}{137}{figure.caption.88}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Cross sections of $V_S$ in the 3D mesh (see \cref {fig:etf-2}) intersecting GVDA along (a) A–A' and (c) B–B'; the downhole accelerometer is denoted with the asterisk. (b) The 1D $V_S$ profile, with its location denoted by the dashed line in the left panels, obtained from the borehole log, and used in the SH1D model. The color version of this figure is available only in the electronic edition.\relax }}{138}{figure.caption.89}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Comparison between the theoretical transfer functions (TTFs) computed using the 3D model and the SH1D model at GVDA, with the two-sigma scatter of empirical transfer functions (ETFs) shaded in gray. The color version of this figure is available only in the electronic edition.\relax }}{139}{figure.caption.90}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Site map of TKCH05, denoted by the star. The rectangle depicts the extent of the modeling domain, where the contours depict elevation in meters. The color version of this figure is available only in the electronic edition.\relax }}{140}{figure.caption.91}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.6}{\ignorespaces (a) Borehole log at TKCH05 (from \citealt {thompsonTaxonomySiteResponse2012}). (b) Borehole $V_S$ profiles at TKCH05 and HKD090, as well as for our simplified 1D model. The color version of this figure is available only in the electronic edition.\relax }}{141}{figure.caption.92}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.7}{\ignorespaces (a) Comparison between TTFs and the two-sigma scatter of the ETF for 3D and 1D models at TKCH05. Solid and dashed lines without markers are the 3D and 1D models based on the borehole log profile, respectively; solid and dashed lines with diamond markers depict the 3D and 1D models, based on the simplified downhole profile. (b,c) Comparison of 1.5–8 Hz observed east–west component surface ground motions with those obtained from convolution of the downhole records with the TTFs from models using the simplified profile for the (b) 3D model and (c) 1D model. The color version of this figure is available only in the electronic edition.\relax }}{142}{figure.caption.93}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.8}{\ignorespaces (a) MRVBF and (c) depth to bedrock in the vicinity of TKCH05, with the site location denoted by the triangle. (b) West–east A–A' and (d) north–south B–B' cross sections intersecting TKCH05, the downhole sensor is marked with the asterisk. The color version of this figure is available only in the electronic edition.\relax }}{143}{figure.caption.94}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.9}{\ignorespaces (a) The Gibbs and Steller velocity profiles at GVDA, in which the bedrock depth is 64 (solid line) and 88 m (dashed line), respectively. (b) Comparison between the two-sigma scatter of the ETFs (gray shaded) and the TTFs from the 3D models assembled with the Gibbs and Steller profiles, respectively. The color version of this figure is available only in the electronic edition.\relax }}{144}{figure.caption.95}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Comparison between the median ensemble ETF, the TTF from the 3D model without and with small-scale heterogeneities (SSHs) at TKCH05. The gray shaded region is the range of maximum and minimum values encountered in TTFs from these realizations of SSHs. The color version of this figure is available only in the electronic edition.\relax }}{145}{figure.caption.96}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Energy on the (a) horizontal and (b) vertical components at the site TKCH05. (c) Total energy along depth using the simplified velocity profile at TKCH05 with different incidence angles. The gray horizontal line, at around 100 m depth, depicts the downhole site depth. The color version of this figure is available only in the electronic edition.\relax }}{146}{figure.caption.97}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A4.1}{\ignorespaces (a) Map of events (purple triangles) used for computing the ETFs at GVDA. The red triangle depicts the event used in simulations. (b) Recorded accelerations (normalized) along West-East direction at 10 randomly selected sites. The maximum amplitude is shown to the left of each line.\relax }}{148}{figure.caption.99}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A4.2}{\ignorespaces (a) Map of events (purple triangles) used for computing the ETFs at TKCH05. The red triangle depicts the event used in simulations. (b) Recorded accelerations (normalized) along West-East direction at 10 randomly selected sites. The maximum amplitude is shown to the left of each line.\relax }}{149}{figure.caption.100}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A4.3}{\ignorespaces Snapshots of ${V_X}$ at TKCH05 along the A-A' cross section in \Cref {fig:etf-8}c, bandpass filtered between 4.5 and 5 Hz. (a), (c) and (e) display snapshots of the 3D model, where the gray contour lines represent interfaces between bulks with difference Vs; the green star denotes the downhole site and the green line marks its depth. (b), (d) and (f) are for the 1D model.\relax }}{150}{figure.caption.101}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A4.4}{\ignorespaces Same as \Cref {fig:etf-A3}, except along the B-B’ cross section in \Cref {fig:etf-8}c.\relax }}{151}{figure.caption.102}%
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {xchapter}{Kinematic Source Models for Earthquake Simulations with Fault-zone Plasticity}{152}{chapter.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Peak slip rate (PSR) simulated on the fault for ShakeOut scenario, with the surface PSR (in m/s) shown in the panel above each subplot. (a) linear, (b) sandstone (nonlinear), and (c) shale (nonlinear) results. Black contours indicate rupture time in 1 s intervals from 0.\relax }}{161}{figure.caption.105}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Peak slip rate (PSR) averaged along strike against depth (left panel of each subplot) for sandstone (nonlinear) and linear models and their ratio (right panel of each subplot). (a)-(c) depit three realizations for the sandstone models with stress drop of 7, 8, and 10 MPa, respectively. Dashed red lines indicate the curves fitting the nonlinear to linear PSR ratios using \Cref {eq:eks-2}.\relax }}{162}{figure.caption.106}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.3}{\ignorespaces (a) STF on a representative subfault from the linear model. (b) Time-domain scaling factors from the shape function computed by \Cref {eq:eks-2}. (c) STFs for the nonlinear model and EKS model. The black dashed lines in (a) and (b) indicate the peak time of the STF and shape functions.\relax }}{163}{figure.caption.107}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.4}{\ignorespaces PGV distribution for the southern San Andreas fault region, obtained for (a) linear, (b) sandstone and (c) EKS model. The red rectangle depicts the LA basin region for further ground motion comparisons in \Cref {fig:eks-10}.\relax }}{164}{figure.caption.108}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Cumulative distribution of PGVs for linear models with stress drop of 7 (a and c) and 10 (b and d) MPa, as well as nonlinear models and the corresponding EKS models. The top row (a and b) depicts models with sandstone and the bottom row (c and d) shows models with shale.\relax }}{165}{figure.caption.109}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Same as \Cref {fig:eks-5}, but for SA-5s comparisons.\relax }}{166}{figure.caption.110}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Same as \Cref {fig:eks-5}, but for SA-3s comparisons.\relax }}{167}{figure.caption.111}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Same as \Cref {fig:eks-5}, but for SA-2s comparisons.\relax }}{168}{figure.caption.112}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Same as \Cref {fig:eks-8}, but the rupture direction is reversed to NW-SE for all models.\relax }}{169}{figure.caption.113}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Probability density (P.D.) histograms of PGVs in the Los Angeles Basin area. The models for each subfigure are the same as in \Cref {fig:eks-8}\relax }}{170}{figure.caption.114}%
