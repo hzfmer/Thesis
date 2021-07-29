@@ -158,6 +158,6 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{Appendix}{171}{appendix*.115}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A}Von Karmen Autocorrelation Function}{171}{section.Alph0.1}%
+\contentsline {section}{\numberline {A}Von K\'arm\'an Autocorrelation Function}{171}{section.Alph0.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{172}{appendix*.116}%
+\contentsline {chapter}{Bibliography}{173}{appendix*.116}%

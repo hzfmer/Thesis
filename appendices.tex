@@ -17,18 +17,22 @@
 
 
 \linespread{1.7}
-\section{Von Karmen Autocorrelation Function}
+\section{Von K\'arm\'an Autocorrelation Function}
 \linespread{2.0}
 %\newrefsection
 \label{app:A}
 
-The form of the von Ka\'rma\'n autocorrelation function \citep{frankelFiniteDifferenceSimulations1986} is
+The stochastic nature of the medium, with the assumption that the randomness is spatially homogeneous or isotropic, can be characterized using an autocorrelation function (ACF) as a function of spatial lag ($R(\mathrm{x})$). The power spectral density function characterizing the random medium can be calculated from the Fourier transform of the ACF over three (for 3D simulations) spatial coordinates:
+\begin{equation}
+    P\left(k_{x}, k_{y}, k_{z}\right)=\iiint_{-\infty}^{\infty} R(x, y, z) \mathrm{e}^{-k_{x} x-k_{y} y-k_{z} z} \mathrm{~d} x \mathrm{~d} y \mathrm{~d} z
+\end{equation}
+\noindent where $k_x$, $k_y$ and $k_z$ are the wavenumbers in each direction, respecitvely. For wave propagation problems in geophysical applications, the von K\'arm\'an ACF is commonly used and found superior to Gaussian or exponential formulations \citep{frankelFiniteDifferenceSimulations1986}, with the form of:
 
 \begin{equation}\label{eq:app-A1}
     \Phi_{v, a}(r)=\sigma^{2} \frac{2^{1-v}}{\Gamma(v)}\left(\frac{r}{a}\right)^{v} K_{v}\left(\frac{r}{a}\right)
 \end{equation}
 
-\noindent in which $\nu$ is the Hurst component, $a$ is the correlation length, $K_{\nu}$ is the modified Bessel function of order $\nu$, $\Gamma(\nu)$ is the gamma function, and $\sigma^2$ is the variance with Fourier transform:
+\noindent in which $\nu$ is the Hurst component, $a$ is the correlation length, $K_{\nu}$ is the modified Bessel function of order $\nu$, $\Gamma(\nu)$ is the gamma function, and $\sigma^2$ is the variance, with Fourier transform:
 
 \begin{equation}\label{eq:app-A2}
     P(k)=\frac{\sigma^{2}(2 \sqrt{\pi} a)^{E} \Gamma(v+E / 2)^{v+E / 2}}{\Gamma(v)\left(1+k^{2} a^{2}\right)}
@@ -36,6 +40,7 @@ The form of the von Ka\'rma\'n autocorrelation function \citep{frankelFiniteDiff
 
 \noindent in which $k$ is the wave number and $E$ is the Euclidean dimension.
 
+The von K\'arm\'an model follows a power law in its power spectral density function when the wavenumber $k$ is large ($ak \gg 1$). In addition, it has a low-cut frequency filter and thus non-fractal large-scale heterogeneities. The von K\'arm\'an model is widely adopted in many independent studies due to its ability to capture the laterallly correlated heterogeneities as well as the self-similar small-scale heterogeneities, and good fit with experiments \citep{ru1982attenuation,carpentier2009conservation,nakata2015stochastic}. Nevertheless, the parameters remain uncertain due to diferent sources of data or the analysis methods used in indivisual studies. In general, Hurst exponents were reported between 0.0 and 0.5, and horizontal to vertical anisotropy ratios between 2 and 5 and the vertical correction lengths between 30 and 300 m in previous studies from digital geological maps, sonic logs and seismic reflection data \citep[e.g., ][ and the references therein]{nakata2015stochastic,savranModelSmallscaleCrustal2016}.
 
 %%%%%%%%%%%%%%%%%%%%%%%% A (end)
 

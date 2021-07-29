@@ -2674,7 +2674,7 @@
     <bcf:citekey order="187">imperatoriBroadbandNearfieldGround2013</bcf:citekey>
     <bcf:citekey order="187">savranGroundMotionSimulation2019</bcf:citekey>
     <bcf:citekey order="188">frankelFiniteDifferenceSimulations1986</bcf:citekey>
-    <bcf:citekey order="189">nakataStochasticCharacterizationMesoscale2015</bcf:citekey>
+    <bcf:citekey order="189">nakata2015stochastic</bcf:citekey>
     <bcf:citekey order="189">savranModelSmallscaleCrustal2016</bcf:citekey>
     <bcf:citekey order="190">olsen2018constraints</bcf:citekey>
     <bcf:citekey order="191">oreillyHighorderFiniteDifference2021</bcf:citekey>
@@ -2832,6 +2832,11 @@
     <bcf:citekey order="305">denolle2014strong</bcf:citekey>
     <bcf:citekey order="306">olsenStrongShakingAngeles2006</bcf:citekey>
     <bcf:citekey order="307">frankelFiniteDifferenceSimulations1986</bcf:citekey>
+    <bcf:citekey order="308">ru1982attenuation</bcf:citekey>
+    <bcf:citekey order="308">carpentier2009conservation</bcf:citekey>
+    <bcf:citekey order="308">nakata2015stochastic</bcf:citekey>
+    <bcf:citekey order="309">nakata2015stochastic</bcf:citekey>
+    <bcf:citekey order="309">savranModelSmallscaleCrustal2016</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">
