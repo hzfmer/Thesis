@@ -107,12 +107,6 @@ For this reason, we use a computationally much less expensive 1D method, which m
 \Cref{fig:highf-4} illustrates the results of applying the SD1D method low-velocity correction for an example site. The two profiles show similar SH1D responses below about 0.3 Hz, above which the SH1D response ratio slowly trends upward with frequency, depicting the amplification from the material with $V_S$ less than 500 m/s. The PGV of the horizontal synthetic with the correction is increased by 32\% relative to that with $V_S$ clamped at 500 m/s (\Cref{fig:highf-4}c). The correction leaves the shape of the waveform almost unchanged. The smoothed Fourier spectra (\Cref{fig:highf-4}d) further suggests that clamping $V_S$ at 500 m/s may be reasonable for frequencies up to 0.8-1 Hz. Similar effects are observed for all profiles with near-surface velocity lower than 500 m/s, and we therefore apply this technique to all our 3D simulations with minimum $V_S$ clamped at 500 m/s.
 
 
-%%\subsection{Reference Model Response}
-%%\Cref{fig:highf-5} shows a comparison between PGVs extracted from records and synthetics for a simulation with source 1, CVM-S including topography, $Q(f)=0.1f^{0.6}$, $Q_P=2Q_S$, shallow velocity tapered down to 1000 m \citep{huCalibrationNearsurfaceSeismic2021}, and no small-scale heterogeneities added, which is our reference case.
-%%for low frequencies (0.15-2.5 Hz) and high frequencies (2.5-5 Hz). 
-%%The minimum $V_S$ is truncated at %500 m/s (at which $V_P$ is %calculated from the $V_P/V_S$ ratio %in CVM-S, and density is unchanged), %often necessitated by limitations of %computational resources. 
-%%While the overall PGV distributions are similar, the reference model tends to predict larger values to the south and west of the source within 40 km distance, especially at high frequencies. On the other hand, the simulation slightly underpredicts the PGVs beyond 40 km at frequencies above 2.5 Hz. The overprediction in the nearfield and small underprediciton in the farther field at high frequencies indicates more than expected seismic energy is trapped within the Los Angeles Basin (LAB) bounded by San Bernardino and Santa Ana Mountains (see \cref{fig:highf-2}a for location). The overprediction within 40 km may suggest a lower $Q$ within the LAB, as hypothesized by \citet{houghAttenuationAnzaCalifornia1988} and examined by \citet{withersValidationDeterministicBroadband2019} that a frequency-dependent low $Q$ layer improves the prediction of site effects.
-
 
 \subsection{Topography}
 In this section we investigate the effects of topography, which are often ignored in numerical simulations \citeg{graves2004observed,olsenStrongShakingAngeles2006,savranGroundMotionSimulation2019}. Our analysis of topographic effects uses a reference model with topography removed.
@@ -199,7 +193,7 @@ This research was supported through the U.S. Geological Survey External Program 
 % \end{sidewaystable}
 
 \begin{table}[!ht]
-  \vrule depth12pt width 0pt
+  \vrule depth 2pt width 0pt
   \caption{Simulation parameters used for the deterministic ground motion simulations of the 2014 La Habra earthquake.}
   \label{tab:highf-1}
   \resizebox{0.7\textwidth}{!}{%
@@ -234,7 +228,7 @@ This research was supported through the U.S. Geological Survey External Program 
 
 \begin{table}[!ht]
   \begin{threeparttable}
-    \vrule depth12pt width 0pt
+    \vrule depth 2pt width 0pt
     \centering
     \caption{Summary and main features of the models used in this study.}
     \label{tab:highf-2}
@@ -272,7 +266,7 @@ This research was supported through the U.S. Geological Survey External Program 
       \item[\textsuperscript{*}] \footnotesize $Q_P=2Q_S$\\[-6pt]
       \item[\textsuperscript{**}] \footnotesize $Q_{seg}(V_S)=0.075V_S$, for $V_S <= 1000$ m/s; $Q_S=0.2V_S - 125$, for $V_S > 1000$ m/s\\[-3pt]
       \item[\textsuperscript{***}] \footnotesize $Q_{poly}(V_S)=10.5 - 16V_S + 153V_S^2 - 103V_S^3 + 34.7V_S^4 - 5.29V_S^5 + 0.31V_S^6$, for $V_S$ in km/s, see \citet{taborda2014ground}\\[-4pt]
-      \item[\textdagger] \footnotesize When included, hurst number = 0.05, Horizontal to vertical correlation length ratio = 5
+      \item[\textdagger] \footnotesize When included, hurst number = 0.05 and orizontal to vertical correlation length ratio = 5
     \end{tablenotes}
   \end{threeparttable}
 \end{table}
